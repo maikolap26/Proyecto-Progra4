@@ -94,7 +94,12 @@
 		padding-bottom:2%;
 		font-size: 20px;
 		font-family: "Comic Sans MS", cursive, sans-serif;
-
+	}
+	
+	.servicio{
+		padding-left:10%;
+		padding-top:2%;
+		padding-bottom:2%;
 	}
 	
 	table.grid{ background: #ffffe6; background-image: url(../fonts/fondo1.png); border-radius: 10px; }	
@@ -107,7 +112,7 @@
 	table.grid tbody tr:nth-child(odd) {background: #ffffe6; background-image: url(../fonts/fondo1.png); border-radius: 10px;}
 	table.grid tbody tr:nth-child(even) {background: #ffffe6; background-image: url(../fonts/fondo1.png); border-radius: 10px;}
 	table.grid tbody tr td{border:inherit; background-image: url(../fonts/fondo1.png); border-radius: 10px;}
-
+	
 	.container_pie{
 		clear: both;
 	}
@@ -154,12 +159,12 @@
 		color:white;
 		text-align:center;
 	}
-
+	
 	.fila{
 		padding-top: 5%;
 		padding-left: 3%;
 	}
-
+	
 	.sign{
 		font-size: 20px;
 		font-weight: bold;
@@ -178,5 +183,4 @@
 		height:30%;
 		float:right;
 	}
-	
 	
