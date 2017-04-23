@@ -80,7 +80,8 @@
 	#claro{
 		background-color: #ffffe6;
 		font-family: "Comic Sans MS", cursive, sans-serif;
-		background-image: url(../fonts/fondo1.png); border-radius: 10px; 
+		background-image: url(../fonts/fondo1.png); 
+		/*border-radius: 10px; */
 	}
 	.pagina{
 		background-image:url(../fonts/fondo2.png);
@@ -193,6 +194,16 @@
 	
 	.formulario{
 		font-size: 20px;
+		margin-left:10%;
+		margin-top:1%;
+		margin-bottom:2%;
+	}
+	 
+	.imagenR{
+		width:70%;
+		height:70%;
+		margin-top:5%;
+		margin-bottom:4%;
 	}
 	
 	.oneWorld{
@@ -221,8 +232,12 @@
 	
 	.inicioSesion{
 		display:block;
-		
 	}
+	
+	#inicioSesion{
+		padding-left: 68%;
+	}
+	
 	.logueado{
 		display:none;
 	}

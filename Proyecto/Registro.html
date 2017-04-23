@@ -18,7 +18,11 @@
 				<div class="col-md-12">
 					<img src="img/Captura.png" class="image1" alt="" style="float:left;">
 					<img src="img/Header.png" class="image" alt="" style="float:left;">
-					
+					<span class="inicioSesion" id="inicioSesion"><span class="campoUs1"> Usuario:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input  class="campoUs" type="text" id="user" > <br> Contraseña: <input type="text" class="campoUs" id="pass"></span>
+					<div> <br> <span class="boton1"> <input type="button" value="Login" class="boton" id="login"> &nbsp;&nbsp; <input type="button" id="signup" value="SignUp" class="boton">  </span>
+					</div>
+					</span>
+					<span class="logueado" id="logueado"> <span id="span"></span> 	</span>
 				</div>
 			</div>
 		</div>
@@ -39,84 +43,99 @@
 		
         <!------------------------------- TERMINA NAVEGACION ------------------------------->
     
-
+	<div>
+		<span class="iz">
     <!------------------------------- CUERPO ------------------------------->
-    <div class="container cuerpo" id="claro">
-        <div class="sign">Sign Up</div>
-        <form class="formulario" method="POST" name="formulario" id="formulario" action="javascript:doSubmit();">
-            <table class="grid">
-                <tbody>
-                    <tr>
-                        <td>&nbsp;&nbsp;</td>
-                    </tr>
-                    <tr>
-                        <td class="etiqueta"> Usuario: </td>
-                        <td> <input type="text" id="usuario"></td>
-                    </tr>
-                    <tr>
-                        <td>&nbsp;&nbsp;</td>
-                    </tr>
-                    <tr>
-                        <td class="etiqueta"> Contraseña:</td>
-                        <td> <input type="password" id="constraseña"></td>
-                    </tr>
-                    <tr>
-                        <td>&nbsp;&nbsp;</td>
-                    </tr>
-                    <tr>
-                        <td class="etiqueta"> Nombre:</td>
-                        <td> <input type="text" id="nombre"></td>
-                    </tr>
-                    <tr>
-                        <td>&nbsp;&nbsp;</td>
-                    </tr>
-                    <tr>
-                        <td class="etiqueta"> Apellidos:</td>
-                        <td> <input type="text" id="apellidos"></td>
-                    </tr>
-                    <tr>
-                        <td>&nbsp;&nbsp;</td>
-                    </tr>
-                    <tr>
-                        <td class="etiqueta"> Correo Electrónico: </td>
-                        <td> <input type="text" id="correo"></td>
-                    </tr>
-                    <tr>
-                        <td>&nbsp;&nbsp;</td>
-                    </tr>
-                    <tr>
-                        <td class="etiqueta"> Teléfono de trabajo:</td>
-                        <td> <input type="text" id="telefono"></td>
-                    </tr>
-                    <tr>
-                        <td>&nbsp;&nbsp;</td>
-                    </tr>
-                    <tr>
-                        <td class="etiqueta"> Celular: </td>
-                        <td> <input type="text" id="celular"></td>
-                    </tr>
-                    <tr>
-                        <td>&nbsp;&nbsp;</td>
-                    </tr>
-                    <tr>
-                        <td class="etiqueta"> Fecha de nacimiento: </td>
-                        <td> <input type="text" id="fechaNacimiento"></td>
-                    </tr>
-                    <tr>
-                        <td>&nbsp;&nbsp;</td>
-                    </tr>
-                    <tr>
-                        <td><input type="submit" class="boton" value="Registrar"> </td>
-                    </tr>
-                </tbody>
-            </table>
-        </form>
-    </div>
-
-    <br>
-    <br>
+			<div class="container cuerpo" >
+				<form class="formulario" method="POST" name="formulario" id="formulario" action="javascript:doSubmit();">
+					<table class="grid">
+						<thead>
+							<tr>
+								<th colspan="2">Sign up</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>&nbsp;&nbsp;</td>
+							</tr>
+							<tr>
+								<td class="etiqueta"> &nbsp;&nbsp; Usuario: </td>
+								<td> <input type="text" id="usuario"></td>
+							</tr>
+							<tr>
+								<td>&nbsp;&nbsp;</td>
+							</tr>
+							<tr>
+								<td class="etiqueta"> &nbsp;&nbsp; Contraseña:</td>
+								<td> <input type="password" id="constraseña"></td>
+							</tr>
+							<tr>
+								<td>&nbsp;&nbsp;</td>
+							</tr>
+							<tr>
+								<td class="etiqueta"> &nbsp;&nbsp; Nombre:</td>
+								<td> <input type="text" id="nombre"></td>
+							</tr>
+							<tr>
+								<td>&nbsp;&nbsp;</td>
+							</tr>
+							<tr>
+								<td class="etiqueta"> &nbsp;&nbsp; Apellidos:</td>
+								<td> <input type="text" id="apellidos"></td>
+							</tr>
+							<tr>
+								<td>&nbsp;&nbsp;</td>
+							</tr>
+							<tr>
+								<td class="etiqueta">  &nbsp;&nbsp; Correo Electrónico: </td>
+								<td> <input type="text" id="correo"></td>
+							</tr>
+							<tr>
+								<td>&nbsp;&nbsp;</td>
+							</tr>
+							<tr>
+								<td class="etiqueta"> &nbsp;&nbsp; Teléfono de trabajo:</td>
+								<td> <input type="text" id="telefono"></td>
+							</tr>
+							<tr>
+								<td>&nbsp;&nbsp;</td>
+							</tr>
+							<tr>
+								<td class="etiqueta"> &nbsp;&nbsp; Celular: </td>
+								<td> <input type="text" id="celular"></td>
+							</tr>
+							<tr>
+								<td>&nbsp;&nbsp;</td>
+							</tr>
+							<tr>
+								<td class="etiqueta"> &nbsp;&nbsp; Fecha de nacimiento: </td>
+								<td> <input type="text" id="fechaNacimiento">&nbsp;&nbsp;</td>
+							</tr>
+							<tr>
+								<td>&nbsp;&nbsp;</td>
+							</tr>
+							<tr>
+								<td>&nbsp;&nbsp;<input type="submit" class="boton" value="Registrar"> </td>
+							</tr>
+							<tr>
+								<td>&nbsp;&nbsp;</td>
+							</tr>
+						</tbody>
+					</table>
+				</form>
+			</div>
+		</span>
+		<span class="der">
+			<img src="img/cloud.jpg" class="imagenR" >
+		</span>
+		
+	</div>
+   
     <!------------------------------- TERMINA CUERPO ------------------------------->
-	
+	<div>
+		<br> <br>
+		<br> <br>
+	</div>
 
     <!------------------------------- PIE DE PAGINA ------------------------------->
 
