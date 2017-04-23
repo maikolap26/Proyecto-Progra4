@@ -18,6 +18,9 @@
 	<script src="js/Aeropuerto.js" type="text/javascript"></script>
 	<script src="js/Ruta.js" type="text/javascript"></script>
 	<script src="js/Tiquete.js" type="text/javascript"></script>
+	<script src="js/Metodos.js" type="text/javascript"></script>
+	<script src="js/Usuario.js" type="text/javascript"></script>
+	
 </head>
 
 <body class="pagina">
@@ -29,7 +32,11 @@
 			<div class="col-md-12">
 				<img src="img/Captura.png" class="image1" alt="" style="float:left;">
 				<img src="img/Header.png" class="image" alt="" style="float:left;">
-				
+				<span class="inicioSesion" id="inicioSesion"><span class="campoUs1"> Usuario:<input  class="campoUs" type="text" id="user" >  Contraseña: <input type="text" class="campoUs" id="pass"></span>
+				<div> <br> <span class="boton1"> <input type="button" value="Login" class="boton" id="login"> &nbsp;&nbsp; <input type="button" id="signup" value="SignUp" class="boton">  </span>
+				</div>
+				</span>
+				<span class="logueado" id="logueado"> <span id="span"></span> 	</span>
 			</div>
 		</div>
 	</div>
@@ -60,13 +67,13 @@
 				<a href="Consultas.html" title="Consultas">
 					<image src="" border="0">Consultas</a>
 			</li>
-			
+
 		</ul>
 	</div>
 
 	<!------------------------------- TERMINA NAVEGACION ------------------------------->
-	
-	<div >
+
+	<div>
 		<span class="iz">
 			
 			<!-- -----------------------------BUSCAR VUELOS--------------------------------------- 
@@ -130,8 +137,8 @@
 			</div>
 			<!-- ----------------------------- TERMINA BUSCAR VUELOS ----------------------------- -->	
 		</span>
-		
-		
+
+
 		<!-- ----------------------------- SLIDES DE DESCUENTOS ----------------------------- -->
 		<span class="der">
 			<div class="container">
@@ -192,28 +199,28 @@
 
 							<a href="#carousel-1" class="left carousel-control" role="button" data-slide="prev">
 								<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-							</a>
+		</a>
 
-							<a href="#carousel-1" class="right carousel-control" role="button" data-slide="next">
-								<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-							</a>
+		<a href="#carousel-1" class="right carousel-control" role="button" data-slide="next">
+			<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+		</a>
 
-						</div>
-					</div>
-				</div>
-				
-			</div>
-		</span>
-	</div>	
+	</div>
+	</div>
+	</div>
+
+	</div>
+	</span>
+	</div>
 	<!-- ----------------------------- TERMINA SLIDES DE DESCUENTOS ------------------- -->
 	<div id="busqueda" class="tableVuelos">
-		<table id= "tablaBusqueda" class="grid">
-			
+		<table id="tablaBusqueda" class="grid">
+
 		</table>
 	</div>
 	<!-- ----------------------------- PIE DE PAGINA ----------------------------- -->
 
-	<div class="container_pie" >
+	<div class="container_pie">
 		<div class="row ">
 			<p class="text-center">Andres-Alex-Maikol Airlines </p>
 			<p class="text-center">AAM es la marca comercial que representa a las aerolíneas latinoamericanas integradas en AAM Holdings S.A.</p>
@@ -269,6 +276,7 @@ AAMModel.prototype={
 		this.buscados=[];
 	}
 };
+
 </script>
 <script>
 	function AAMController(model,view) {
@@ -287,8 +295,10 @@ AAMController.prototype={
 			)
 	}
 };
+
 </script>
-<script>//view
+<script>
+	//view
 var model;
 var controller;
 var vuelos;
@@ -329,6 +339,7 @@ function showBuscados(){
 	}
 }
 document.addEventListener("DOMContentLoaded",pageLoad);
+
 </script>
 
 </html>

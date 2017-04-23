@@ -201,3 +201,56 @@
 		float:right;
 	}
 	
+	.campoUs{
+		margin-left:1%;
+		margin-top:2%;
+		margin-right:1%;
+	}
+	.campoUs1{
+		margin-left:0%;
+		margin-top:2%;
+		margin-right:1%;
+		font-family: "Comic Sans MS", cursive, sans-serif;
+	}
+	.boton1{
+		margin-left:10%;
+		margin-top:2%;
+		margin-right:1%;
+		font-family: "Comic Sans MS", cursive, sans-serif;
+	}
+	
+	.inicioSesion{
+		display:block;
+		
+	}
+	.logueado{
+		display:none;
+	}
+	.anchor{
+		text-decoration:none;
+		background:black;
+		margin-left:30%;
+	}
+	
+	.user{
+		margin-left:40%;
+		margin-top:2%;
+		margin-right:1%;
+	}
+	.focus{
+		background: antiquewhite;
+	}
+
+	.blur{
+		background: white;
+	}
+	#user{
+		margin-left:1%;
+		margin-top:2%;
+		margin-right:1%;
+	}
+	#pass{
+		margin-left:1%;
+		margin-top:2%;
+		margin-right:1%;
+	}
