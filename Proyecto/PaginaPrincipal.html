@@ -15,7 +15,9 @@
 	<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
 	<script type="text/javascript" src="js/jquery-ui-1.8.18.custom.min.js"></script>
 	<script src="js/funcionesJQuery.js" type="text/javascript"></script>
-
+	<script src="js/Aeropuerto.js" type="text/javascript"></script>
+	<script src="js/Ruta.js" type="text/javascript"></script>
+	<script src="js/Tiquete.js" type="text/javascript"></script>
 </head>
 
 <body class="pagina">
@@ -203,12 +205,12 @@
 			</div>
 		</span>
 	</div>	
-	<!-- ----------------------------- TERMINA SLIDES DE DESCUENTOS ----------------------------- -->
-
-	<div id="busqueda">
-		
+	<!-- ----------------------------- TERMINA SLIDES DE DESCUENTOS ------------------- -->
+	<div id="busqueda" class="tableVuelos">
+		<table id= "tablaBusqueda" class="grid">
+			
+		</table>
 	</div>
-
 	<!-- ----------------------------- PIE DE PAGINA ----------------------------- -->
 
 	<div class="container_pie" >
@@ -249,28 +251,22 @@
 }
 AAMModel.prototype={
 	AAMModel: function(){
-		this.ciudades= this.initCiudades();
-		this.vuelos= this.initVuelos();
+		this.ciudades= [
+		new Aeropuerto("SJO","San Jose"),
+		new Aeropuerto("LIB","Guanacaste"),
+		new Aeropuerto("MIA","Miami"),
+		new Aeropuerto("CAN","Cancun"),
+		new Aeropuerto("ORL","Orlando"),
+		new Aeropuerto("ANT","Antigua")
+		];
+		this.vuelos= [
+		new Ruta("111","San Jose","Orlando","500"),
+		new Ruta("222","Miami","Orlando","700"),
+		new Ruta("333","San Jose","Orlando","350"),
+		new Ruta("999","San Jose","Orlando","100"),
+		new Ruta("000","San Jose","Orlando","250"),
+		];
 		this.buscados=[];
-	},
-	initCiudades: function(){
-		var ciudades=[
-		new Ciudad("SJO","San Jose","Costa Rica"),
-		new Ciudad("LIB","Guanacaste","Costa Rica"),
-		new Ciudad("MIA","Miami","USA"),
-		new Ciudad("CAN","Cancun","Mexico"),
-		new Ciudad("ORL","Orlando","USA"),
-		new Ciudad("ANT","Antigua","Guatemala")
-		]
-	},
-	initVuelos: function(){
-		var vuelos=[
-		new Vuelo("San Jose","Orlando","111","500"),
-		new Vuelo("Miami","Orlando","222","700"),
-		new Vuelo("San Jose","Orlando","333","350"),
-		new Vuelo("San Jose","Orlando","999","100"),
-		new Vuelo("San Jose","Orlando","000","250"),
-		]
 	}
 };
 </script>
@@ -285,11 +281,9 @@ AAMController.prototype={
 		this.view= view;
 	},
 	buscar: function(){
-		var origen= this.view.$("#origen").val();
-		var destino= this.view.$("#destino").val();
-		model.buscados= model.vuelos.filter(
-			function(v){
-				return (v.origen.codigo.include(origen))&&(v.destino.codigo.include(destino)); }
+		var origen= this.view.document.getElementById("origen").value;
+		var destino= this.view.document.getElementById("destino").value;
+		model.buscados= model.vuelos.filter(function(v){return (v.codigo_AeropuertoOrigen.includes(origen))&&(v.codigo_AeropuertoDestino.includes(destino)); }
 			)
 	}
 };
@@ -297,19 +291,41 @@ AAMController.prototype={
 <script>//view
 var model;
 var controller;
+var vuelos;
+var ciudades;
 
 function pageLoad(event) {
 	model=new AAMModel();
+	vuelos= model.vuelos;
+	ciudades= model.ciudades;
 	controller= new AAMController(model,window);
-	$("#buscar").click(function(){controller.buscar(); showBuscados();})
+
+	document.getElementById("buscar").addEventListener("click",showBuscados);
 }
 
 function showBuscados(){
-	var s= document.getElementByid("busqueda");
+	controller.buscar();
+	var s= document.getElementById("tablaBusqueda");
+	var thea= document.createElement("thead");
+	var x= document.createElement("tr");
+	var y=document.createElement("th");
+	y.innerHTML= "Resultados de la busqueda";
+	x.appendChild(y);
+	thea.appendChild(x);
+	s.appendChild(thea);
 	for(var i=0; i< model.buscados.length; i++){
-		var elem = document.createElement("div");
-		elem.innerHTML=model.buscados[i].origen.nombre+" -- "+ model.buscados[i].destino.nombre;
-		s.appendChild(elem);
+		var t= document.createElement("tr");
+		t.id="filabusq";
+		var t1= document.createElement("td");
+		t1.innerHTML=i+1+".                       Desde: "+ model.buscados[i].codigo_AeropuertoOrigen+" hasta "+ model.buscados[i].codigo_AeropuertoDestino+"      $ "+ model.buscados[i].precio;
+		t.appendChild(t1);
+		var t2= document.createElement("td");
+		var boton= document.createElement("input");
+		boton.type = "button";
+		boton.value= " Comprar ";
+		t2.appendChild(boton);
+		t.appendChild(t2);
+		s.appendChild(t);
 	}
 }
 document.addEventListener("DOMContentLoaded",pageLoad);

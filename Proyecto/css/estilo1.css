@@ -101,6 +101,11 @@
 		padding-top:2%;
 		padding-bottom:2%;
 	}
+
+	#busqueda{
+		clear: left;
+		width: 100%;
+	}
 	
 	table.grid{ background: #ffffe6; background-image: url(../fonts/fondo1.png); border-radius: 10px; }	
 	table.grid{border:1px ; border-collapse: collapse; border-radius: 10px;}
@@ -172,6 +177,18 @@
 		background-color: #cc9900;
 		background-image: url(../fonts/fondo3.png); 
 		border-radius: 10px;
+	}
+
+	#filabusq{
+		border-radius: 10px 10px 10px 10px;
+		-moz-border-radius: 10px 10px 10px 10px;
+		-webkit-border-radius: 10px 10px 10px 10px;
+		border: 30px solid transparent;
+		padding: 50px;
+	}
+	#tablaBusqueda{
+		clear: left;;
+		width: 100%;
 	}
 	
 	.formulario{
