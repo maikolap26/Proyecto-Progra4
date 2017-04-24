@@ -65,6 +65,11 @@
 	    height: 22%;
 	    padding-left: 9.2%;
 	}
+	.image2 {
+	    width: 88%;
+	    height: 88%;
+	    padding-right: 20%;
+	}
 	
 	.menuP {
 	    padding-left: 10%;
@@ -95,7 +100,7 @@
 	    background-color: #ffffe6;
 	    font-family: "Comic Sans MS", cursive, sans-serif;
 	    background-image: url(../fonts/fondo1.png);
-	    /*border-radius: 10px; */
+	    
 	}
 	
 	.pagina {
@@ -288,9 +293,9 @@
 	
 	.formulario {
 	    font-size: 20px;
-	    margin-left: 10%;
-	    margin-top: 1%;
-	    margin-bottom: 2%;
+	    margin-left: 90%;
+	    margin-top: 2%;
+	    margin-bottom: 5%;
 	}
 	
 	.imagenR {
@@ -422,4 +427,7 @@
 		text-decoration:none;
 		margin-left:50%;
 	}
-	
+	.container_cuerpo{
+		padding-left:12%;
+		padding-right:15%;
+	}
