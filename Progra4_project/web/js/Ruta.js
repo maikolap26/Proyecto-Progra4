@@ -1,15 +1,15 @@
  // funcion Ruta
-function Ruta (codigo_Ruta,codigo_AeropuertoOrigen,codigo_AeropuertoDestino,precio){ 
-  this.Ruta(codigo_Ruta,codigo_AeropuertoOrigen,codigo_AeropuertoDestino,precio);
+function Ruta (codigo_Ruta,codigo_CiudadO,codigo_CiudadD,duracion){ 
+  this.Ruta(codigo_Ruta,codigo_CiudadO,codigo_CiudadD,duracion);
 }
 
 
 // solo metodos
 Ruta.prototype={ 
-  Ruta: function(codigo_Ruta,codigo_AeropuertoOrigen,codigo_AeropuertoDestino,precio){
+  Ruta: function(codigo_Ruta,codigo_CiudadO,codigo_CiudadD,duracion){
       this.codigo_Ruta=codigo_Ruta;
-      this.codigo_AeropuertoOrigen=codigo_AeropuertoOrigen;
-      this.codigo_AeropuertoDestino=codigo_AeropuertoDestino;
-      this.precio=precio;
+      this.codigo_CiudadO=codigo_CiudadO;
+      this.codigo_CiudadD=codigo_CiudadD;
+      this.duracion=duracion;
   }
 }
