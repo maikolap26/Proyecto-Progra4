@@ -1,13 +1,13 @@
  // funcion Asiento
-function Asiento (numero,codigo_Tiquete){ 
-  this.Asiento(numero,codigo_Tiquete);
+function Asiento (numero,tiquete){ 
+  this.Asiento(numero,tiquete);
 }
 
 
 // solo metodos
 Asiento.prototype={ 
-  Asiento: function(numero,codigo_Tiquete){
+  Asiento: function(numero,tiquete){
       this.numero=numero;
-      this.codigo_Tiquete=codigo_Tiquete;
+      this.tiquete=tiquete;
   }
-}
+};

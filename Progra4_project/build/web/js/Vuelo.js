@@ -14,5 +14,5 @@ Vuelo.prototype={
       this.hora_llegada=hora_llegada;
       this.precio=precio;
   }
-}
+};
 
