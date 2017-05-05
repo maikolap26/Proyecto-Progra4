@@ -1,12 +1,12 @@
  // funcion Ciudad
-function Ciudad (codigo_Ciudad,nombre,pais){ 
-  this.Ciudad(codigo_Ciudad,nombre,pais);
+function Ciudad (codigo_ciudad,nombre,pais){ 
+  this.Ciudad(codigo_ciudad,nombre,pais);
 }
 
 // solo metodos
 Ciudad.prototype={ 
-  Ciudad: function(codigo_Ciudad,nombre,pais){
-      this.codigo_Ciudad=codigo_Ciudad;
+  Ciudad: function(codigo_ciudad,nombre,pais){
+      this.codigo_ciudad=codigo_ciudad;
       this.nombre=nombre;
       this.pais=pais;
   }

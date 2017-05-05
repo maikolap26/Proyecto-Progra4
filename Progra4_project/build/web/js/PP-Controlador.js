@@ -6,23 +6,24 @@ AAMController.prototype = {
     AAMController: function (model, view) {
         this.model = model;
         this.view = view;
+        Proxy.getCiudades(function(result){
+            model.ciudades=result;
+            view.llenarSelects();
+        })
     },
     buscar: function () {
-        var origen = this.view.document.getElementById("origen").value;
-        var destino = this.view.document.getElementById("destino").value;
+         var model=this.model;
+        var view= this.view;
+        var origen = view.document.getElementById("origen").value;
+        var destino = view.document.getElementById("destino").value;
+      
         if ((origen.length > 0) && (destino.length > 0)) {
-            Proxy.vuelosSearch(origen,destino,function(result){
+                Proxy.vuelosSearch(origen,destino,function(result){
                 model.buscados =result;
+                view.showBuscados();
             });
-            
-           /* 
-            model.buscados = model.vuelos.filter(function (v) {
-                return (v.ciudadO.includes(origen)) && (v.ciudadD.includes(destino));
-            }
-            )*/
         } else {
             model.buscados = [];
         }
-
     }
 };
