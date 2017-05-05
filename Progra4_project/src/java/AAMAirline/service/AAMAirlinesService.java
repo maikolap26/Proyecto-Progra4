@@ -2,6 +2,7 @@
 package AAMAirline.service;
 
 import AAMAirline.model.AAMAirlineModel;
+import AAMAirline.model.Avion;
 import AAMAirline.model.Ciudad;
 import AAMAirline.model.Jsonable;
 import AAMAirline.model.Ruta;
@@ -29,6 +30,7 @@ public class AAMAirlinesService extends HttpServlet {
 				RuntimeTypeAdapterFactory<Jsonable> rta = RuntimeTypeAdapterFactory.of(Jsonable.class,"_class")
 				.registerSubtype(Ciudad.class,"Ciudad")
                                 .registerSubtype(Ruta.class,"Ruta")
+                                .registerSubtype(Avion.class,"Avion")
 				.registerSubtype(Vuelo.class,"Vuelo");
 				Gson gson=new GsonBuilder().registerTypeAdapterFactory(rta).setDateFormat("dd/MM/yyyy").create();
 				String json;
@@ -50,7 +52,7 @@ public class AAMAirlinesService extends HttpServlet {
 					case "vueloListSearch":
 						String origen=request.getParameter("origen");
 						String destino=request.getParameter("destino");
-                                                    vuelos=model.getVuelos(origen,destino);
+                                                vuelos=model.getVuelos(origen,destino);
 						json=gson.toJson(vuelos);
 						out.write(json);
 						break;

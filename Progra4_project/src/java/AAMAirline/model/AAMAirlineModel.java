@@ -37,21 +37,21 @@ public class AAMAirlineModel {
             /* 3 */ new Avion("04", "Chevrolet", "Lavara", 100, 10, 10)
         };
         Vuelo[] vuelos = {
-            new Vuelo("01", aviones[0], "Martes", "9",rutas[0], Integer.toString(9 + Integer.parseInt(rutas[0].getDuracion())),  400),
-            new Vuelo("02", aviones[1], "Lunes", "12",rutas[1], Integer.toString(12 + Integer.parseInt(rutas[1].getDuracion())),  300),
-            new Vuelo("03",aviones[2], "Sabado", "3",rutas[2],  Integer.toString(3 + Integer.parseInt(rutas[2].getDuracion())),  550),
-            new Vuelo("04",aviones[3], "Martes", "8", rutas[3], Integer.toString(8 + Integer.parseInt(rutas[3].getDuracion())),  400),
-            new Vuelo("05", aviones[0],"Viernes", "2", rutas[4],  Integer.toString(2 + Integer.parseInt(rutas[4].getDuracion())), 400),
-            new Vuelo("06",aviones[1], "Jueves", "5",  rutas[5],Integer.toString(5 + Integer.parseInt(rutas[5].getDuracion())),  400),
-            new Vuelo("07",  aviones[2],"Miercoles", "7", rutas[6], Integer.toString(7 + Integer.parseInt(rutas[6].getDuracion())), 100),
-            new Vuelo("08",  aviones[3],"Martes", "1", rutas[7], Integer.toString(1 + Integer.parseInt(rutas[7].getDuracion())), 200),};
+            new Vuelo("01", "Martes", "9", Integer.toString(9 + Integer.parseInt(rutas[0].getDuracion())),rutas[0], aviones[0],  400),
+            new Vuelo("02", "Lunes", "12", Integer.toString(12 + Integer.parseInt(rutas[1].getDuracion())),rutas[1], aviones[1],  300),
+            new Vuelo("03", "Sabado", "3",  Integer.toString(3 + Integer.parseInt(rutas[2].getDuracion())),rutas[2], aviones[2], 550),
+            new Vuelo("04", "Martes", "8",  Integer.toString(8 + Integer.parseInt(rutas[3].getDuracion())),rutas[3],aviones[3],  400),
+            new Vuelo("05", "Viernes", "2",  Integer.toString(2 + Integer.parseInt(rutas[4].getDuracion())), rutas[4], aviones[0],400),
+            new Vuelo("06", "Jueves", "5",  Integer.toString(5 + Integer.parseInt(rutas[5].getDuracion())),rutas[5],aviones[1],  400),
+            new Vuelo("07",  "Miercoles", "7",  Integer.toString(7 + Integer.parseInt(rutas[6].getDuracion())),rutas[6],aviones[2], 100),
+            new Vuelo("08", "Martes", "1",  Integer.toString(1 + Integer.parseInt(rutas[7].getDuracion())), rutas[7],aviones[3], 200),};
         return new ArrayList(Arrays.asList(vuelos));
     }
 
     public List<Vuelo> getVuelos(String origen, String destino) {
         ArrayList<Vuelo> result = new ArrayList();
         for (Vuelo v : this.getVuelos()) {
-            if (v.getRuta().getCiudadO().getCodigo_ciudad().contains(origen) && v.getRuta().getCiudadD().getCodigo_ciudad().contains(destino)) {
+            if (v.getRuta().getCiudadO().getNombre().contains(origen) && v.getRuta().getCiudadD().getNombre().contains(destino)) {
                 result.add(v);
             }
         }

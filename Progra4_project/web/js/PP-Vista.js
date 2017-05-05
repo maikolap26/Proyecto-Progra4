@@ -7,11 +7,12 @@ var usuarios;
 
 function pageLoad(event) {
     model = new AAMModel();
-    //vuelos = model.vuelos;
-    //ciudades = model.ciudades;
+    vuelos = model.vuelos;
+    ciudades = model.ciudades;
     controller = new AAMController(model, window);
     //llenarSelects();
-    document.getElementById("buscar").addEventListener("click", controller.buscar);
+    //document.getElementById("buscar").addEventListener("click",controller.buscar());
+    $("#buscar").click(function(){controller.buscar();});
     document.getElementById("cancelOrder").addEventListener("click", cancelOrden);
     document.getElementById("goTi").disabled = false;
     document.getElementById("goTi").addEventListener("click", goAsientos);
@@ -112,7 +113,7 @@ function cancelOrden() {
 }
 
 function showBuscados() {
-    controller.buscar();
+    //controller.buscar();
     var s = document.getElementById("tablaBusqueda");
     var aux = document.getElementById("resultBusq");
     if (aux == null) {
@@ -134,7 +135,7 @@ function showBuscados() {
         var t = document.createElement("tr");
         t.id = "filabusq";
         var t1 = document.createElement("td");
-        t1.innerHTML = i + 1 + ". Desde: " + model.buscados[i].codigo_ruta.ciudadO.nombre + " hasta " + model.buscados[i].codigo_ruta.ciudadD.nombre + "      $ " + model.buscados[i].precio;
+        t1.innerHTML = i + 1 + ". Desde: " + model.buscados[i].ruta.ciudadO.nombre + " hasta " + model.buscados[i].ruta.ciudadD.nombre + "      $ " + model.buscados[i].precio;
         t.id = "buscado";
         t.appendChild(t1);
         var t2 = document.createElement("td");

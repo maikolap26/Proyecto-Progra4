@@ -22,7 +22,7 @@ Proxy.getPromo = function (callback) {
 Proxy.vuelosSearch = function (origen, destino, callback) {
     var AJAX_req = new XMLHttpRequest();
     url = "/Progra4_project/AAMAirlinesService?action=vueloListSearch";
-    AJAX_req.open("GET", url, true);
+    AJAX_req.open("POST", url, true);
     AJAX_req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     AJAX_req.onreadystatechange = function () {
         if (AJAX_req.readyState == 4 && AJAX_req.status === 200) {
