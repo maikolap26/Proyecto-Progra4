@@ -11,13 +11,11 @@ package AAMAirline.model;
  */
 public class Tiquete implements Jsonable{
 
-    public Tiquete(String codigo_Tiquete, Usuario cliente, Vuelo vuelo, Asiento asiento) {
+    public Tiquete(String codigo_Tiquete, Usuario cliente, Vuelo vuelo) {
         this.codigo_Tiquete = codigo_Tiquete;
         this.cliente = cliente;
         this.vuelo = vuelo;
-        this.asiento = asiento;
     }
-
 
 
     public String getCodigo_Tiquete() {
@@ -44,16 +42,7 @@ public class Tiquete implements Jsonable{
         this.vuelo = vuelo;
     }
 
-    public Asiento getAsiento() {
-        return asiento;
-    }
-
-    public void setAsiento(Asiento asiento) {
-        this.asiento = asiento;
-    }
-    
     private String codigo_Tiquete;
     private Usuario cliente;
     private Vuelo vuelo;
-    private Asiento asiento;
 }

@@ -1,14 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package AAMAirline.model;
 
-/**
- *
- * @author jimen
- */
 public class Ruta implements Jsonable{
 
     public Ruta(String codigo_ruta, Ciudad ciudadO, Ciudad ciudadD, String duracion) {
@@ -50,7 +42,6 @@ public class Ruta implements Jsonable{
         this.duracion = duracion;
     }
 
-    
     private String codigo_ruta;
     private Ciudad ciudadO;
     private Ciudad ciudadD;

@@ -1,13 +1,14 @@
- // funcion Asiento
-function Asiento (numero,tiquete){ 
-  this.Asiento(numero,tiquete);
+// funcion Asiento
+function Asiento(numero, tiquete, avion) {
+    this.Asiento(numero, tiquete, avion);
 }
 
 
 // solo metodos
-Asiento.prototype={ 
-  Asiento: function(numero,tiquete){
-      this.numero=numero;
-      this.tiquete=tiquete;
-  }
+Asiento.prototype = {
+    Asiento: function (numero, tiquete, avion) {
+        this.numero = numero;
+        this.tiquete = tiquete;
+        this.avion = avion;
+    }
 };

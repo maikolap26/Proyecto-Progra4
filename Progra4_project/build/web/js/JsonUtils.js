@@ -1,5 +1,5 @@
 var JsonUtils = JsonUtils || {};
-JsonUtils.revive = function(k, v) {
+JsonUtils.revive = function (k, v) {
     if (v instanceof Object && v._class == 'Ciudad') {
         return new Ciudad(v.codigo, v.nombre, v.pais);
     }
@@ -8,7 +8,7 @@ JsonUtils.revive = function(k, v) {
     }
     return v;
 }
-JsonUtils.replacer = function(k, v) {
+JsonUtils.replacer = function (k, v) {
     if (v instanceof Ciudad) {
         v._class = "Ciudad";
     }

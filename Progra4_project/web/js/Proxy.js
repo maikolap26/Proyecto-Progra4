@@ -1,7 +1,7 @@
 var Proxy = Proxy || {};
 Proxy.getCiudades = function(callback) {
     var AJAX_req = new XMLHttpRequest();
-    url = "/AAMAirlines/AAMAirlinesService?action=ciudadAll";
+    url = "/AAMAirlines/AAMAirlinesService?action=ciudadListAll";
     AJAX_req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     AJAX_req.onreadystatechange = function() {
         if (AJAX_req.readyState == 4 && AJAX_req.status === 200) {

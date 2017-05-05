@@ -116,7 +116,7 @@
                     var t= document.createElement("tr");
                     t.id="filabusq";
                     var t1= document.createElement("td");
-                    t1.innerHTML=i+1 +". Desde: "+ model.buscados[i].codigo_AeropuertoOrigen+" hasta "+ model.buscados[i].codigo_AeropuertoDestino+"      $ "+ model.buscados[i].precio;
+                    t1.innerHTML=i+1 +". Desde: "+ model.buscados[i].codigo_Ruta+" hasta "+ model.buscados[i].codigo_Ruta+"      $ "+ model.buscados[i].precio;
                     t.id="buscado";
                     t.appendChild(t1);
                     var t2= document.createElement("td");

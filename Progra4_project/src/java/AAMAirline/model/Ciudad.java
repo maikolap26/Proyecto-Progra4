@@ -1,14 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package AAMAirline.model;
 
-/**
- *
- * @author jimen
- */
 public class Ciudad implements Jsonable{
 
     public Ciudad(String codigo_ciudad, String nombre, String pais) {

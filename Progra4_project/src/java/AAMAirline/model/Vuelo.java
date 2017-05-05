@@ -1,17 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package AAMAirline.model;
 
-/**
- *
- * @author jimen
- */
 public class Vuelo implements Jsonable{
 
-    public Vuelo(String codigo_Vuelo, String dia_salida, String hora_salida, String hora_llegada, Ruta ruta, Avion avion, float precio) {
+    public Vuelo(String codigo_Vuelo,Avion avion, String dia_salida, String hora_salida,Ruta ruta, String hora_llegada, float precio) {
         this.codigo_Vuelo = codigo_Vuelo;
         this.dia_salida = dia_salida;
         this.hora_salida = hora_salida;
