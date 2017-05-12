@@ -40,7 +40,7 @@ public class AAMAirlinesService extends HttpServlet {
 				List<Vuelo> vuelos;
 				switch(accion){
 					case "ciudadListAll":
-						ciudades=model.getCiudades();
+						ciudades=model.getCiudades1();
 						json=gson.toJson(ciudades);
 						out.write(json);
 						break;

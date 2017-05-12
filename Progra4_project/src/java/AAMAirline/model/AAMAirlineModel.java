@@ -1,11 +1,52 @@
 package AAMAirline.model;
 
+import AAMAirline.database.Database;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public class AAMAirlineModel {
 
+    
+    static Database BD;
+    
+    static {
+        initCiudades();
+    }
+    private static void initCiudades(){
+       BD= new Database(null, null, null);        
+    }
+
+    public static List<Ciudad> getCiudades1(){
+       List<Ciudad> ciudades;
+       ciudades= new ArrayList();
+        try {
+            String sql="select * "+
+                    "from ciudad  c  ";
+            ResultSet rs =  BD.executeQuery(sql);
+            while (rs.next()) {
+                ciudades.add(toCiudad(rs));
+            }
+        } catch (SQLException ex) {
+        }
+       return ciudades;
+   }
+    
+   private static Ciudad toCiudad(ResultSet rs){
+        try {
+            Ciudad obj= new Ciudad();
+            obj.setCodigo_ciudad(rs.getString("codigo_ciudad"));
+            obj.setNombre(rs.getString("nombre"));
+            obj.setPais(rs.getString("pais"));
+            return obj;
+        } catch (SQLException ex) {
+            return null;
+        }
+    } 
+    
+    
     public List<Ciudad> getCiudades() {
         Ciudad[] ciudades = {
             new Ciudad("SJO", "San Jose", "Costa Rica"),
@@ -67,5 +108,8 @@ public class AAMAirlineModel {
         }
         return result;
     }
+    
+    
+    
 }
     

@@ -9,6 +9,10 @@ public class Ciudad implements Jsonable{
         this.pais = pais;
     }
 
+    public Ciudad() {
+        this("","","");
+    }
+
     public String getCodigo_ciudad() {
         return codigo_ciudad;
     }
