@@ -29,6 +29,21 @@ function pageLoad(event) {
     pass.addEventListener("blur", doBlur);
     if(formulario != null)
     formulario.addEventListener("submit", doValidate);
+    llenarDescuentos();
+}
+
+function llenarDescuentos() {              
+    for (var i = 1; i < 6; i++) {
+        var imagen = document.createElement("img");
+        var image="img/d"+i+".jpg";
+        imagen.src=image;//direccion de la imagen 
+        imagen.class='img-responsive';
+        imagen.name="img"+i;
+        imagen.alt='';
+        var id="div"+i;
+        var actual = document.getElementById(id);
+        actual.appendChild(imagen);           
+    }
 }
 
 function llenarSelects() {

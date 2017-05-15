@@ -263,6 +263,22 @@
 	    color: white;
 	    text-align: center;
 	}
+        
+        .COMPRAR{
+            width: 50%;
+	    height: 100%;
+            border: 2px solid #006400;
+	    border-radius: 10px;
+	    background-color: #7FFF00;
+	    color: black;
+	    text-align: center;
+        }
+        #COMPRAR{
+            width: 50%;
+	    height: 25%;
+	    padding-left: 12%;
+            padding-bottom:5%;
+        }
 	
 	.fila {
 	    padding-top: 5%;
