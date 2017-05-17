@@ -10,6 +10,10 @@ public class Ruta implements Jsonable{
         this.duracion = duracion;
     }
 
+    public Ruta() {
+      
+    }
+
     public String getCodigo_ruta() {
         return codigo_ruta;
     }

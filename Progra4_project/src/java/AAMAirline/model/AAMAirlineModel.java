@@ -91,17 +91,88 @@ public class AAMAirlineModel {
 
     public List<Vuelo> getVuelos(String origen, String destino) {
         ArrayList<Vuelo> result = new ArrayList();
-        for (Vuelo v : this.getVuelos()) {
+        for (Vuelo v : this.getVuelos1()) {
             if (v.getRuta().getCiudadO().getNombre().contains(origen) && v.getRuta().getCiudadD().getNombre().contains(destino)) {
                 result.add(v);
             }
         }
         return result;
     }
+        public List<Vuelo> getVuelos1() {
+        List<Vuelo> vuelos ;
+       vuelos= new ArrayList();
+        try {
+           
+            String sql="select * "+
+                    "from vuelo  c  ";
+            ResultSet rs =  BD.executeQuery(sql);
+            while (rs.next()) {
+                Vuelo vuelo = new Vuelo();
+                vuelo.setCodigo_Vuelo(rs.getString("codigo_vuelo"));
+                vuelo.setHora_llegada(rs.getString("hora_llegada"));
+                vuelo.setHora_salida(rs.getString("hora_salida"));
+                vuelo.setPrecio(rs.getFloat("precio"));
+                String r = rs.getString("codigo_ruta");
+                char ascii= 34;
+                String sql4 = "select * from ruta r where r.codigo_ruta = '%s'";
+                sql4= String.format(sql4 , r);
+                ResultSet rs2= BD.executeQuery(sql4);
+                Ruta ruta = new Ruta();
+                Ciudad ciudadO;
+                 Ciudad ciudadD;
+                while(rs2.next()){
+                    ruta.setCodigo_ruta(rs2.getString("codigo_ruta"));
+                    ruta.setDuracion(Integer.toString(rs2.getInt("duracion")));
+                    String c = rs2.getString("ciudad_origen");
+                    String sql2= "select * from ciudad where codigo_ciudad = '%s'";
+                    sql2= String.format(sql2, c);
+                    ResultSet rs3= BD.executeQuery(sql2);
+                    while(rs3.next()){
+                        ciudadO = toCiudad(rs3);
+                        ruta.setCiudadO(ciudadO);
+                    }
+                     c = rs2.getString("ciudad_destino");
+                    sql2= "select * from ciudad where codigo_ciudad = '%s'";
+                    sql2=String.format(sql2, c);
+                    rs3= BD.executeQuery(sql2);
+                    while(rs3.next()){
+                         ciudadD = toCiudad(rs3);
+                         ruta.setCiudadD(ciudadD);
+                    }
+                }
+                String a= rs.getString("codigo_av");
+                String sql2= "select * from avion where codigo_avion = '%s'";
+                sql2= String.format(sql2, a);
+                ResultSet rs3 = BD.executeQuery(sql2);
+                while(rs3.next())
+                    vuelo.setAvion(toAvion(rs3));
+                vuelo.setRuta(ruta);
+                vuelos.add(vuelo);
+            }
+        } catch (SQLException ex) {
+        }
+       return vuelos;
+    }
+    private Avion toAvion(ResultSet rs){
+        Avion plane = new Avion();
+        try {
+            
+            plane.setCodigo_Avion(rs.getString("codigo_avion"));
+            plane.setCant_filas(rs.getInt("cant_filas"));
+            plane.setCant_Asiento_Fila(rs.getInt("cant_asiento_fila"));
+            plane.setCant_pasajeros(rs.getInt("cant_pasajeros"));
+            plane.setMarca(rs.getString("marca"));
+            plane.setModelo(rs.getString("modelo"));
+            
+        } catch (SQLException ex) {
+           System.err.println(ex.getMessage());
+        }
+        return plane;
+    }
 
     public List<Vuelo> getVuelos(String origen) {
         ArrayList<Vuelo> result = new ArrayList();
-        for (Vuelo v : this.getVuelos()) {
+        for (Vuelo v : this.getVuelos1()) {
             if (v.getRuta().getCiudadO().getCodigo_ciudad().contains(origen)) {
                 result.add(v);
             }

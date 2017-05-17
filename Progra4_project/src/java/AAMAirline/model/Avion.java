@@ -20,6 +20,10 @@ public class Avion implements Jsonable{
         this.cant_Asiento_Fila = cant_Asiento_Fila;
     }
 
+    public Avion() {
+       
+    }
+
     public String getCodigo_Avion() {
         return codigo_Avion;
     }

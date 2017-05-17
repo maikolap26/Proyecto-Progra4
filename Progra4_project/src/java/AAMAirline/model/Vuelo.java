@@ -12,6 +12,9 @@ public class Vuelo implements Jsonable {
         this.precio = precio;
     }
 
+    public Vuelo() {
+    }
+
     public String getCodigo_Vuelo() {
         return codigo_Vuelo;
     }
