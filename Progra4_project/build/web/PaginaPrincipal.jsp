@@ -1,3 +1,10 @@
+<%-- 
+    Document   : PaginaPrincipal
+    Created on : 17-may-2017, 10:35:03
+    Author     : ACS
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -40,9 +47,7 @@
                 </script>
                 <script src="js/PP-Modelo.js" type="text/javascript">
                 </script>
-                
-                
-                
+
             </meta>
         </meta>
     </head>
@@ -53,8 +58,8 @@
             <div class="container-fluid">
                 <div class="row encabezado">
                     <div class="col-md-12">
-                        <img alt="" class="image1" src="img/Captura.png" style="float:left;">
-                            <img alt="" class="image" src="img/Header.png" style="float:left;">
+                        <img alt="" class="image1" src="img/Captura.PNG" style="float:left;">
+                            <img alt="" class="image" src="img/Header.PNG" style="float:left;">
                                 <span class="inicioSesion" id="inicioSesion">
                                     <span class="campoUs1">
                                         Usuario:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -96,28 +101,28 @@
                         </a>
                     </li>
                     <li>
-                        <a href="QuienesSomos.html" title="Quienes Somos">
+                        <a href="QuienesSomos.jsp" title="Quienes Somos">
                             <image border="0" src="">
                                 Quienes somos
                             </image>
                         </a>
                     </li>
                     <li>
-                        <a href="Cousine.html" title="Cousine a bordo">
+                        <a href="Cousine.jsp" title="Cousine a bordo">
                             <image border="0" src="">
                                 Cousine a bordo
                             </image>
                         </a>
                     </li>
                     <li>
-                        <a href="ExperienciaABordo.html" title="Experiencia">
+                        <a href="ExperienciaABordo.jsp" title="Experiencia">
                             <image border="0" src="">
                                 Experiencia
                             </image>
                         </a>
                     </li>
                     <li>
-                        <a href="Consultas.html" title="Consultas">
+                        <a href="Consultas.jsp" title="Consultas">
                             <image border="0" src="">
                                 Consultas
                             </image>

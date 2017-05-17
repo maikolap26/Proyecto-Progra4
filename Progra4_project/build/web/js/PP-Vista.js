@@ -197,7 +197,7 @@ function doBlur(event) {
     event.target.className = "nofocus";
 }
 function redireccionar() {
-    location = "Registro.html";
+    location = "Registro.jsp";
 }
 
 function inicioSesion() {

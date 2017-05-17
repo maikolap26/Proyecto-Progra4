@@ -1,3 +1,10 @@
+<%-- 
+    Document   : ExperienciaABordo
+    Created on : 17-may-2017, 10:35:38
+    Author     : ACS
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 
@@ -20,8 +27,8 @@
 	<div class="container-fluid">
 		<div class="row encabezado">
 			<div class="col-md-12">
-				<img src="img/Captura.png" class="image1" alt="" style="float:left;">
-				<img src="img/Header.png" class="image" alt="" style="float:left;">
+				<img src="img/Captura.PNG" class="image1" alt="" style="float:left;">
+				<img src="img/Header.PNG" class="image" alt="" style="float:left;">
 				<span class="inicioSesion" id="inicioSesion"><span class="campoUs1"> Usuario:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input  class="campoUs" type="text" id="user" > <br> Contraseña: <input type="text" class="campoUs" id="pass"></span>
 				<div> <br> <span class="boton1"> <input type="button" value="Login" class="boton" id="login"> &nbsp;&nbsp; <input type="button" id="signup" value="SignUp" class="boton">  </span>
 				</div>
@@ -38,15 +45,15 @@
 	<div class="menuP">
 		<ul class="MyMenu">
 			<li>
-				<a href="PaginaPrincipal.html" title="Inicio">
+				<a href="PaginaPrincipal.jsp" title="Inicio">
 					<image src="" border="0">Inicio</a>
 			</li>
 			<li>
-				<a href="QuienesSomos.html" title="Quienes Somos">
+				<a href="QuienesSomos.jsp" title="Quienes Somos">
 					<image src="" border="0">Quienes somos</a>
 			</li>
 			<li>
-				<a href="Cousine.html" title="Cousine a bordo">
+				<a href="Cousine.jsp" title="Cousine a bordo">
 					<image src="" border="0">Cousine a bordo</a>
 			</li>
 			<li>
@@ -54,7 +61,7 @@
 					<image src="" border="0">Experiencia</a>
 			</li>
 			<li>
-				<a href="Consultas.html" title="Consultas">
+				<a href="Consultas.jsp" title="Consultas">
 					<image src="" border="0">Consultas</a>
 			</li>
 		</ul>
