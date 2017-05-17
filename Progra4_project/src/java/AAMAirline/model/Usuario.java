@@ -15,7 +15,7 @@ public class Usuario implements Jsonable{
     }
 
     Usuario() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this("","","","","","","","");
     }
 
     public String getCedula() {

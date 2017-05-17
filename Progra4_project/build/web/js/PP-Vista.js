@@ -11,7 +11,10 @@ function pageLoad(event) {
     ciudades = model.ciudades;
     controller = new AAMController(model, window);
     llenarDescuentos();
-    $("#buscar").click(function(){controller.buscar();});
+    $("#buscar").click(function () {
+        controller.buscar();
+    });
+    
     document.getElementById("cancelOrder").addEventListener("click", cancelOrden);
     document.getElementById("goTi").disabled = false;
     document.getElementById("goTi").addEventListener("click", goAsientos);
@@ -20,28 +23,28 @@ function pageLoad(event) {
     var campoUs = document.getElementById("user");
     var campoPass = document.getElementById("pass");
     var formulario = document.getElementById("formulario");
-    btn.addEventListener("click", inicioSesion);
+    btn.addEventListener("click", controller.iniciar());
     btn1.addEventListener("click", redireccionar);
     campoUs.addEventListener("focus", doFocus);
     campoUs.addEventListener("blur", doBlur);
     pass.addEventListener("focus", doFocus);
     pass.addEventListener("blur", doBlur);
-    if(formulario != null)
-    formulario.addEventListener("submit", doValidate);
-    
+    if (formulario != null)
+        formulario.addEventListener("submit", doValidate);
+
 }
 
-function llenarDescuentos() {              
+function llenarDescuentos() {
     for (var i = 1; i < 6; i++) {
         var imagen = document.createElement("img");
-        var image="img/d"+i+".jpg";
-        imagen.src=image;//direccion de la imagen 
-        imagen.class='img-responsive';
-        imagen.name="img"+i;
-        imagen.alt='';
-        var id="div"+i;
+        var image = "img/d" + i + ".jpg";
+        imagen.src = image;//direccion de la imagen 
+        imagen.class = 'img-responsive';
+        imagen.name = "img" + i;
+        imagen.alt = '';
+        var id = "div" + i;
         var actual = document.getElementById(id);
-        actual.appendChild(imagen);           
+        actual.appendChild(imagen);
     }
 }
 
@@ -49,8 +52,8 @@ function llenarSelects() {
     var origen = document.getElementById("origen");
     var destino = document.getElementById("destino");
     /*Proxy.getCiudades(function (result) {
-        model.buscados = result;
-    });*/
+     model.buscados = result;
+     });*/
     for (var i = 0; i < model.ciudades.length; i++) {
         var option = document.createElement("option");
         option.value = model.ciudades[i].nombre;
@@ -199,30 +202,31 @@ function redireccionar() {
     location = "Registro.jsp";
 }
 
-function inicioSesion() {
+function inicioSesion(usuario) {
     var us = document.getElementById("user");
-    usuario = new Usuario("maikolap26");
+    var ps = document.getElementById("pass");
+
     if (us.value == usuario.usuario) {
-        var clase = document.getElementById("inicioSesion");
-        var clase1 = document.getElementById("logueado");
-        clase.className = "logueado";
-        clase1.className = "inicioSesion";
-        var sp = document.getElementById("span");
-        var p = document.createElement("p");
-        var a = document.createElement("a");
-        var ul = document.createElement("a");
-        var li = document.createElement("li");
-        li.appendChild(document.createTextNode("Cerrar Sesión"));
-        li.className = "cerrar";
-        a.className = "anchor";
-        a.appendChild(document.createTextNode(usuario.usuario));
-        a.appendChild(li);
-        p.appendChild(a);
-        ul.appendChild(p);
-        sp.appendChild(ul);
-
+        if (ps.value == usuario.contraseña){
+            var clase = document.getElementById("inicioSesion");
+            var clase1 = document.getElementById("logueado");
+            clase.className = "logueado";
+            clase1.className = "inicioSesion";
+            var sp = document.getElementById("span");
+            var p = document.createElement("p");
+            var a = document.createElement("a");
+            var ul = document.createElement("a");
+            var li = document.createElement("li");
+            li.appendChild(document.createTextNode("Cerrar Sesión"));
+            li.className = "cerrar";
+            a.className = "anchor";
+            a.appendChild(document.createTextNode(usuario.usuario));
+            a.appendChild(li);
+            p.appendChild(a);
+            ul.appendChild(p);
+            sp.appendChild(ul);
+        }
     }
-
 }
 
 function doValidate() {

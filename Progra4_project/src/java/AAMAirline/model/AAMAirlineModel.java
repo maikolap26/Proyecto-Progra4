@@ -231,7 +231,6 @@ public class AAMAirlineModel {
         obj.setEmail(rs.getString("email"));
         obj.setTelefono(rs.getString("telefono"));
         obj.setCelular(rs.getString("celular"));
-        obj.setFecha(rs.getString("fecha"));
         return obj;
     }
     

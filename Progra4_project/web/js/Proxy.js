@@ -31,4 +31,19 @@ Proxy.vuelosSearch = function (origen, destino, callback) {
         }
     };
     AJAX_req.send("origen=" + origen + "&destino=" + destino);
-}
+};
+
+Proxy.userLogin = function(user,callBack){
+    var AJAX_req = new XMLHttpRequest();
+    url="/Progra4_project/AAMAirlinesService?action=userLogin";
+    AJAX_req.open( "POST", url, true );
+    AJAX_req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    AJAX_req.onreadystatechange = function(){
+        if( AJAX_req.readyState === 4 && AJAX_req.status === 200 ){
+            jsonText=AJAX_req.responseText;
+            var object = JSON.parse( jsonText,JsonUtils.revive );
+            callBack(object);
+        }
+    };
+    AJAX_req.send("user="+jsonText);   
+};

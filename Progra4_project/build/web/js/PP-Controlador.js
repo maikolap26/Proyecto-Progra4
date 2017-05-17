@@ -25,5 +25,14 @@ AAMController.prototype = {
         } else {
             model.buscados = [];
         }
+    },
+    iniciar: function () {
+        var us= this.view.document.getElementById("user").value;
+        var pass=this.view.document.getElementById("pass").value; 
+        var u1= new Login(us,pass,"0");
+        var view= this.view;
+        Proxy.userLogin(u1,function(result){
+             view.inicioSesion(u1);
+        });
     }
 };

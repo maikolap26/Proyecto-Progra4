@@ -68,14 +68,14 @@ public class AAMAirlinesService extends HttpServlet {
                             case "1": // client
                                 Usuario client = model.clientGet(us.getUsuario());
                                 request.getSession().setAttribute("client", client);
-                                request.getRequestDispatcher("/PaginaPrincipal.html").forward(request, response);
+                                request.getRequestDispatcher("/PaginaPrincipal.jsp").forward(request, response);
                                 break;
                             case "2": // manager
                                 request.getRequestDispatcher("/ManagerMenu.jsp").forward(request, response);
                                 break;
                         }
                     }
-
+                    break;
             }
         } catch (Exception e) {
             System.out.println(e);

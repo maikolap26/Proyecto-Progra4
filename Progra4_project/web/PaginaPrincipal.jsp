@@ -4,6 +4,8 @@
     Author     : ACS
 --%>
 
+<%@page import="AAMAirline.model.Usuario"%>
+<%@page import="AAMAirline.model.Login"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,43 +14,43 @@
             Inicio
         </title>
         <meta charset="utf-8">
-            <meta content="width=device-width, initial-scale=1.0" name="viewport">
-                <link href="css/boots	trap.min.css" rel="stylesheet" type="text/css"/>
-                <link href="css/estilo1.css" rel="stylesheet" type="text/css"/>
-                <script src="https://code.jquery.com/jquery-1.10.2.js">
-                </script>
-                <script src="js/script.js" type="text/javascript">
-                </script>
-                <link href="css/normalize.css" rel="stylesheet" type="text/css"/>
-                <link href="css/datepicker.css" rel="stylesheet" type="text/css"/>
-                <script src="js/jquery-1.7.1.min.js" type="text/javascript">
-                </script>
-                <script src="js/jquery-ui-1.8.18.custom.min.js" type="text/javascript">
-                </script>
-                <script src="js/funcionesJQuery.js" type="text/javascript">
-                </script>
-                <script src="js/Ciudad.js" type="text/javascript">
-                </script>
-                <script src="js/Vuelo.js" type="text/javascript">
-                </script>
-                <script src="js/Ruta.js" type="text/javascript">
-                </script>
-                <script src="js/Tiquete.js" type="text/javascript">
-                </script>
-                <script src="js/Usuario.js" type="text/javascript">
-                </script>
-                <script src="js/Proxy.js" type="text/javascript">
-                </script>
-                <script src="js/JsonUtils.js" type="text/javascript">
-                </script>
-                <script src="js/PP-Vista.js" type="text/javascript">
-                </script>
-                <script src="js/PP-Controlador.js" type="text/javascript">
-                </script>
-                <script src="js/PP-Modelo.js" type="text/javascript">
-                </script>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <link href="css/boots	trap.min.css" rel="stylesheet" type="text/css"/>
+        <link href="css/estilo1.css" rel="stylesheet" type="text/css"/>
+        <script src="https://code.jquery.com/jquery-1.10.2.js">
+        </script>
+        <script src="js/script.js" type="text/javascript">
+        </script>
+        <link href="css/normalize.css" rel="stylesheet" type="text/css"/>
+        <link href="css/datepicker.css" rel="stylesheet" type="text/css"/>
+        <script src="js/jquery-1.7.1.min.js" type="text/javascript">
+        </script>
+        <script src="js/jquery-ui-1.8.18.custom.min.js" type="text/javascript">
+        </script>
+        <script src="js/funcionesJQuery.js" type="text/javascript">
+        </script>
+        <script src="js/Ciudad.js" type="text/javascript">
+        </script>
+        <script src="js/Vuelo.js" type="text/javascript">
+        </script>
+        <script src="js/Ruta.js" type="text/javascript">
+        </script>
+        <script src="js/Tiquete.js" type="text/javascript">
+        </script>
+        <script src="js/Usuario.js" type="text/javascript">
+        </script>
+        <script src="js/Proxy.js" type="text/javascript">
+        </script>
+        <script src="js/JsonUtils.js" type="text/javascript">
+        </script>
+        <script src="js/PP-Vista.js" type="text/javascript">
+        </script>
+        <script src="js/PP-Controlador.js" type="text/javascript">
+        </script>
+        <script src="js/PP-Modelo.js" type="text/javascript">
+        </script>
 
-            </meta>
+        </meta>
         </meta>
     </head>
     <body>
@@ -59,33 +61,40 @@
                 <div class="row encabezado">
                     <div class="col-md-12">
                         <img alt="" class="image1" src="img/Captura.PNG" style="float:left;">
-                            <img alt="" class="image" src="img/Header.PNG" style="float:left;">
-                                <span class="inicioSesion" id="inicioSesion">
-                                    <span class="campoUs1">
-                                        Usuario:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                        <input class="campoUs" id="user" type="text">
-                                            <br>
-                                                Contraseña:
-                                                <input class="campoUs" id="pass" type="text"/>
-                                            </br>
+                        <img alt="" class="image" src="img/Header.PNG" style="float:left;">
+                        <% Login user = (Login) request.getSession().getAttribute("user"); %>
+                        <% if (user == null) {%>
+                        <form method="post" action="/Progra4_project/AAMAirlinesService?action=userLogin"><span class="inicioSesion" id="inicioSesion">
+                                <span class="campoUs1">
+                                    Usuario:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <input class="campoUs" name="user" id="user" type="text">
+                                    <br>
+                                    Contraseña:
+                                    <input class="campoUs" name="pass" id="pass" type="text"/>
+                                    </br>
+                                    </input>
+                                </span>
+                                <div>
+                                    <br>
+                                    <span class="boton1">
+                                        <input class="boton" id="login" type="submit" value="Login">
+                                        <input class="boton" id="signup" type="button" value="SignUp">
+                                        </input>
                                         </input>
                                     </span>
-                                    <div>
-                                        <br>
-                                            <span class="boton1">
-                                                <input class="boton" id="login" type="button" value="Login">
-                                                    <input class="boton" id="signup" type="button" value="SignUp">
-                                                    </input>
-                                                </input>
-                                            </span>
-                                        </br>
-                                    </div>
-                                </span>
-                                <span class="logueado" id="logueado">
-                                    <span id="span">
-                                    </span>
-                                </span>
-                            </img>
+                                    </br>
+                                </div>
+                            </span></form>
+                            <%}%> 
+                            <%   if (user != null) {%>
+                        <span class="u1">
+                            <span id="u1" style="font-family:Papyrus,fantasy; font-size:15px; font-weight:700; color:white;">
+                                <p class="u2"> Usuario: <%=user.getUsuario()%></p>
+                                
+                            </span>
+                        </span>
+                        <%}%> 
+                        </img>
                         </img>
                     </div>
                 </div>
@@ -96,35 +105,35 @@
                     <li>
                         <a href="" title="Inicio">
                             <image border="0" src="">
-                                Inicio
+                            Inicio
                             </image>
                         </a>
                     </li>
                     <li>
                         <a href="QuienesSomos.jsp" title="Quienes Somos">
                             <image border="0" src="">
-                                Quienes somos
+                            Quienes somos
                             </image>
                         </a>
                     </li>
                     <li>
                         <a href="Cousine.jsp" title="Cousine a bordo">
                             <image border="0" src="">
-                                Cousine a bordo
+                            Cousine a bordo
                             </image>
                         </a>
                     </li>
                     <li>
                         <a href="ExperienciaABordo.jsp" title="Experiencia">
                             <image border="0" src="">
-                                Experiencia
+                            Experiencia
                             </image>
                         </a>
                     </li>
                     <li>
                         <a href="Consultas.jsp" title="Consultas">
                             <image border="0" src="">
-                                Consultas
+                            Consultas
                             </image>
                         </a>
                     </li>
@@ -172,14 +181,14 @@
                                         </td>
                                     </tr>
                                     <tr class="fila">
-                                        <tr>
-                                            <td>
-                                                <input class="datepicker" id="datepicker1" type="text"/>
-                                            </td>
-                                            <td>
-                                                <input class="datepicker" id="datepicker2" type="text"/>
-                                            </td>
-                                        </tr>
+                                    <tr>
+                                        <td>
+                                            <input class="datepicker" id="datepicker1" type="text"/>
+                                        </td>
+                                        <td>
+                                            <input class="datepicker" id="datepicker2" type="text"/>
+                                        </td>
+                                    </tr>
                                     </tr>
                                     <tr>
                                         <td class="fila">
@@ -326,13 +335,13 @@
                 </div>
             </div>
             <br>
-                <div class="container_pie" id="pie">
-                    <div class="row">
-                        <p class="text-center">
-                            Derechos Reservados © · AAM Airlines · 2017
-                        </p>
-                    </div>
+            <div class="container_pie" id="pie">
+                <div class="row">
+                    <p class="text-center">
+                        Derechos Reservados © · AAM Airlines · 2017
+                    </p>
                 </div>
+            </div>
             </br>
         </div>
         <!-- ------------------------ Parte de compras ---------------------- -->
@@ -375,16 +384,16 @@
                                 </td>
                             </tr>
                             <tr class="fila">
-                                <tr>
-                                    <td>
-                                        <label class="bo" id="partida">
-                                        </label>
-                                    </td>
-                                    <td>
-                                        <label class="bo" id="regreso">
-                                        </label>
-                                    </td>
-                                </tr>
+                            <tr>
+                                <td>
+                                    <label class="bo" id="partida">
+                                    </label>
+                                </td>
+                                <td>
+                                    <label class="bo" id="regreso">
+                                    </label>
+                                </td>
+                            </tr>
                             </tr>
                             <tr>
                                 <td class="fila">
