@@ -109,6 +109,60 @@ public class AAMAirlineModel {
         return result;
     }
     
+    public static Login userLogin(Login usuario) throws Exception{
+        try {
+            String sql="select * from "+
+                    "Login  u  "+
+                    "where u.usuario = '%s' and u.contraseña='%s'";
+            sql=String.format(sql,usuario.getUsuario(),usuario.getContraseña());
+            
+            ResultSet rs =  BD.executeQuery(sql);
+            if (rs.next()) {
+                return toUser(rs);
+            }
+            else{
+                return new Login(usuario.getUsuario(),usuario.getContraseña(),"0");
+            }
+        } catch (SQLException ex) {
+        }
+        return null;
+   }
+    
+    private static Login toUser(ResultSet rs) throws Exception{
+        Login obj= new Login();
+        obj.setUsuario(rs.getString("usuario"));
+        obj.setContraseña(rs.getString("contraseña"));
+        obj.setTipo(rs.getString("tipo"));
+        return obj;
+    }
+    
+    public static Usuario clientGet(String id) throws Exception{
+    String sql="select * from "+
+            "Usuario  c  "+
+            "where c.usuario = '%s'";
+    sql=String.format(sql,id);
+
+    ResultSet rs =  BD.executeQuery(sql);
+    if (rs.next()) {
+        return toClient(rs);
+    }
+    else{
+        throw new Exception("Cliente no existe");
+    }
+}
+    
+     private static Usuario toClient(ResultSet rs) throws Exception{
+        Usuario obj= new Usuario();
+        obj.setUsuario(rs.getString("usuario"));
+        obj.setCedula(rs.getString("cedula"));
+        obj.setNombre(rs.getString("nombre"));
+        obj.setApellidos(rs.getString("apellidos"));
+        obj.setEmail(rs.getString("email"));
+        obj.setTelefono(rs.getString("telefono"));
+        obj.setCelular(rs.getString("celular"));
+        obj.setFecha(rs.getString("fecha"));
+        return obj;
+    }
     
     
 }

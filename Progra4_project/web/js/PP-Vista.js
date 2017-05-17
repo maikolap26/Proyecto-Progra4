@@ -10,8 +10,7 @@ function pageLoad(event) {
     vuelos = model.vuelos;
     ciudades = model.ciudades;
     controller = new AAMController(model, window);
-    //llenarSelects();
-    //document.getElementById("buscar").addEventListener("click",controller.buscar());
+    llenarDescuentos();
     $("#buscar").click(function(){controller.buscar();});
     document.getElementById("cancelOrder").addEventListener("click", cancelOrden);
     document.getElementById("goTi").disabled = false;
@@ -29,7 +28,7 @@ function pageLoad(event) {
     pass.addEventListener("blur", doBlur);
     if(formulario != null)
     formulario.addEventListener("submit", doValidate);
-    llenarDescuentos();
+    
 }
 
 function llenarDescuentos() {              
