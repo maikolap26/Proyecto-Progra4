@@ -20,72 +20,11 @@
 
 <body class="pagina">
 
-	 <!-- ---------------------- ENCABEZADO ----------------------- -->
-            <div class="container-fluid">
-                <div class="row encabezado">
-                    <div class="col-md-12">
-                        <img alt="" class="image1" src="img/Captura.PNG" style="float:left;">
-                            <img alt="" class="image" src="img/Header.PNG" style="float:left;">
-                                <span class="inicioSesion" id="inicioSesion">
-                                    <span class="campoUs1">
-                                        Usuario: &nbsp;&nbsp;&nbsp;&nbsp;
-                                        <input class="campoUs" id="user" type="text">
-                                            <br>
-                                                Contraseña:
-                                                <input class="campoUs" id="pass" type="text"/>
-                                            </br>
-                                        </input>
-                                    </span>
-                                    <div>
-                                        <br>
-                                            <span class="boton1">
-                                                <input class="boton" id="login" type="button" value="Login">
-                                                    <input class="boton" id="signup" type="button" value="SignUp">
-                                                    </input>
-                                                </input>
-                                            </span>
-                                        </br>
-                                    </div>
-                                </span>
-                                <span class="logueado" id="logueado">
-                                    <span id="span">
-                                    </span>
-                                </span>
-                            </img>
-                        </img>
-                    </div>
-                </div>
-            </div>
+	<!------------------------------- ENCABEZADO ------------------------------->
+        
+        <%@ include file="Header.jspf" %>
+	
 	<!------------------------------- TERMINA ENCABEZADO ------------------------------->
-
-	<!------------------------------- NAVEGACION ------------------------------->
-
-	<div class="menuP">
-		<ul class="MyMenu">
-			<li>
-				<a href="PaginaPrincipal.jsp" title="Inicio">
-					<image src="" border="0">Inicio</a>
-			</li>
-			<li>
-				<a href="" title="Quienes Somos">
-					<image src="" border="0">Quienes somos</a>
-			</li>
-			<li>
-				<a href="Cousine.jsp" title="Cousine a bordo">
-					<image src="" border="0">Cousine a bordo</a>
-			</li>
-			<li>
-				<a href="ExperienciaABordo.jsp" title="Experiencia">
-					<image src="" border="0">Experiencia</a>
-			</li>
-			<li>
-				<a href="Consultas.jsp" title="Consultas">
-					<image src="" border="0">Consultas</a>
-			</li>
-		</ul>
-	</div>
-
-	<!------------------------------- TERMINA NAVEGACION ------------------------------->
 
 	<!------------------------------- CUERPO ------------------------------->
 	<div class="container_cuerpo">
