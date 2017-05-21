@@ -454,4 +454,7 @@
 	    margin-right: 0%;
 	    font-family: "Comic Sans MS", cursive, sans-serif;
         }
-        
+        .error{
+            border-color: red;
+            background: pink;
+        }     

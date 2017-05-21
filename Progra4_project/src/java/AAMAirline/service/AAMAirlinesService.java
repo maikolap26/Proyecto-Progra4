@@ -10,9 +10,11 @@ import AAMAirline.model.Usuario;
 import AAMAirline.model.Vuelo;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.reflect.TypeToken;
 import com.google.gson.typeadapters.RuntimeTypeAdapterFactory;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.lang.ProcessBuilder.Redirect.Type;
 import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -34,6 +36,7 @@ public class AAMAirlinesService extends HttpServlet {
                     .registerSubtype(Ciudad.class, "Ciudad")
                     .registerSubtype(Ruta.class, "Ruta")
                     .registerSubtype(Avion.class, "Avion")
+                    .registerSubtype(Usuario.class, "Usuario")
                     .registerSubtype(Vuelo.class, "Vuelo");
             Gson gson = new GsonBuilder().registerTypeAdapterFactory(rta).setDateFormat("dd/MM/yyyy").create();
             String json;
@@ -62,6 +65,11 @@ public class AAMAirlinesService extends HttpServlet {
                 case "userLogin":
                     Login us = new Login(request.getParameter("user"), request.getParameter("pass"), "0");
                     us = model.userLogin(us);
+                    if (us == null) {
+                        request.getSession().setAttribute("error", "Error usuario o contraseña incorrecto");
+                        request.getRequestDispatcher("/PaginaPrincipal.jsp").forward(request, response);
+                    }
+
                     if (us.getTipo() != "0") {
                         request.getSession().setAttribute("user", us);
                         switch (us.getTipo()) {
@@ -74,6 +82,19 @@ public class AAMAirlinesService extends HttpServlet {
                                 request.getRequestDispatcher("/ManagerMenu.jsp").forward(request, response);
                                 break;
                         }
+                    }
+                    break;
+                case "userLogout":
+                    request.getSession().removeAttribute("user");
+                    request.getSession().invalidate();
+                    request.getRequestDispatcher("/PaginaPrincipal.jsp").forward(request, response);
+                    break;
+                case "guardar":
+                    String ac = request.getParameter("us");
+                    Usuario us1 = gson.fromJson(ac, Usuario.class);
+                    if (model.guardar1(us1) == 1) {
+                        request.getSession().setAttribute("error", "error");
+                        request.getRequestDispatcher("/Registro.jsp").forward(request, response);
                     }
                     break;
             }

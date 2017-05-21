@@ -6,6 +6,7 @@ var usuario;
 var usuarios;
 
 function pageLoad(event) {
+
     model = new AAMModel();
     vuelos = model.vuelos;
     ciudades = model.ciudades;
@@ -14,23 +15,19 @@ function pageLoad(event) {
     $("#buscar").click(function () {
         controller.buscar();
     });
-    
-    document.getElementById("cancelOrder").addEventListener("click", cancelOrden);
-    document.getElementById("goTi").disabled = false;
-    document.getElementById("goTi").addEventListener("click", goAsientos);
-    var btn = document.getElementById("login");
-    var btn1 = document.getElementById("signup");
-    var campoUs = document.getElementById("user");
-    var campoPass = document.getElementById("pass");
-    var formulario = document.getElementById("formulario");
-    btn.addEventListener("click", controller.iniciar());
-    btn1.addEventListener("click", redireccionar);
-    campoUs.addEventListener("focus", doFocus);
-    campoUs.addEventListener("blur", doBlur);
-    pass.addEventListener("focus", doFocus);
-    pass.addEventListener("blur", doBlur);
-    if (formulario != null)
-        formulario.addEventListener("submit", doValidate);
+    var a = document.getElementById("cancelOrder");
+    var b = document.getElementById("goTi");
+    var c = document.getElementById("goTi");
+
+    if (a != null) {
+        c.addEventListener("click", goAsientos);
+        b.disabled = false;
+        a.addEventListener("click", cancelOrden);
+    }
+
+    document.getElementById("formulario").addEventListener("submit", doValidate);
+
+
 
 }
 
@@ -44,7 +41,8 @@ function llenarDescuentos() {
         imagen.alt = '';
         var id = "div" + i;
         var actual = document.getElementById(id);
-        actual.appendChild(imagen);
+        if (actual != null)
+            actual.appendChild(imagen);
     }
 }
 
@@ -202,34 +200,7 @@ function redireccionar() {
     location = "Registro.jsp";
 }
 
-function inicioSesion(usuario) {
-    var us = document.getElementById("user");
-    var ps = document.getElementById("pass");
-
-    if (us.value == usuario.usuario) {
-        if (ps.value == usuario.contraseña){
-            var clase = document.getElementById("inicioSesion");
-            var clase1 = document.getElementById("logueado");
-            clase.className = "logueado";
-            clase1.className = "inicioSesion";
-            var sp = document.getElementById("span");
-            var p = document.createElement("p");
-            var a = document.createElement("a");
-            var ul = document.createElement("a");
-            var li = document.createElement("li");
-            li.appendChild(document.createTextNode("Cerrar Sesión"));
-            li.className = "cerrar";
-            a.className = "anchor";
-            a.appendChild(document.createTextNode(usuario.usuario));
-            a.appendChild(li);
-            p.appendChild(a);
-            ul.appendChild(p);
-            sp.appendChild(ul);
-        }
-    }
-}
-
-function doValidate() {
+function doValidate(event) {
     var user = document.getElementById("usuario");
     var contraseña = document.getElementById("contraseña");
     var cedula = document.getElementById("cedula");
@@ -239,6 +210,7 @@ function doValidate() {
     var telefono = document.getElementById("telefono");
     var celular = document.getElementById("celular");
     var fecha = document.getElementById("fechaNacimiento");
+    var confCont = document.getElementById("contraseña1");
     var error = false;
 
     if (user != null) {
@@ -303,6 +275,12 @@ function doValidate() {
             fecha.className = "error";
         }
     }
+    if (confCont != null) {
+        if (confCont.value == "") {
+            error = true;
+            confCont.className = "error";
+        }
+    }
 
     if (error == true) {
         event.preventDefault();
@@ -321,14 +299,15 @@ function doSubmit() {
     var celular = document.getElementById("celular");
     var fecha = document.getElementById("fechaNacimiento");
 
-    usuario = new Usuario(cedula.value, user.value, contraseña.value, nombre.value, apellido.value, correo.value, telefono.value, celular.value, fecha.value);
-
+    usuario = new Usuario(user.value, cedula.value, nombre.value, apellido.value, correo.value, telefono.value, celular.value, fecha.value,contraseña.value);
     var formulario = document.getElementById("formulario");
-    usuarios.push(usuario);
-    StorageUsuario.store("usuarios", usuarios);
+    if (formulario != null) {
+        formulario.addEventListener("submit", doValidate);
+        Proxy.guardar(usuario, function (result) {
+        });
+    }
     window.alert("Data sent: " + usuario.usuario);
     formulario.reset();
-
 }
 
 document.addEventListener("DOMContentLoaded", pageLoad);
