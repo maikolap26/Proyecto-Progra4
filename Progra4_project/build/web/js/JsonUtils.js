@@ -14,9 +14,13 @@ JsonUtils.revive = function (k, v) {
     }
     if (v instanceof Object && v._class == 'Usuario') {
         return new Usuario(v.usuario, v.cedula, v.nombre, v.apellidos, v.email, v.telefono, v.celular, v.fecha,v.contrasena);
-    }
+    }  
+    if (v instanceof Object && v._class == 'Avion') {
+		return new Avion(v.codigo_Avion,v.modelo,v.marca,v.cant_pasajeros,v.cant_filas,v.cant_Asiento_Fila);
+	}  
+
     return v;
-}
+};
 JsonUtils.replacer = function (k, v) {
     if (v instanceof Ciudad) {
         v._class = "Ciudad";
@@ -27,10 +31,15 @@ JsonUtils.replacer = function (k, v) {
     if(v instanceof Usuario){
         v._class = "Usuario";
     }
+    if (v instanceof Avion) {
+        v._class = "Avion"; 
+    }
     return v;
-}
+};
 
 JsonUtils.enviar = function (object){
     return JSON.stringify(object,this.replacer);
     //return JSON.stringify(object);
 }
+
+    

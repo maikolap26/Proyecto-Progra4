@@ -1,3 +1,5 @@
+/* global JsonUtils */
+
 var Proxy = Proxy || {};
 Proxy.getCiudades = function (callback) {
     var AJAX_req = new XMLHttpRequest();

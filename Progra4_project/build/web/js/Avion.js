@@ -14,4 +14,4 @@ Avion.prototype={
       this.cant_filas=cant_filas;
       this.cant_Asiento_Fila=cant_Asiento_Fila;
   }
-}
+};
