@@ -127,6 +127,7 @@
 	#busqueda {
 	    clear: left;
 	    width: 100%;
+            margin-right: 10%;
 	}
 	
 	table.grid {
@@ -143,7 +144,7 @@
 	
 	table.grid thead tr {
 	    background: #cc9900;
-        background-image: url(../fonts/fondo3.png);
+            background-image: url(../fonts/fondo3.png);
 	    border-radius: 10px;
 	}
 	
@@ -210,15 +211,16 @@
 	.der {
 	    float: right;
 	    width: 50%;
+            margin-right: 0%;
 	}
 	
 	.derAv {
 	    position: relative;
 	    margin: 1%;
+	    display: block;
 	    float: center;
 	    width: 50%;
 	    background: black;
-            display: none;
 	}
 	
 	#imagen {
@@ -255,9 +257,7 @@
 	    margin-right: 15%;
 	    margin-top: 5%;
 	}
-        .ver{
-            display: block;
-        }
+	
 	.boton {
 	    border: 2px solid #0066ff;
 	    border-radius: 10px;
@@ -305,8 +305,10 @@
 	}
 	
 	#tablaBusqueda {
-	    clear: left;
-	    ;
+	    margin-left: 0%;
+            margin-right: 10%;
+	    margin-top: 5%;
+	    margin-bottom: 5%;
 	    width: 100%;
 	}
 	
@@ -428,11 +430,8 @@
 	    text-align: center;
 	    background-color: transparent;
 	    border-style: none;
-            color: black;
 	}
-        .seleccionado{
-            background-color: greenyellow;
-        }
+	
 	#asientosAvion {
 	    position: absolute;
 	    top: 60%;
@@ -459,7 +458,129 @@
 	    margin-right: 0%;
 	    font-family: "Comic Sans MS", cursive, sans-serif;
         }
-        .error{
-            border-color: red;
-            background: pink;
-        }     
+        
+        /* MENU ADMINISTRATIVO*/
+        ul.MyMenuAdmi {
+	    font-size: 0px;
+	    /* Sin espacio entre opciones */
+	}
+	
+	ul.MyMenuAdmi li {
+	    /* Establece tamaño letra */
+	    font-size: 20px;
+	}
+	/*Estilo de las listas del menu y submenues*/
+	
+	ul.MyMenuAdmi, ul.MyMenuAdmi li ul {
+	    padding: 0;
+	    list-style: none;
+	}
+	/* Ancho del menu y del submenu */
+	
+	ul.MyMenuAdmi li a, ul.MyMenuAdmi li ul {
+	    width: 11em;
+	    text-align: center;
+	}
+	/* Opciones (y sus bloques)  horizontalmente*/
+	
+	ul.MyMenuAdmi li {
+	    display: inline-block;
+	    vertical-align: top;
+	}
+	/*MENU NORMAL*/
+	
+	ul.MyMenuAdmi li a {
+	    text-decoration: none;
+	    padding: 4.5px 18.5px 4.5px 12.5px;
+	    color: white;
+	    background: grey;
+	    display: block;
+	    box-shadow: 8px 7px 5px 0px rgba(0, 0, 0, 0.37);
+	    font-family: "Comic Sans MS", cursive, sans-serif;
+	}
+	
+	ul.MyMenuAdmi li a:hover {
+	    background: #993333;
+	}
+        
+        .Admin{
+            margin-top: 2%;
+            margin-left: 15%;
+            margin-bottom: 2%;
+        }
+        
+        .ImgAdmi{
+            margin-top: 0%;
+            margin-left: 15%;
+            margin-bottom: 5%;
+        }
+        
+        /* SUBMENU ADMINISTRATIVO*/
+        ul.MyMenuSubAdmi {
+	    font-size: 0px;
+	    /* Sin espacio entre opciones */
+	}
+	
+	ul.MyMenuSubAdmi li {
+	    /* Establece tamaño letra */
+	    font-size: 20px;
+	}
+	/*Estilo de las listas del menu y submenues*/
+	
+	ul.MyMenuSubAdmi, ul.MyMenuSubAdmi li ul {
+	    padding: 0;
+	    list-style: none;
+	}
+	/* Ancho del menu y del submenu */
+	
+	ul.MyMenuSubAdmi li a, ul.MyMenuSubAdmi li ul {
+	    width: 11em;
+	    text-align: center;
+	}
+	/* Opciones (y sus bloques)  horizontalmente*/
+	
+	ul.MyMenuSubAdmi li {
+	    display: inline-block;
+	    vertical-align: top;
+	}
+	/*MENU NORMAL*/
+	
+	ul.MyMenuSubAdmi li a {
+	    text-decoration: none;
+	    padding: 4.5px 18.5px 4.5px 12.5px;
+	    color: white;
+	    background: #94b8b8;
+	    display: block;
+	    box-shadow: 8px 7px 5px 0px rgba(0, 0, 0, 0.37);
+	    font-family: "Comic Sans MS", cursive, sans-serif;
+	}
+	
+	ul.MyMenuSubAdmi li a:hover {
+	    background: #339966;
+	}
+        
+        .SubAdmin{
+            margin-top: 0%;
+            margin-left: 29%;
+            margin-bottom: 2%;
+        }
+        
+       #IngAdm {
+	    font-size: 20px;
+	    font-weight: bold;
+	    text-align: center;
+	    background-image: url(../fonts/fondo3.png);
+	    border-radius: 5px;
+	}
+        
+        .prueba{
+            margin-top: 30%;
+            margin-bottom: 5%;
+            margin-right: 50%;
+        }
+        #Ad{
+            text-align: center;
+            margin-bottom: 5%;
+            margin-left:26%
+        }
+        

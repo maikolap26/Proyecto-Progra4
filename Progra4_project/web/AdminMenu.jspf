@@ -1,0 +1,36 @@
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+
+            <!-- ---------------------- NAVEGACION ADMINISTRACION ----------------------- -->
+            <div class="Admin">
+                <ul class="MyMenuAdmi">
+                    <li>
+                        <a href="Aviones.jsp" title="Aviones">
+                            <image border="0" src="">
+                            Aviones
+                            </image>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="Rutas.jsp" title="Rutas">
+                            <image border="0" src="">
+                            Rutas
+                            </image>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="Vuelos.jsp" title="Vuelos">
+                            <image border="0" src="">
+                            Vuelos
+                            </image>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="Ciudades.jsp" title="Ciudades">
+                            <image border="0" src="">
+                            Ciudades
+                            </image>
+                        </a>
+                    </li>
+                </ul>
+            </div>

@@ -1,5 +1,3 @@
-/* global JsonUtils */
-
 var Proxy = Proxy || {};
 Proxy.getCiudades = function (callback) {
     var AJAX_req = new XMLHttpRequest();
@@ -48,15 +46,4 @@ Proxy.userLogin = function(user,callBack){
         }
     };
     AJAX_req.send("user="+jsonText);   
-};
-
-Proxy.guardar = function(user,callBack){
-    var enviar;
-    var AJAX_req = new XMLHttpRequest();
-    url="/Progra4_project/AAMAirlinesService?action=guardar";
-    AJAX_req.open( "POST", url, true );
-    AJAX_req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    enviar = JsonUtils.enviar(user) ;
-    
-    AJAX_req.send("us="+ enviar);
 };

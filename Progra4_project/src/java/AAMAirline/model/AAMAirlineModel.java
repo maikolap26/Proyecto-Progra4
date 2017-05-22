@@ -3,42 +3,40 @@ package AAMAirline.model;
 import AAMAirline.database.Database;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Date;
 import java.util.List;
 
 public class AAMAirlineModel {
 
+    
     static Database BD;
-
+    
     static {
         initCiudades();
     }
-
-    private static void initCiudades() {
-        BD = new Database(null, null, null);
+    private static void initCiudades(){
+       BD= new Database(null, null, null);        
     }
 
-    public static List<Ciudad> getCiudades1() {
-        List<Ciudad> ciudades;
-        ciudades = new ArrayList();
+    public static List<Ciudad> getCiudades1(){
+       List<Ciudad> ciudades;
+       ciudades= new ArrayList();
         try {
-            String sql = "select * "
-                    + "from ciudad  c  ";
-            ResultSet rs = BD.executeQuery(sql);
+            String sql="select * "+
+                    "from ciudad  c  ";
+            ResultSet rs =  BD.executeQuery(sql);
             while (rs.next()) {
                 ciudades.add(toCiudad(rs));
             }
         } catch (SQLException ex) {
         }
-        return ciudades;
-    }
-
-    private static Ciudad toCiudad(ResultSet rs) {
+       return ciudades;
+   }
+    
+   private static Ciudad toCiudad(ResultSet rs){
         try {
-            Ciudad obj = new Ciudad();
+            Ciudad obj= new Ciudad();
             obj.setCodigo_ciudad(rs.getString("codigo_ciudad"));
             obj.setNombre(rs.getString("nombre"));
             obj.setPais(rs.getString("pais"));
@@ -46,8 +44,9 @@ public class AAMAirlineModel {
         } catch (SQLException ex) {
             return null;
         }
-    }
-
+    } 
+    
+    
     public List<Ciudad> getCiudades() {
         Ciudad[] ciudades = {
             new Ciudad("SJO", "San Jose", "Costa Rica"),
@@ -79,14 +78,14 @@ public class AAMAirlineModel {
             /* 3 */ new Avion("04", "Chevrolet", "Lavara", 100, 10, 10)
         };
         Vuelo[] vuelos = {
-            new Vuelo("01", "Martes", "9", Integer.toString(9 + Integer.parseInt(rutas[0].getDuracion())), rutas[0], aviones[0], 400),
-            new Vuelo("02", "Lunes", "12", Integer.toString(12 + Integer.parseInt(rutas[1].getDuracion())), rutas[1], aviones[1], 300),
-            new Vuelo("03", "Sabado", "3", Integer.toString(3 + Integer.parseInt(rutas[2].getDuracion())), rutas[2], aviones[2], 550),
-            new Vuelo("04", "Martes", "8", Integer.toString(8 + Integer.parseInt(rutas[3].getDuracion())), rutas[3], aviones[3], 400),
-            new Vuelo("05", "Viernes", "2", Integer.toString(2 + Integer.parseInt(rutas[4].getDuracion())), rutas[4], aviones[0], 400),
-            new Vuelo("06", "Jueves", "5", Integer.toString(5 + Integer.parseInt(rutas[5].getDuracion())), rutas[5], aviones[1], 400),
-            new Vuelo("07", "Miercoles", "7", Integer.toString(7 + Integer.parseInt(rutas[6].getDuracion())), rutas[6], aviones[2], 100),
-            new Vuelo("08", "Martes", "1", Integer.toString(1 + Integer.parseInt(rutas[7].getDuracion())), rutas[7], aviones[3], 200),};
+            new Vuelo("01", "Martes", "9", Integer.toString(9 + Integer.parseInt(rutas[0].getDuracion())),rutas[0], aviones[0],  400),
+            new Vuelo("02", "Lunes", "12", Integer.toString(12 + Integer.parseInt(rutas[1].getDuracion())),rutas[1], aviones[1],  300),
+            new Vuelo("03", "Sabado", "3",  Integer.toString(3 + Integer.parseInt(rutas[2].getDuracion())),rutas[2], aviones[2], 550),
+            new Vuelo("04", "Martes", "8",  Integer.toString(8 + Integer.parseInt(rutas[3].getDuracion())),rutas[3],aviones[3],  400),
+            new Vuelo("05", "Viernes", "2",  Integer.toString(2 + Integer.parseInt(rutas[4].getDuracion())), rutas[4], aviones[0],400),
+            new Vuelo("06", "Jueves", "5",  Integer.toString(5 + Integer.parseInt(rutas[5].getDuracion())),rutas[5],aviones[1],  400),
+            new Vuelo("07",  "Miercoles", "7",  Integer.toString(7 + Integer.parseInt(rutas[6].getDuracion())),rutas[6],aviones[2], 100),
+            new Vuelo("08", "Martes", "1",  Integer.toString(1 + Integer.parseInt(rutas[7].getDuracion())), rutas[7],aviones[3], 200),};
         return new ArrayList(Arrays.asList(vuelos));
     }
 
@@ -99,78 +98,74 @@ public class AAMAirlineModel {
         }
         return result;
     }
-
-    public List<Vuelo> getVuelos1() {
-        List<Vuelo> vuelos;
-        vuelos = new ArrayList();
+        public List<Vuelo> getVuelos1() {
+        List<Vuelo> vuelos ;
+       vuelos= new ArrayList();
         try {
-
-            String sql = "select * "
-                    + "from vuelo  c  ";
-            ResultSet rs = BD.executeQuery(sql);
+           
+            String sql="select * "+
+                    "from vuelo  c  ";
+            ResultSet rs =  BD.executeQuery(sql);
             while (rs.next()) {
                 Vuelo vuelo = new Vuelo();
                 vuelo.setCodigo_Vuelo(rs.getString("codigo_vuelo"));
                 vuelo.setHora_llegada(rs.getString("hora_llegada"));
                 vuelo.setHora_salida(rs.getString("hora_salida"));
-                vuelo.setDia_salida(rs.getString("dia_salida"));
                 vuelo.setPrecio(rs.getFloat("precio"));
                 String r = rs.getString("codigo_ruta");
-                char ascii = 34;
+                char ascii= 34;
                 String sql4 = "select * from ruta r where r.codigo_ruta = '%s'";
-                sql4 = String.format(sql4, r);
-                ResultSet rs2 = BD.executeQuery(sql4);
+                sql4= String.format(sql4 , r);
+                ResultSet rs2= BD.executeQuery(sql4);
                 Ruta ruta = new Ruta();
                 Ciudad ciudadO;
-                Ciudad ciudadD;
-                while (rs2.next()) {
+                 Ciudad ciudadD;
+                while(rs2.next()){
                     ruta.setCodigo_ruta(rs2.getString("codigo_ruta"));
                     ruta.setDuracion(Integer.toString(rs2.getInt("duracion")));
                     String c = rs2.getString("ciudad_origen");
-                    String sql2 = "select * from ciudad where codigo_ciudad = '%s'";
-                    sql2 = String.format(sql2, c);
-                    ResultSet rs3 = BD.executeQuery(sql2);
-                    while (rs3.next()) {
+                    String sql2= "select * from ciudad where codigo_ciudad = '%s'";
+                    sql2= String.format(sql2, c);
+                    ResultSet rs3= BD.executeQuery(sql2);
+                    while(rs3.next()){
                         ciudadO = toCiudad(rs3);
                         ruta.setCiudadO(ciudadO);
                     }
-                    c = rs2.getString("ciudad_destino");
-                    sql2 = "select * from ciudad where codigo_ciudad = '%s'";
-                    sql2 = String.format(sql2, c);
-                    rs3 = BD.executeQuery(sql2);
-                    while (rs3.next()) {
-                        ciudadD = toCiudad(rs3);
-                        ruta.setCiudadD(ciudadD);
+                     c = rs2.getString("ciudad_destino");
+                    sql2= "select * from ciudad where codigo_ciudad = '%s'";
+                    sql2=String.format(sql2, c);
+                    rs3= BD.executeQuery(sql2);
+                    while(rs3.next()){
+                         ciudadD = toCiudad(rs3);
+                         ruta.setCiudadD(ciudadD);
                     }
                 }
-                String a = rs.getString("codigo_av");
-                String sql2 = "select * from avion where codigo_avion = '%s'";
-                sql2 = String.format(sql2, a);
+                String a= rs.getString("codigo_av");
+                String sql2= "select * from avion where codigo_avion = '%s'";
+                sql2= String.format(sql2, a);
                 ResultSet rs3 = BD.executeQuery(sql2);
-                while (rs3.next()) {
+                while(rs3.next())
                     vuelo.setAvion(toAvion(rs3));
-                }
                 vuelo.setRuta(ruta);
                 vuelos.add(vuelo);
             }
         } catch (SQLException ex) {
         }
-        return vuelos;
+       return vuelos;
     }
-
-    private Avion toAvion(ResultSet rs) {
+    private Avion toAvion(ResultSet rs){
         Avion plane = new Avion();
         try {
-
+            
             plane.setCodigo_Avion(rs.getString("codigo_avion"));
             plane.setCant_filas(rs.getInt("cant_filas"));
             plane.setCant_Asiento_Fila(rs.getInt("cant_asiento_fila"));
             plane.setCant_pasajeros(rs.getInt("cant_pasajeros"));
             plane.setMarca(rs.getString("marca"));
             plane.setModelo(rs.getString("modelo"));
-
+            
         } catch (SQLException ex) {
-            System.err.println(ex.getMessage());
+           System.err.println(ex.getMessage());
         }
         return plane;
     }
@@ -184,53 +179,51 @@ public class AAMAirlineModel {
         }
         return result;
     }
-
-    public static Login userLogin(Login usuario) throws Exception {
+    
+    public static Login userLogin(Login usuario) throws Exception{
         try {
-            String sql = "select * from "
-                    + "Login  u  "
-                    + "where u.usuario = '%s' and u.contraseña='%s'";
-            sql = String.format(sql, usuario.getUsuario(), usuario.getContraseña());
-
-            ResultSet rs = BD.executeQuery(sql);
-            if (rs == null) {
-                return null;
-            }
-
+            String sql="select * from "+
+                    "Login  u  "+
+                    "where u.usuario = '%s' and u.contraseña='%s'";
+            sql=String.format(sql,usuario.getUsuario(),usuario.getContraseña());
+            
+            ResultSet rs =  BD.executeQuery(sql);
             if (rs.next()) {
                 return toUser(rs);
-            } else {
-                return null;
+            }
+            else{
+                return new Login(usuario.getUsuario(),usuario.getContraseña(),"0");
             }
         } catch (SQLException ex) {
         }
         return null;
-    }
-
-    private static Login toUser(ResultSet rs) throws Exception {
-        Login obj = new Login();
+   }
+    
+    private static Login toUser(ResultSet rs) throws Exception{
+        Login obj= new Login();
         obj.setUsuario(rs.getString("usuario"));
         obj.setContraseña(rs.getString("contraseña"));
         obj.setTipo(rs.getString("tipo"));
         return obj;
     }
+    
+    public static Usuario clientGet(String id) throws Exception{
+    String sql="select * from "+
+            "Usuario  c  "+
+            "where c.usuario = '%s'";
+    sql=String.format(sql,id);
 
-    public static Usuario clientGet(String id) throws Exception {
-        String sql = "select * from "
-                + "Usuario  c  "
-                + "where c.usuario = '%s'";
-        sql = String.format(sql, id);
-
-        ResultSet rs = BD.executeQuery(sql);
-        if (rs.next()) {
-            return toClient(rs);
-        } else {
-            throw new Exception("Cliente no existe");
-        }
+    ResultSet rs =  BD.executeQuery(sql);
+    if (rs.next()) {
+        return toClient(rs);
     }
-
-    private static Usuario toClient(ResultSet rs) throws Exception {
-        Usuario obj = new Usuario();
+    else{
+        throw new Exception("Cliente no existe");
+    }
+}
+    
+     private static Usuario toClient(ResultSet rs) throws Exception{
+        Usuario obj= new Usuario();
         obj.setUsuario(rs.getString("usuario"));
         obj.setCedula(rs.getString("cedula"));
         obj.setNombre(rs.getString("nombre"));
@@ -238,35 +231,9 @@ public class AAMAirlineModel {
         obj.setEmail(rs.getString("email"));
         obj.setTelefono(rs.getString("telefono"));
         obj.setCelular(rs.getString("celular"));
-        obj.setContraseña(rs.getString("contraseña"));
         return obj;
     }
-
-    public static int guardar1(Usuario us) throws Exception {
-        String sql = "insert into "
-                + "usuario (cedula,apellidos,celular,email,fecha,nombre,telefono,usuario,contraseña)"
-                + "values('%s','%s','%s','%s','%s','%s','%s','%s','%s')";
-        sql = String.format(sql, us.getCedula(), us.getApellidos(), us.getCelular(), us.getEmail(),
-                us.getFecha(), us.getNombre(), us.getTelefono(),
-                us.getUsuario(), us.getContraseña());
-        String sql2 = "insert into " + "login (usuario,contraseña,tipo)" + "values('%s','%s','%s')";
-        sql2 = String.format(sql2, us.getUsuario(), us.getContraseña(), "1");
-        ResultSet rs = BD.executeUpdateWithKeys(sql);
-
-        if (rs != null) {
-            ResultSet rs2 = BD.executeUpdateWithKeys(sql2);
-            if (rs2 == null) {
-                return 1;
-            }
-        } else {
-            return 1;
-        }
-
-        if (rs.next()) {
-            return rs.getInt(1);
-        } else {
-            return 0;
-        }
-    }
-
+    
+    
 }
+    

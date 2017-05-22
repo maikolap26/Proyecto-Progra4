@@ -3,7 +3,7 @@ package AAMAirline.model;
 
 public class Usuario implements Jsonable{
 
-    public Usuario(String usuario,String cedula,String nombre, String apellidos, String email, String telefono, String celular, String fecha,String contrasena) {
+    public Usuario(String usuario,String cedula,String nombre, String apellidos, String email, String telefono, String celular, String fecha) {
         this.usuario=usuario;
         this.cedula = cedula;
         this.nombre = nombre;
@@ -12,11 +12,10 @@ public class Usuario implements Jsonable{
         this.telefono = telefono;
         this.celular = celular;
         this.fecha = fecha;
-        this.contrasena=contrasena;
     }
 
     Usuario() {
-        this("","","","","","","","","");
+        this("","","","","","","","");
     }
 
     public String getCedula() {
@@ -83,14 +82,7 @@ public class Usuario implements Jsonable{
     public String getUsuario() {
         return usuario;
     }
-     public String getContraseña() {
-        return contrasena;
-    }
-
-    public void setContraseña(String contraseña) {
-        this.contrasena = contraseña;
-    }
-     
+    
     
      private String usuario;
     private String cedula;
@@ -100,7 +92,4 @@ public class Usuario implements Jsonable{
     private String telefono;
     private String celular;
     private String fecha;
-    private String contrasena;
-
-   
 }
