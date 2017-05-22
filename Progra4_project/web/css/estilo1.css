@@ -215,10 +215,10 @@
 	.derAv {
 	    position: relative;
 	    margin: 1%;
-	    display: block;
 	    float: center;
 	    width: 50%;
 	    background: black;
+            display: none;
 	}
 	
 	#imagen {
@@ -255,7 +255,9 @@
 	    margin-right: 15%;
 	    margin-top: 5%;
 	}
-	
+        .ver{
+            display: block;
+        }
 	.boton {
 	    border: 2px solid #0066ff;
 	    border-radius: 10px;
@@ -426,8 +428,11 @@
 	    text-align: center;
 	    background-color: transparent;
 	    border-style: none;
+            color: black;
 	}
-	
+        .seleccionado{
+            background-color: greenyellow;
+        }
 	#asientosAvion {
 	    position: absolute;
 	    top: 60%;

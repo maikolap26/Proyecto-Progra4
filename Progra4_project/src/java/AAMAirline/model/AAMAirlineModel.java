@@ -111,6 +111,7 @@ public class AAMAirlineModel {
                 vuelo.setCodigo_Vuelo(rs.getString("codigo_vuelo"));
                 vuelo.setHora_llegada(rs.getString("hora_llegada"));
                 vuelo.setHora_salida(rs.getString("hora_salida"));
+                vuelo.setDia_salida(rs.getString("dia_salida"));
                 vuelo.setPrecio(rs.getFloat("precio"));
                 String r = rs.getString("codigo_ruta");
                 char ascii= 34;

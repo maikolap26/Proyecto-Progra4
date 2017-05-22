@@ -29,6 +29,8 @@
         </script>
         <script src="js/funcionesJQuery.js" type="text/javascript">
         </script>
+        <script src="js/Avion.js" type="text/javascript">
+        </script>
         <script src="js/Ciudad.js" type="text/javascript">
         </script>
         <script src="js/Vuelo.js" type="text/javascript">
