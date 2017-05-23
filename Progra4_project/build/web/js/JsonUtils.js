@@ -29,7 +29,9 @@ JsonUtils.replacer = function (k, v) {
     if(v instanceof Usuario){
         v._class = "Usuario";
     }
-    
+    if(v instanceof Avion){
+        v._class = "Avion";
+    }
     return v;
 };
 

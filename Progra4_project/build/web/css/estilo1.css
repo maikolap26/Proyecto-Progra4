@@ -441,8 +441,9 @@
 	#imag {
 	    width: 220%;
 	    height: 220%
-	}	.error{
-		border-color: red;
+	}	
+        .error{
+            border-color: red;
 	}
 	.cerrar{
 		text-decoration:none;
@@ -493,18 +494,18 @@
 	    text-decoration: none;
 	    padding: 4.5px 18.5px 4.5px 12.5px;
 	    color: white;
-	    background: grey;
+	    background: #993333;
 	    display: block;
 	    box-shadow: 8px 7px 5px 0px rgba(0, 0, 0, 0.37);
 	    font-family: "Comic Sans MS", cursive, sans-serif;
 	}
 	
 	ul.MyMenuAdmi li a:hover {
-	    background: #993333;
+	    background: grey;
 	}
         
         .Admin{
-            margin-top: 2%;
+            margin-top: 0%;
             margin-left: 15%;
             margin-bottom: 2%;
         }

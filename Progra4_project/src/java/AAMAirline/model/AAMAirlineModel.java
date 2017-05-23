@@ -158,7 +158,7 @@ public class AAMAirlineModel {
         return vuelos;
     }
 
-    private Avion toAvion(ResultSet rs) {
+    private static Avion toAvion(ResultSet rs) {
         Avion plane = new Avion();
         try {
 
@@ -269,5 +269,87 @@ public class AAMAirlineModel {
         }
     }
 
-}
+    public static int guardar2(Avion av) throws Exception {
+        String sql = "insert into " + "avion (codigo_avion,cant_asiento_fila,cant_filas,cant_pasajeros,modelo,marca)"
+                + "values('%s','%s','%s','%s','%s','%s')";
+        sql = String.format(sql, av.getCodigo_Avion(), av.getCant_Asiento_Fila(), av.getCant_filas(), av.getCant_pasajeros(),
+                av.getModelo(), av.getMarca());
+        ResultSet rs = BD.executeUpdateWithKeys(sql);
+        if (rs != null) {
+            if (rs.next()) {
+                return rs.getInt(1);
+            } else {
+                return 0;
+            }
+        } else {
+            return 1;
+        }
+
+    }
+
+    public static int guardar3(Ciudad ciu) throws Exception {
+        String sql = "insert into " + "ciudad (codigo_ciudad,nombre,pais)"
+                + "values('%s','%s','%s')";
+        sql = String.format(sql, ciu.getCodigo_ciudad(), ciu.getNombre(), ciu.getPais());
+        ResultSet rs = BD.executeUpdateWithKeys(sql);
+        if (rs != null) {
+            if (rs.next()) {
+                return rs.getInt(1);
+            } else {
+                return 0;
+            }
+        } else {
+            return 1;
+        }
+    }
     
+    public static int guardar4(Ruta ru) throws Exception {
+        String sql = "insert into " + "ruta (codigo_ruta,ciudad_origen,ciudad_destino,duracion)"
+                + "values('%s','%s','%s','%s')";
+        sql = String.format(sql, ru.getCodigo_ruta(), ru.getCiudadO(), ru.getCiudadD(),ru.getDuracion());
+        ResultSet rs = BD.executeUpdateWithKeys(sql);
+        if (rs != null) {
+            if (rs.next()) {
+                return rs.getInt(1);
+            } else {
+                return 0;
+            }
+        } else {
+            return 1;
+        }
+    }
+    
+    public static int guardar5(Vuelo vu) throws Exception {
+        String sql = "insert into " + "vuelo (codigo_vuelo,codigo_ruta,codigo_av,dia_salida,hora_llegada,hora_salida,precio)"
+                + "values('%s','%s','%s','%s','%s','%s','%s')";
+        sql = String.format(sql, vu.getCodigo_Vuelo(),vu.getRuta(),vu.getAvion(),vu.getDia_salida(),vu.getHora_llegada(),vu.getHora_salida(),vu.getPrecio());
+        ResultSet rs = BD.executeUpdateWithKeys(sql);
+        if (rs != null) {
+            if (rs.next()) {
+                return rs.getInt(1);
+            } else {
+                return 0;
+            }
+        } else {
+            return 1;
+        }
+    }
+    
+    public static List<Avion> getAviones() {
+        List<Avion> aviones;
+        aviones = new ArrayList();
+        try {
+            String sql = "select * "
+                    + "from avion  c  ";
+            ResultSet rs = BD.executeQuery(sql);
+            while (rs.next()) {
+                aviones.add(toAvion(rs));
+            }
+        } catch (SQLException ex) {
+        }
+        return aviones;
+    }
+
+   
+    
+}

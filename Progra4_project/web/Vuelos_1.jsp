@@ -27,6 +27,8 @@
         </script>
         <script src="js/funcionesJQuery.js" type="text/javascript">
         </script>
+        <script src="js/Avion.js" type="text/javascript">
+        </script>
         <script src="js/Ciudad.js" type="text/javascript">
         </script>
         <script src="js/Vuelo.js" type="text/javascript">
@@ -55,8 +57,6 @@
         <!-- ------------------------ Cuerpo de la pagina ------------------ -->
         <div class="pagina" id="cuerpo">
             <!-- ---------------------- ENCABEZADO ------------------------- -->
-            <%@ include file="Header.jspf" %>
-            <!-- ---------------------- CUERPO ----------------------------- -->
             <%@ include file="AdminMenu.jspf" %>
             
            <div class="SubAdmin">
@@ -69,7 +69,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="" title="Administrar">
+                        <a href="Vuelos_2.jsp" title="Administrar">
                             <image border="0" src="">
                             Administrar
                             </image>
@@ -87,7 +87,7 @@
                 <div class="form-group">
                     <label for="nombre" class="control-label col-md-12" id="claro">Codigo del vuelo</label>
                     <div class="col-md-5">
-                        <input type="text" class="form-control" id="cod_Avion">
+                        <input type="text" class="form-control" id="codigo_vuelo">
                     </div>
                 </div>
             </div>
@@ -96,7 +96,7 @@
                 <div class="form-group">
                     <label for="Email" class="control-label col-md-12" id="claro">Codigo de la ruta</label>
                     <div class="col-md-5">
-                        <input type="text" class="form-control" id="cant_Filas">
+                        <input type="text" class="form-control" id="codigo_ruta">
                     </div>
                 </div>
             </div>
@@ -105,7 +105,7 @@
                 <div class="form-group">
                     <label for="tel" class="control-label col-md-12" id="claro">Codigo del avion</label>
                     <div class="col-md-5">
-                        <input type="text" class="form-control" id="cant_Asientos">
+                        <input type="text" class="form-control" id="codigo_avion">
                     </div>
                 </div>
             </div>
@@ -114,7 +114,7 @@
                 <div class="form-group">
                     <label for="ti" class="control-label col-md-12" id="claro">Dia de salida</label>
                     <div class="col-md-5">
-                        <input type="text" class="form-control" id="cant_Pasa">
+                        <input type="text" class="form-control" id="salida">
                     </div>
                 </div>
             </div>
@@ -123,7 +123,7 @@
                 <div class="form-group">
                     <label for="ti" class="control-label col-md-12" id="claro">Hora de salida</label>
                     <div class="col-md-5">
-                        <input type="text" class="form-control" id="marca">
+                        <input type="text" class="form-control" id="horaS">
                     </div>
                 </div>
             </div>
@@ -132,7 +132,7 @@
                 <div class="form-group">
                     <label for="ti" class="control-label col-md-12" id="claro">Hora de llegada</label>
                     <div class="col-md-5">
-                        <input type="text" class="form-control" id="modelo">
+                        <input type="text" class="form-control" id="horaL">
                     </div>
                 </div>
             </div>
@@ -141,7 +141,7 @@
                 <div class="form-group">
                     <label for="ti" class="control-label col-md-12" id="claro">Precio</label>
                     <div class="col-md-5">
-                        <input type="text" class="form-control" id="modelo">
+                        <input type="text" class="form-control" id="precio">
                     </div>
                 </div>
             </div>
@@ -151,7 +151,7 @@
             <div class="row" id="claro">
                 <div class="form-group">
                     <div class="col-md-2">
-                        <button class="btn btn-primary form-control ui-button ui-widget ui-corner-all" id="btn">Ingresar</button>
+                        <button class="btn btn-primary form-control ui-button ui-widget ui-corner-all" id="btn" onclick="doSubmitVuelos()">Ingresar</button>
                     </div>
                 </div>
             </div>

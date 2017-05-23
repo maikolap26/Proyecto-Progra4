@@ -33,6 +33,8 @@
         </script>
         <script src="js/Ruta.js" type="text/javascript">
         </script>
+        <script src="js/Avion.js" type="text/javascript">
+        </script>
         <script src="js/Tiquete.js" type="text/javascript">
         </script>
         <script src="js/Usuario.js" type="text/javascript">
@@ -55,8 +57,6 @@
         <!-- ------------------------ Cuerpo de la pagina ------------------ -->
         <div class="pagina" id="cuerpo">
             <!-- ---------------------- ENCABEZADO ------------------------- -->
-            <%@ include file="Header.jspf" %>
-            <!-- ---------------------- CUERPO ----------------------------- -->
             <%@ include file="AdminMenu.jspf" %>
             
            <!-- ---------------------- NAVEGACION ADMINISTRACION ----------------------- -->
@@ -70,7 +70,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="" title="Administrar">
+                        <a href="Aviones_2.jsp" title="Administrar">
                             <image border="0" src="">
                             Administrar
                             </image>
@@ -143,7 +143,7 @@
             <div class="row" id="claro">
                 <div class="form-group">
                     <div class="col-md-2">
-                        <button class="btn btn-primary form-control ui-button ui-widget ui-corner-all" id="btn">Ingresar</button>
+                        <button class="btn btn-primary form-control ui-button ui-widget ui-corner-all" id="btn" onclick="doSubmitAvion()" >Ingresar</button>
                     </div>
                 </div>
             </div>

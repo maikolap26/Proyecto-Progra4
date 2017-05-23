@@ -1,6 +1,6 @@
 <%-- 
-    Document   : Administracion
-    Created on : 19-may-2017, 15:17:32
+    Document   : Aviones
+    Created on : 19-may-2017, 17:26:33
     Author     : ACS
 --%>
 
@@ -9,7 +9,7 @@
 <html lang="en">
     <head>
         <title>
-            Administracion
+            Aviones
         </title>
         <meta charset="utf-8">
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -26,6 +26,8 @@
         <script src="js/jquery-ui-1.8.18.custom.min.js" type="text/javascript">
         </script>
         <script src="js/funcionesJQuery.js" type="text/javascript">
+        </script>
+        <script src="js/Avion.js" type="text/javascript">
         </script>
         <script src="js/Ciudad.js" type="text/javascript">
         </script>
@@ -57,8 +59,46 @@
             <!-- ---------------------- ENCABEZADO ------------------------- -->
             <%@ include file="AdminMenu.jspf" %>
             
-            <img class="ImgAdmi" src="img/admin.jpg">
+            <!-- ---------------------- NAVEGACION ADMINISTRACION ----------------------- -->
+            <div class="SubAdmin">
+                <ul class="MyMenuSubAdmi">
+                    <li>
+                        <a href="Aviones_1.jsp" title="Nuevo Ingreso">
+                            <image border="0" src="">
+                            Nuevo Ingreso
+                            </image>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="Aviones_2.jsp" title="Administrar">
+                            <image border="0" src="">
+                            Administrar
+                            </image>
+                        </a>
+                    </li>               
+                </ul>
+            </div>      
             
+            <!-- ---------------------- CUERPO ---------------------------- -->
+      
+            <div style="display: block" id="tablaBusqueda">
+            <table border=2>
+                <thead>
+                    <tr>
+                        <th> Código </th> 
+                        <th> Cant Asiento Fila </th>
+                        <th> Cant Filas </th> 
+                        <th> Marca </th>
+                        <th> Modelo </th> 
+                    </tr>
+                </thead>
+                <tbody id="listado"> </tbody>
+
+            </table>
+        </div>
+                
+                
+
             <!-- ---------------------- PIE DE PAGINA ---------------------- -->
             <div class="container_pie">
                 <div class="row ">
@@ -95,7 +135,9 @@
             </div>
             </br>
         </div>
-       
+        
+        
+        
         <script src="http://code.jquery.com/jquery-latest.js">
         </script>
         <script src="js/bootstrap.min.js" type="text/javascript">

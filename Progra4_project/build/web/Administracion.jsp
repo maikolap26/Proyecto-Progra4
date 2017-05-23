@@ -55,8 +55,6 @@
         <!-- ------------------------ Cuerpo de la pagina ------------------ -->
         <div class="pagina" id="cuerpo">
             <!-- ---------------------- ENCABEZADO ------------------------- -->
-            <%@ include file="Header.jspf" %>
-            <!-- ---------------------- CUERPO ----------------------------- -->
             <%@ include file="AdminMenu.jspf" %>
             
             <img class="ImgAdmi" src="img/admin.jpg">

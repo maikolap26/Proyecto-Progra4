@@ -1,6 +1,6 @@
 <%-- 
-    Document   : Administracion
-    Created on : 19-may-2017, 15:17:32
+    Document   : Ciudades
+    Created on : 19-may-2017, 17:27:00
     Author     : ACS
 --%>
 
@@ -9,7 +9,7 @@
 <html lang="en">
     <head>
         <title>
-            Administracion
+            Ciudades
         </title>
         <meta charset="utf-8">
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -26,6 +26,8 @@
         <script src="js/jquery-ui-1.8.18.custom.min.js" type="text/javascript">
         </script>
         <script src="js/funcionesJQuery.js" type="text/javascript">
+        </script>
+        <script src="js/Avion.js" type="text/javascript">
         </script>
         <script src="js/Ciudad.js" type="text/javascript">
         </script>
@@ -57,7 +59,33 @@
             <!-- ---------------------- ENCABEZADO ------------------------- -->
             <%@ include file="AdminMenu.jspf" %>
             
-            <img class="ImgAdmi" src="img/admin.jpg">
+            <!-- ---------------------- NAVEGACION ADMINISTRACION ----------------------- -->
+            <div class="SubAdmin">
+                <ul class="MyMenuSubAdmi">
+                    <li>
+                        <a href="Ciudades_1.jsp" title="Nuevo Ingreso">
+                            <image border="0" src="">
+                            Nuevo Ingreso
+                            </image>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="Ciudades_2.jsp" title="Administrar">
+                            <image border="0" src="">
+                            Administrar
+                            </image>
+                        </a>
+                    </li>               
+                </ul>
+            </div>
+            
+            <!-- ---------------------- CUERPO ---------------------------- -->
+            
+            <div class="SetAdmi">
+            <div class="Actualizar" id="tableCiudades">
+                <table class="grid" id="tablaCiudades">
+                </table>
+            </div>
             
             <!-- ---------------------- PIE DE PAGINA ---------------------- -->
             <div class="container_pie">

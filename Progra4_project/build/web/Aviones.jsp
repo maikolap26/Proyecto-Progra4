@@ -29,6 +29,8 @@
         </script>
         <script src="js/Ciudad.js" type="text/javascript">
         </script>
+        <script src="js/Avion.js" type="text/javascript">
+        </script>
         <script src="js/Vuelo.js" type="text/javascript">
         </script>
         <script src="js/Ruta.js" type="text/javascript">
@@ -55,8 +57,6 @@
         <!-- ------------------------ Cuerpo de la pagina ------------------ -->
         <div class="pagina" id="cuerpo">
             <!-- ---------------------- ENCABEZADO ------------------------- -->
-            <%@ include file="Header.jspf" %>
-            <!-- ---------------------- CUERPO ----------------------------- -->
             <%@ include file="AdminMenu.jspf" %>
             
             <!-- ---------------------- NAVEGACION ADMINISTRACION ----------------------- -->
@@ -70,7 +70,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="" title="Administrar">
+                        <a href="Aviones_2.jsp" title="Administrar">
                             <image border="0" src="">
                             Administrar
                             </image>

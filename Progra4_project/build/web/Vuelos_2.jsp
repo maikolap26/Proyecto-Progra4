@@ -1,6 +1,6 @@
 <%-- 
-    Document   : Administracion
-    Created on : 19-may-2017, 15:17:32
+    Document   : Vuelos
+    Created on : 19-may-2017, 17:26:50
     Author     : ACS
 --%>
 
@@ -9,7 +9,7 @@
 <html lang="en">
     <head>
         <title>
-            Administracion
+            Vuelos
         </title>
         <meta charset="utf-8">
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -24,6 +24,8 @@
         <script src="js/jquery-1.7.1.min.js" type="text/javascript">
         </script>
         <script src="js/jquery-ui-1.8.18.custom.min.js" type="text/javascript">
+        </script>
+        <script src="js/Avion.js" type="text/javascript">
         </script>
         <script src="js/funcionesJQuery.js" type="text/javascript">
         </script>
@@ -57,8 +59,33 @@
             <!-- ---------------------- ENCABEZADO ------------------------- -->
             <%@ include file="AdminMenu.jspf" %>
             
-            <img class="ImgAdmi" src="img/admin.jpg">
+            <div class="SubAdmin">
+                <ul class="MyMenuSubAdmi">
+                    <li>
+                        <a href="Vuelos_1.jsp" title="Nuevo Ingreso">
+                            <image border="0" src="">
+                            Nuevo Ingreso
+                            </image>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="Vuelos_2.jsp" title="Administrar">
+                            <image border="0" src="">
+                            Administrar
+                            </image>
+                        </a>
+                    </li>               
+                </ul>
+            </div>
             
+            <!-- ---------------------- CUERPO ---------------------------- -->
+            
+            <div class="SetAdmi">
+            <div class="Actualizar" id="tableHorarios">
+                <table class="grid" id="tablaHorarios">
+                </table>
+            </div>
+                 
             <!-- ---------------------- PIE DE PAGINA ---------------------- -->
             <div class="container_pie">
                 <div class="row ">

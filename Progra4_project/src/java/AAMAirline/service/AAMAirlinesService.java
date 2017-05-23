@@ -44,6 +44,7 @@ public class AAMAirlinesService extends HttpServlet {
             System.out.println(accion);
             List<Ciudad> ciudades;
             List<Vuelo> vuelos;
+            List<Avion> aviones;
             request.getSession().removeAttribute("error1");
             request.getSession().removeAttribute("error");
             switch (accion) {
@@ -81,7 +82,7 @@ public class AAMAirlinesService extends HttpServlet {
                                 request.getRequestDispatcher("/PaginaPrincipal.jsp").forward(request, response);
                                 break;
                             case "2": // manager
-                                request.getRequestDispatcher("/ManagerMenu.jsp").forward(request, response);
+                                request.getRequestDispatcher("/Administracion.jsp").forward(request, response);
                                 break;
                         }
                     }
@@ -98,6 +99,43 @@ public class AAMAirlinesService extends HttpServlet {
                         request.getSession().setAttribute("error", "error");
                         request.getRequestDispatcher("/Registro.jsp").forward(request, response);
                     }
+                    break;
+                case "guardar1":
+                    String av= request.getParameter("avion");
+                    Avion av1= gson.fromJson(av, Avion.class);
+                    if(model.guardar2(av1) == 1){
+                        request.getSession().setAttribute("error", "error");
+                        request.getRequestDispatcher("/Aviones_1.jsp").forward(request, response);
+                    }
+                    break;
+                case "guardar2":
+                    String ci= request.getParameter("ciudad");
+                    Ciudad ciu= gson.fromJson(ci, Ciudad.class);
+                    if(model.guardar3(ciu) == 1){
+                        request.getSession().setAttribute("error", "error");
+                        request.getRequestDispatcher("/Ciudades_1.jsp").forward(request, response);
+                    }
+                    break;
+                case "guardar3":
+                    String ru= request.getParameter("ruta");
+                    Ruta rut= gson.fromJson(ru, Ruta.class);
+                    if(model.guardar4(rut) == 1){
+                        request.getSession().setAttribute("error", "error");
+                        request.getRequestDispatcher("/Rutas_1.jsp").forward(request, response);
+                    }
+                    break;
+                case "guardar4":
+                    String vu= request.getParameter("vuelo");
+                    Vuelo vue= gson.fromJson(vu, Vuelo.class);
+                    if(model.guardar5(vue) == 1){
+                        request.getSession().setAttribute("error", "error");
+                        request.getRequestDispatcher("/Vuelos_1.jsp").forward(request, response);
+                    }
+                    break;
+                case "avionSearch":
+                    aviones = model.getAviones();
+                    json = gson.toJson(aviones);
+                    out.write(json);
                     break;
             }
         } catch (Exception e) {
