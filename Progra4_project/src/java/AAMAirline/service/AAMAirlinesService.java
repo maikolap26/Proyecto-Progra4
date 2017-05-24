@@ -45,12 +45,32 @@ public class AAMAirlinesService extends HttpServlet {
             List<Ciudad> ciudades;
             List<Vuelo> vuelos;
             List<Avion> aviones;
+            List<Ruta> rutas;
             request.getSession().removeAttribute("error1");
             request.getSession().removeAttribute("error");
             switch (accion) {
                 case "ciudadListAll":
                     ciudades = model.getCiudades1();
                     json = gson.toJson(ciudades);
+                    out.write(json);
+                    break;
+                case "getCiudad":
+                    String cod = request.getParameter("codigo1");
+                    String cod1 = request.getParameter("codigo2");
+                    ciudades = model.getCiudad(cod, cod1);
+                    json = gson.toJson(ciudades);
+                    out.write(json);
+                    break;
+                case "getRuta":
+                    String codR = request.getParameter("codigoR");
+                    rutas = model.getRuta(codR);
+                    json = gson.toJson(rutas);
+                    out.write(json);
+                    break;
+                case "getAvion":
+                    String codA = request.getParameter("codigoA");
+                    aviones = model.getAvion(codA);
+                    json = gson.toJson(aviones);
                     out.write(json);
                     break;
                 case "vueloListPromo":
@@ -101,33 +121,33 @@ public class AAMAirlinesService extends HttpServlet {
                     }
                     break;
                 case "guardar1":
-                    String av= request.getParameter("avion");
-                    Avion av1= gson.fromJson(av, Avion.class);
-                    if(model.guardar2(av1) == 1){
+                    String av = request.getParameter("avion");
+                    Avion av1 = gson.fromJson(av, Avion.class);
+                    if (model.guardar2(av1) == 1) {
                         request.getSession().setAttribute("error", "error");
                         request.getRequestDispatcher("/Aviones_1.jsp").forward(request, response);
                     }
                     break;
                 case "guardar2":
-                    String ci= request.getParameter("ciudad");
-                    Ciudad ciu= gson.fromJson(ci, Ciudad.class);
-                    if(model.guardar3(ciu) == 1){
+                    String ci = request.getParameter("ciudad");
+                    Ciudad ciu = gson.fromJson(ci, Ciudad.class);
+                    if (model.guardar3(ciu) == 1) {
                         request.getSession().setAttribute("error", "error");
                         request.getRequestDispatcher("/Ciudades_1.jsp").forward(request, response);
                     }
                     break;
                 case "guardar3":
-                    String ru= request.getParameter("ruta");
-                    Ruta rut= gson.fromJson(ru, Ruta.class);
-                    if(model.guardar4(rut) == 1){
+                    String ru = request.getParameter("ruta");
+                    Ruta rut = gson.fromJson(ru, Ruta.class);
+                    if (model.guardar4(rut) == 1) {
                         request.getSession().setAttribute("error", "error");
                         request.getRequestDispatcher("/Rutas_1.jsp").forward(request, response);
                     }
                     break;
                 case "guardar4":
-                    String vu= request.getParameter("vuelo");
-                    Vuelo vue= gson.fromJson(vu, Vuelo.class);
-                    if(model.guardar5(vue) == 1){
+                    String vu = request.getParameter("vuelo");
+                    Vuelo vue = gson.fromJson(vu, Vuelo.class);
+                    if (model.guardar5(vue) == 1) {
                         request.getSession().setAttribute("error", "error");
                         request.getRequestDispatcher("/Vuelos_1.jsp").forward(request, response);
                     }
@@ -135,6 +155,16 @@ public class AAMAirlinesService extends HttpServlet {
                 case "avionSearch":
                     aviones = model.getAviones();
                     json = gson.toJson(aviones);
+                    out.write(json);
+                    break;
+                case "rutaSearch":
+                    rutas = model.getRutas();
+                    json = gson.toJson(rutas);
+                    out.write(json);
+                    break;
+                case "vueloSearch":
+                    vuelos = model.getVuelos1();
+                    json = gson.toJson(vuelos);
                     out.write(json);
                     break;
             }

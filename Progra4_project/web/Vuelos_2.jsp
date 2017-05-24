@@ -80,11 +80,23 @@
             
             <!-- ---------------------- CUERPO ---------------------------- -->
             
-            <div class="SetAdmi">
-            <div class="Actualizar" id="tableHorarios">
-                <table class="grid" id="tablaHorarios">
-                </table>
-            </div>
+                <div style="display: block" id="tablaBusqueda">
+            <table border=2>
+                <thead>
+                    <tr>
+                        <th> Código Vuelo </th> 
+                        <th> Día Salida </th>
+                        <th> Hora Salida </th>
+                        <th> Hora Llegada </th>
+                        <th> Ruta </th>
+                        <th> Avion </th>
+                        <th> Precio </th>
+                    </tr>
+                </thead>
+                <tbody id="listado"> </tbody>
+
+            </table>
+        </div>
                  
             <!-- ---------------------- PIE DE PAGINA ---------------------- -->
             <div class="container_pie">

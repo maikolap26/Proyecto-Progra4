@@ -80,11 +80,20 @@
             
             <!-- ---------------------- CUERPO ---------------------------- -->
             
-            <div class="SetAdmi">
-            <div class="Actualizar" id="tableRutas">
-                <table class="grid" id="tablaRutas">
-                </table>
-            </div>
+             <div style="display: block" id="tablaBusqueda">
+            <table border=2>
+                <thead>
+                    <tr>
+                        <th> Código Ruta </th> 
+                        <th> Ciudad Origen </th>
+                        <th> Ciudad Destino </th>
+                        <th> Duración </th>
+                    </tr>
+                </thead>
+                <tbody id="listado"> </tbody>
+
+            </table>
+        </div>
             
           <!-- ---------------------- PIE DE PAGINA ---------------------- -->
             <div class="container_pie">

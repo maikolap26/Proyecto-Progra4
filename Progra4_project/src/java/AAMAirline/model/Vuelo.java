@@ -2,8 +2,8 @@ package AAMAirline.model;
 
 public class Vuelo implements Jsonable {
 
-    public Vuelo(String codigo_Vuelo, String dia_salida, String hora_salida, String hora_llegada, Ruta ruta, Avion avion, float precio) {
-        this.codigo_Vuelo = codigo_Vuelo;
+    public Vuelo(String codigo_vuelo, String dia_salida, String hora_salida, String hora_llegada, Ruta ruta, Avion avion, float precio) {
+        this.codigo_vuelo = codigo_vuelo;
         this.avion = avion;
         this.dia_salida = dia_salida;
         this.hora_salida = hora_salida;
@@ -16,11 +16,11 @@ public class Vuelo implements Jsonable {
     }
 
     public String getCodigo_Vuelo() {
-        return codigo_Vuelo;
+        return codigo_vuelo;
     }
 
-    public void setCodigo_Vuelo(String codigo_Vuelo) {
-        this.codigo_Vuelo = codigo_Vuelo;
+    public void setCodigo_Vuelo(String codigo_vuelo) {
+        this.codigo_vuelo = codigo_vuelo;
     }
 
     public String getDia_salida() {
@@ -71,7 +71,7 @@ public class Vuelo implements Jsonable {
         this.ruta = ruta;
     }
 
-    private String codigo_Vuelo;
+    private String codigo_vuelo;
     private String dia_salida;
     private String hora_salida;
     private String hora_llegada;

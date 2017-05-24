@@ -302,11 +302,11 @@ public class AAMAirlineModel {
             return 1;
         }
     }
-    
+
     public static int guardar4(Ruta ru) throws Exception {
         String sql = "insert into " + "ruta (codigo_ruta,ciudad_origen,ciudad_destino,duracion)"
                 + "values('%s','%s','%s','%s')";
-        sql = String.format(sql, ru.getCodigo_ruta(), ru.getCiudadO(), ru.getCiudadD(),ru.getDuracion());
+        sql = String.format(sql, ru.getCodigo_ruta(), ru.getCiudadO().getCodigo_ciudad(), ru.getCiudadD().getCodigo_ciudad(), ru.getDuracion());
         ResultSet rs = BD.executeUpdateWithKeys(sql);
         if (rs != null) {
             if (rs.next()) {
@@ -318,11 +318,11 @@ public class AAMAirlineModel {
             return 1;
         }
     }
-    
+
     public static int guardar5(Vuelo vu) throws Exception {
         String sql = "insert into " + "vuelo (codigo_vuelo,codigo_ruta,codigo_av,dia_salida,hora_llegada,hora_salida,precio)"
                 + "values('%s','%s','%s','%s','%s','%s','%s')";
-        sql = String.format(sql, vu.getCodigo_Vuelo(),vu.getRuta(),vu.getAvion(),vu.getDia_salida(),vu.getHora_llegada(),vu.getHora_salida(),vu.getPrecio());
+        sql = String.format(sql, vu.getCodigo_Vuelo(), vu.getRuta().getCodigo_ruta(), vu.getAvion().getCodigo_Avion(), vu.getDia_salida(), vu.getHora_llegada(), vu.getHora_salida(), vu.getPrecio());
         ResultSet rs = BD.executeUpdateWithKeys(sql);
         if (rs != null) {
             if (rs.next()) {
@@ -334,7 +334,7 @@ public class AAMAirlineModel {
             return 1;
         }
     }
-    
+
     public static List<Avion> getAviones() {
         List<Avion> aviones;
         aviones = new ArrayList();
@@ -350,6 +350,97 @@ public class AAMAirlineModel {
         return aviones;
     }
 
-   
+    private static Ruta toRuta(ResultSet rs) throws Exception {
+        Ruta obj = new Ruta();
+        String sql2 = "select *" + "from ciudad c where codigo_ciudad= '%s'";
+        sql2 = String.format(sql2, rs.getString("ciudad_origen"));
+        ResultSet rs2 = BD.executeQuery(sql2);
+        while (rs2.next()) {
+            obj.setCiudadO(toCiudad(rs2));
+        }
+        String sql4 = "select *" + "from ciudad c where codigo_ciudad= '%s'";
+        sql4 = String.format(sql4, rs.getString("ciudad_destino"));
+        ResultSet rs3 = BD.executeQuery(sql4);
+        while (rs3.next()) {
+            obj.setCiudadD(toCiudad(rs3));
+        }
+        obj.setCodigo_ruta(rs.getString("codigo_ruta"));
+        obj.setDuracion(String.valueOf(rs.getInt("duracion")));
+
+        return obj;
+    }
+
+    public static List<Ruta> getRutas() throws Exception {
+        List<Ruta> rutas;
+        rutas = new ArrayList();
+        try {
+            String sql = "select * "
+                    + "from ruta  c  ";
+            ResultSet rs = BD.executeQuery(sql);
+            while (rs.next()) {
+                rutas.add(toRuta(rs));
+            }
+        } catch (SQLException ex) {
+        }
+        return rutas;
+    }
+
+    public static List<Ciudad> getCiudad(String codigo, String codigo1) {
+        List<Ciudad> ciudades;
+        ciudades = new ArrayList();
+        try {
+            String sql = "select * "
+                    + "from ciudad  c where codigo_ciudad= '%s' ";
+            sql = String.format(sql, codigo);
+            ResultSet rs = BD.executeQuery(sql);
+            while (rs.next()) {
+                ciudades.add(toCiudad(rs));
+            }
+            String sql2 = "select * "
+                    + "from ciudad  c where codigo_ciudad= '%s' ";
+            sql2 = String.format(sql2, codigo1);
+            ResultSet rs1 = BD.executeQuery(sql2);
+            while (rs1.next()) {
+                ciudades.add(toCiudad(rs1));
+            }
+
+        } catch (SQLException ex) {
+        }
+        return ciudades;
+    }
+
+    public static List<Ruta> getRuta(String codigo) throws Exception {
+        List<Ruta> rutas;
+        rutas = new ArrayList();
+        try {
+            String sql = "select * "
+                    + "from ruta  c where codigo_ruta= '%s'";
+            sql=String.format(sql, codigo);
+            ResultSet rs = BD.executeQuery(sql);
+            while (rs.next()) {
+                rutas.add(toRuta(rs));
+            }
+
+        } catch (SQLException ex) {
+        }
+        return rutas;
+    }
+
+    public static List<Avion> getAvion(String codigo) throws Exception {
+        List<Avion> aviones;
+        aviones = new ArrayList();
+        try {
+            String sql = "select * "
+                    + "from avion  c where codigo_avion= '%s'";
+            sql=String.format(sql, codigo);
+            ResultSet rs = BD.executeQuery(sql);
+            while (rs.next()) {
+                aviones.add(toAvion(rs));
+            }
+
+        } catch (SQLException ex) {
+        }
+        return aviones;
+    }
     
 }

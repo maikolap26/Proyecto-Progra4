@@ -12,6 +12,6 @@ Avion.prototype={
       this.marca=marca;
       this.cant_pasajeros=cant_pasajeros;
       this.cant_filas=cant_filas;
-      this.cant_Asiento_Fila=cant_asiento_fila;
+      this.cant_asiento_fila=cant_asiento_fila;
   }
 }

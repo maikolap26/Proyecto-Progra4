@@ -81,11 +81,19 @@
             
             <!-- ---------------------- CUERPO ---------------------------- -->
             
-            <div class="SetAdmi">
-            <div class="Actualizar" id="tableCiudades">
-                <table class="grid" id="tablaCiudades">
-                </table>
-            </div>
+           <div style="display: block" id="tablaBusqueda">
+            <table border=2>
+                <thead>
+                    <tr>
+                        <th> Código Ciudad </th> 
+                        <th> Nombre </th>
+                        <th> País </th>
+                    </tr>
+                </thead>
+                <tbody id="listado"> </tbody>
+
+            </table>
+        </div>
             
             <!-- ---------------------- PIE DE PAGINA ---------------------- -->
             <div class="container_pie">

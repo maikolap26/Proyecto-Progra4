@@ -40,6 +40,7 @@
                             <span id="u1" style="font-family:Papyrus,fantasy; font-size:15px; font-weight:700; color:white;">
                                 <p class="u1"> Usuario: <%=user.getUsuario()%></p>
                                 <p class="u1" ><input class="boton" type="submit" value="Logout"> </p>
+                                
                             </span>
                                 </span></form>
                         <%}%> 

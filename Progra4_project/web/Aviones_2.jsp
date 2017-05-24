@@ -87,7 +87,8 @@
                     <tr>
                         <th> Código </th> 
                         <th> Cant Asiento Fila </th>
-                        <th> Cant Filas </th> 
+                        <th> Cant Filas </th>
+                        <th> Cant Pasajeros </th>
                         <th> Marca </th>
                         <th> Modelo </th> 
                     </tr>

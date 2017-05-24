@@ -13,7 +13,8 @@ public class Ruta implements Jsonable{
     public Ruta() {
       
     }
-
+    
+    
     public String getCodigo_ruta() {
         return codigo_ruta;
     }
@@ -46,6 +47,8 @@ public class Ruta implements Jsonable{
         this.duracion = duracion;
     }
 
+
+    
     private String codigo_ruta;
     private Ciudad ciudadO;
     private Ciudad ciudadD;

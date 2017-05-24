@@ -114,7 +114,7 @@
                 <div class="form-group">
                     <label for="ti" class="control-label col-md-12" id="claro">duracion</label>
                     <div class="col-md-5">
-                        <input type="text" class="form-control" id="duracion" onclick="doSubmitRutas()">
+                        <input type="text" class="form-control" id="duracion" >
                     </div>
                 </div>
             </div>
@@ -124,7 +124,7 @@
             <div class="row" id="claro">
                 <div class="form-group">
                     <div class="col-md-2">
-                        <button class="btn btn-primary form-control ui-button ui-widget ui-corner-all" id="btn">Ingresar</button>
+                        <button class="btn btn-primary form-control ui-button ui-widget ui-corner-all" id="btn" onclick="doSubmitRutas()">Ingresar</button>
                     </div>
                 </div>
             </div>
