@@ -1,4 +1,5 @@
-	ul.MyMenu {
+/* ----------------------  MENU CLIENTES ---------------------- */
+        ul.MyMenu {
 	    font-size: 0px;
 	    /* Sin espacio entre opciones */
 	}
@@ -40,7 +41,9 @@
 	ul.MyMenu li a:hover {
 	    background: grey;
 	}
-	
+        
+/* ----------------------  PIE DE PAGINA ---------------------- */	
+
 	.container_pie {
 	    background-color: #cc6600;
 	    color: white;
@@ -49,7 +52,7 @@
 	#pie {
 	    background-color: grey;
 	}
-	
+/* ----------------------  IMAGENES ---------------------- */	
 	.image {
 	    display: block;
 	    margin: 0 auto 0 auto;
@@ -82,7 +85,7 @@
 	.col-md-12 {
 	    background-image: url(../fonts/sky.jpg);
 	}
-	
+/* ----------------------  OTROS ---------------------- */		
 	#Negrita {
 	    font-size: 20px;
 	}
@@ -94,13 +97,14 @@
 	    text-align: center;
 	    background-image: url(../fonts/fondo3.png);
 	    border-radius: 10px;
+            color: white;
 	}
 	
 	#claro {
 	    background-color: #ffffe6;
 	    font-family: "Comic Sans MS", cursive, sans-serif;
 	    background-image: url(../fonts/fondo1.png);
-	    
+	    color: white;
 	}
 	
 	.pagina {
@@ -116,6 +120,7 @@
 	    padding-bottom: 2%;
 	    font-size: 20px;
 	    font-family: "Comic Sans MS", cursive, sans-serif;
+            color: white;
 	}
 	
 	.servicio {
@@ -128,12 +133,16 @@
 	    clear: left;
 	    width: 100%;
             margin-right: 10%;
+            color: white;
 	}
-	
+        
+/* ----------------------  DISTINTAS TABLAS ---------------------- */	
+
 	table.grid {
 	    background: #ffffe6;
 	    background-image: url(../fonts/fondo1.png);
 	    border-radius: 10px;
+            color: black;
 	}
 	
 	table.grid {
@@ -146,6 +155,7 @@
 	    background: #cc9900;
             background-image: url(../fonts/fondo3.png);
 	    border-radius: 10px;
+            color: white;
 	}
 	
 	table.grid thead tr th {
@@ -173,30 +183,36 @@
 	table.grid tbody tr {
 	    background: #99ff99;
 	    border-radius: 10px;
+            color:black;
 	}
 	
 	table.grid tbody tr:nth-child(odd) {
 	    background: #ffffe6;
 	    background-image: url(../fonts/fondo1.png);
 	    border-radius: 10px;
+            color:black;
 	}
 	
 	table.grid tbody tr:nth-child(even) {
 	    background: #ffffe6;
 	    background-image: url(../fonts/fondo1.png);
 	    border-radius: 10px;
+            color:black;
 	}
 	
 	table.grid tbody tr td {
 	    border: inherit;
 	    background-image: url(../fonts/fondo1.png);
 	    border-radius: 10px;
+            color:black;
 	}
 	
 	.container_pie {
 	    clear: both;
 	}
-	
+        
+/* ----------------------  CAROUSEL  ---------------------- */	
+
 	#carousel-1 {
 	    width: 100%;
 	    height: 100%;
@@ -257,7 +273,7 @@
 	    margin-right: 15%;
 	    margin-top: 5%;
 	}
-	
+/* ----------------------  BOTON  ---------------------- */		
 	.boton {
 	    border: 2px solid #0066ff;
 	    border-radius: 10px;
@@ -265,14 +281,20 @@
 	    color: white;
 	    text-align: center;
 	}
-        
+        #i{
+            border: 2px solid #0066ff;
+	    border-radius: 10px;
+	    background-color: #0066ff;
+	    color: white;
+	    text-align: center;
+        }
         .COMPRAR{
             width: 50%;
 	    height: 100%;
             border: 2px solid #006400;
 	    border-radius: 10px;
 	    background-color: #7FFF00;
-	    color: black;
+	    color: white;
 	    text-align: center;
         }
         #COMPRAR{
@@ -310,13 +332,15 @@
 	    margin-top: 5%;
 	    margin-bottom: 5%;
 	    width: 100%;
+            color: white;
 	}
-	
+        
 	.formulario {
 	    font-size: 20px;
 	    margin-left: 90%;
 	    margin-top: 2%;
 	    margin-bottom: 5%;
+            color: white;
 	}
 	
 	.imagenR {
@@ -325,17 +349,17 @@
 	    margin-top: 5%;
 	    margin-bottom: 4%;
 	}
-	
-	.oneWorld {
-	    width: 30%;
-	    height: 30%;
-	    float: right;
+/* ----------------------  LOG IN ---------------------- */		
+	.inicioSesion {
+	    display: block;
+            color: white;
 	}
-	
+        
 	.campoUs {
 	    margin-left: 1%;
 	    margin-top: 2%;
 	    margin-right: 1%;
+            color: black;
 	}
 	
 	.campoUs1 {
@@ -350,10 +374,7 @@
 	    margin-top: 2%;
 	    margin-right: 1%;
 	    font-family: "Comic Sans MS", cursive, sans-serif;
-	}
-	
-	.inicioSesion {
-	    display: block;
+            color: white;
 	}
 	
 	#inicioSesion {
@@ -460,6 +481,8 @@
 	    font-family: "Comic Sans MS", cursive, sans-serif;
         }
         
+/* ----------------------  PAGINAS ADMINISTRATIVAS ---------------------- */    
+  
         /* MENU ADMINISTRATIVO*/
         ul.MyMenuAdmi {
 	    font-size: 0px;
@@ -570,6 +593,7 @@
 	    font-size: 20px;
 	    font-weight: bold;
 	    text-align: center;
+            color: white;
 	    background-image: url(../fonts/fondo3.png);
 	    border-radius: 5px;
 	}
@@ -584,4 +608,243 @@
             margin-bottom: 5%;
             margin-left:26%
         }
+/* ----------------------  AVIONES ---------------------- */
+        .admi{
+            margin-top: 0%;
+            margin-bottom: 5%;
+            margin-left: 13.5%;
+        }
         
+        table.admi{
+            padding-left: 20%;
+	    padding-top: 0%;
+	    padding-bottom: 2%;
+	    font-size: 20px;
+            color: white;
+	    font-family: "Comic Sans MS", cursive, sans-serif;
+        }
+	
+	table.admi thead tr {
+	    background: #cc9900;
+            background-image: url(../fonts/fondo3.png);
+	    border-radius: 10px;
+            color: white;
+	}
+	
+	table.admi thead tr th {
+	    background: #cc9900;
+	    border: inherit;
+	    text-align: center;
+	    background-image: url(../fonts/fondo3.png);
+	    border-radius: 10px;
+	}
+	
+	
+	table.admi tbody tr {
+	    background: #99ff99;
+	    border-radius: 10px;
+            color:black;
+            text-align: center;
+	}
+		
+	table.admi tbody tr td {
+	    border: inherit;
+	    background-image: url(../fonts/fondo1.png);
+	    border-radius: 10px;
+            color:black;
+            text-align: center;
+	}
+        
+	table.admi tbody tr:nth-child(odd) {
+	    background: #ffffe6;
+	    background-image: url(../fonts/fondo1.png);
+	    border-radius: 10px;
+            color:black;
+	}
+	
+	table.admi tbody tr:nth-child(even) {
+	    background: #ffffe6;
+	    background-image: url(../fonts/fondo1.png);
+	    border-radius: 10px;
+            color:grey;
+	}
+/* ----------------------  CIUDADES ---------------------- */
+        .admi1{
+            margin-top: 0%;
+            margin-bottom: 5%;
+            margin-left: 27.5%;
+        }
+        
+        table.admi1{
+            padding-left: 20%;
+	    padding-top: 0%;
+	    padding-bottom: 2%;
+	    font-size: 20px;
+            color: white;
+	    font-family: "Comic Sans MS", cursive, sans-serif;
+        }
+	
+	table.admi1 thead tr {
+	    background: #cc9900;
+            background-image: url(../fonts/fondo3.png);
+	    border-radius: 10px;
+            color: white;
+	}
+	
+	table.admi1 thead tr th {
+	    background: #cc9900;
+	    border: inherit;
+	    text-align: center;
+	    background-image: url(../fonts/fondo3.png);
+	    border-radius: 10px;
+	}
+	
+	
+	table.admi1 tbody tr {
+	    background: #99ff99;
+	    border-radius: 10px;
+            color:black;
+            text-align: center;
+	}
+		
+	table.admi1 tbody tr td {
+	    border: inherit;
+	    background-image: url(../fonts/fondo1.png);
+	    border-radius: 10px;
+            color:black;
+            text-align: center;
+	}
+        
+	table.admi1 tbody tr:nth-child(odd) {
+	    background: #ffffe6;
+	    background-image: url(../fonts/fondo1.png);
+	    border-radius: 10px;
+            color:black;
+	}
+	
+	table.admi1 tbody tr:nth-child(even) {
+	    background: #ffffe6;
+	    background-image: url(../fonts/fondo1.png);
+	    border-radius: 10px;
+            color:grey;
+	}
+/* ----------------------  RUTAS ---------------------- */
+        .admi2{
+            margin-top: 0%;
+            margin-bottom: 5%;
+            margin-left: 23%;
+        }
+        
+        table.admi2{
+            padding-left: 20%;
+	    padding-top: 0%;
+	    padding-bottom: 2%;
+	    font-size: 20px;
+            color: white;
+	    font-family: "Comic Sans MS", cursive, sans-serif;
+        }
+	
+	table.admi2 thead tr {
+	    background: #cc9900;
+            background-image: url(../fonts/fondo3.png);
+	    border-radius: 10px;
+            color: white;
+	}
+	
+	table.admi2 thead tr th {
+	    background: #cc9900;
+	    border: inherit;
+	    text-align: center;
+	    background-image: url(../fonts/fondo3.png);
+	    border-radius: 10px;
+	}
+	
+	
+	table.admi2 tbody tr {
+	    background: #99ff99;
+	    border-radius: 10px;
+            color:black;
+            text-align: center;
+	}
+		
+	table.admi2 tbody tr td {
+	    border: inherit;
+	    background-image: url(../fonts/fondo1.png);
+	    border-radius: 10px;
+            color:black;
+            text-align: center;
+	}
+        
+	table.admi2 tbody tr:nth-child(odd) {
+	    background: #ffffe6;
+	    background-image: url(../fonts/fondo1.png);
+	    border-radius: 10px;
+            color:black;
+	}
+	
+	table.admi2 tbody tr:nth-child(even) {
+	    background: #ffffe6;
+	    background-image: url(../fonts/fondo1.png);
+	    border-radius: 10px;
+            color:grey;
+	}
+/* ----------------------  VUELOS ---------------------- */
+        .admi3{
+            margin-top: 0%;
+            margin-bottom: 5%;
+            margin-left: 15%;
+        }
+        
+        table.admi3{
+            padding-left: 20%;
+	    padding-top: 0%;
+	    padding-bottom: 2%;
+	    font-size: 20px;
+            color: white;
+	    font-family: "Comic Sans MS", cursive, sans-serif;
+        }
+	
+	table.admi3 thead tr {
+	    background: #cc9900;
+            background-image: url(../fonts/fondo3.png);
+	    border-radius: 10px;
+            color: white;
+	}
+	
+	table.admi3 thead tr th {
+	    background: #cc9900;
+	    border: inherit;
+	    text-align: center;
+	    background-image: url(../fonts/fondo3.png);
+	    border-radius: 10px;
+	}
+	
+	
+	table.admi3 tbody tr {
+	    background: #99ff99;
+	    border-radius: 10px;
+            color:black;
+            text-align: center;
+	}
+		
+	table.admi3 tbody tr td {
+	    border: inherit;
+	    background-image: url(../fonts/fondo1.png);
+	    border-radius: 10px;
+            color:black;
+            text-align: center;
+	}
+        
+	table.admi3 tbody tr:nth-child(odd) {
+	    background: #ffffe6;
+	    background-image: url(../fonts/fondo1.png);
+	    border-radius: 10px;
+            color:black;
+	}
+	
+	table.admi3 tbody tr:nth-child(even) {
+	    background: #ffffe6;
+	    background-image: url(../fonts/fondo1.png);
+	    border-radius: 10px;
+            color:grey;
+	}

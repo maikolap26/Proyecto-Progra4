@@ -25,6 +25,8 @@
         <link href="css/datepicker.css" rel="stylesheet" type="text/css"/>
         <script src="js/jquery-1.7.1.min.js" type="text/javascript">
         </script>
+        <script src="js/Avion.js" type="text/javascript">
+        </script>
         <script src="js/jquery-ui-1.8.18.custom.min.js" type="text/javascript">
         </script>
         <script src="js/funcionesJQuery.js" type="text/javascript">
@@ -227,6 +229,12 @@
             <div class="prueba">
             <div class="tableVuelos" id="busqueda">
                 <table class="grid" id="tablaBusqueda">
+                    <thead>
+                        <tr>
+                            <th colspan="6" > &nbsp;&nbsp;Resultados de la busqueda&nbsp;&nbsp; </th> 
+                        </tr>
+                    </thead>
+                    <tbody id="tablaBusqueda"> </tbody>
                 </table>
             </div>
             

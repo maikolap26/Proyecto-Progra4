@@ -48,9 +48,7 @@ function llenarDescuentos() {
 function llenarSelects() {
     var origen = document.getElementById("origen");
     var destino = document.getElementById("destino");
-    /*Proxy.getCiudades(function (result) {
-     model.buscados = result;
-     });*/
+
     for (var i = 0; i < model.ciudades.length; i++) {
         var option = document.createElement("option");
         option.value = model.ciudades[i].nombre;
@@ -182,18 +180,17 @@ function showBuscados() {
     //controller.buscar();
     var s = document.getElementById("tablaBusqueda");
     var aux = document.getElementById("resultBusq");
-    if (aux == null) {
+    if (aux === null) {
         var thea = document.createElement("thead");
         var x = document.createElement("tr");
         var y = document.createElement("th");
-        y.innerHTML = "Resultados de la busqueda";
         y.id = "resultBusq";
         x.appendChild(y);
         thea.appendChild(x);
         s.appendChild(thea);
     }
     var buscado = document.getElementById("buscado");
-    while (s.childNodes.length > 0 && aux != null && buscado != null) {
+    while (s.childNodes.length > 0 && aux !== null && buscado !== null) {
         s.removeChild(buscado);
         buscado = document.getElementById("buscado");
     }
@@ -206,7 +203,7 @@ function showBuscados() {
         t.appendChild(t1);
         var t2 = document.createElement("td");
         var boton = document.createElement("input");
-        boton.id = i;
+        boton.id = "i";
         boton.type = "button";
         boton.value = " Comprar ";
         boton.addEventListener("click", openInfo);
@@ -215,7 +212,7 @@ function showBuscados() {
         s.appendChild(t);
     }
     aux = document.getElementById("sinBusq");
-    if (aux == null && model.buscados.length == 0) {
+    if (aux === null && model.buscados.length === 0) {
         var t = document.createElement("tr");
         t.id = "buscado";
         t.innerHTML = "Sin resultados...";

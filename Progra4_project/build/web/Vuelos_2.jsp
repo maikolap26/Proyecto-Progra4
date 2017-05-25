@@ -80,17 +80,17 @@
             
             <!-- ---------------------- CUERPO ---------------------------- -->
             
-                <div style="display: block" id="tablaBusqueda">
-            <table border=2>
+            <div style="display: block" class="administracion" id="tablaBusqueda">
+            <table border=2 class="admi3">
                 <thead>
                     <tr>
-                        <th> Código Vuelo </th> 
-                        <th> Día Salida </th>
-                        <th> Hora Salida </th>
-                        <th> Hora Llegada </th>
-                        <th> Ruta </th>
-                        <th> Avion </th>
-                        <th> Precio </th>
+                        <th> &nbsp;&nbsp;Código Vuelo&nbsp;&nbsp; </th> 
+                        <th> &nbsp;&nbsp;Día Salida&nbsp;&nbsp; </th>
+                        <th> &nbsp;&nbsp;Hora Salida&nbsp;&nbsp; </th>
+                        <th> &nbsp;&nbsp;Hora Llegada&nbsp;&nbsp; </th>
+                        <th> &nbsp;&nbsp;Ruta&nbsp;&nbsp; </th>
+                        <th> &nbsp;&nbsp;Avion&nbsp;&nbsp; </th>
+                        <th> &nbsp;&nbsp;Precio&nbsp;&nbsp; </th>
                     </tr>
                 </thead>
                 <tbody id="listado"> </tbody>

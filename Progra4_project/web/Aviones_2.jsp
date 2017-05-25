@@ -81,16 +81,16 @@
             
             <!-- ---------------------- CUERPO ---------------------------- -->
       
-            <div style="display: block" id="tablaBusqueda">
-            <table border=2>
+        <div style="display: block" class="administracion" id="tablaBusqueda">
+            <table border=2 class="admi">
                 <thead>
                     <tr>
-                        <th> Código </th> 
-                        <th> Cant Asiento Fila </th>
-                        <th> Cant Filas </th>
-                        <th> Cant Pasajeros </th>
-                        <th> Marca </th>
-                        <th> Modelo </th> 
+                        <th> &nbsp;&nbsp;&nbsp; Código &nbsp;&nbsp;&nbsp;</th> 
+                        <th>&nbsp;&nbsp;&nbsp; Asientos por fila &nbsp;&nbsp;&nbsp;</th>
+                        <th> &nbsp;&nbsp;&nbsp; Filas &nbsp;&nbsp;&nbsp;</th>
+                        <th> &nbsp;&nbsp;&nbsp; Pasajeros &nbsp;&nbsp;&nbsp;</th>
+                        <th> &nbsp;&nbsp;&nbsp; Marca &nbsp;&nbsp;&nbsp;</th>
+                        <th>&nbsp;&nbsp;&nbsp; Modelo &nbsp;&nbsp;&nbsp; </th> 
                     </tr>
                 </thead>
                 <tbody id="listado"> </tbody>

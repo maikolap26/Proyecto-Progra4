@@ -81,13 +81,13 @@
             
             <!-- ---------------------- CUERPO ---------------------------- -->
             
-           <div style="display: block" id="tablaBusqueda">
-            <table border=2>
+           <div style="display: block" class="administracion" id="tablaBusqueda">
+            <table border=2 class="admi1">
                 <thead>
                     <tr>
-                        <th> Código Ciudad </th> 
-                        <th> Nombre </th>
-                        <th> País </th>
+                        <th> &nbsp;&nbsp; Código Ciudad &nbsp;&nbsp; </th> 
+                        <th> &nbsp;&nbsp;&nbsp;&nbsp; Nombre &nbsp;&nbsp;&nbsp;&nbsp; </th>
+                        <th> &nbsp;&nbsp;&nbsp;&nbsp; País &nbsp;&nbsp;&nbsp;&nbsp;</th>
                     </tr>
                 </thead>
                 <tbody id="listado"> </tbody>

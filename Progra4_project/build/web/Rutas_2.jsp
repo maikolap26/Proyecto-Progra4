@@ -80,14 +80,14 @@
             
             <!-- ---------------------- CUERPO ---------------------------- -->
             
-             <div style="display: block" id="tablaBusqueda">
-            <table border=2>
+            <div style="display: block" class="administracion" id="tablaBusqueda">
+            <table border=2 class="admi2">
                 <thead>
                     <tr>
-                        <th> Código Ruta </th> 
-                        <th> Ciudad Origen </th>
-                        <th> Ciudad Destino </th>
-                        <th> Duración </th>
+                        <th> &nbsp;&nbsp;Código Ruta&nbsp;&nbsp; </th> 
+                        <th> &nbsp;&nbsp;Ciudad Origen&nbsp;&nbsp; </th>
+                        <th> &nbsp;&nbsp;Ciudad Destino&nbsp;&nbsp; </th>
+                        <th> &nbsp;&nbsp;Duración&nbsp;&nbsp; </th>
                     </tr>
                 </thead>
                 <tbody id="listado"> </tbody>
