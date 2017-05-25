@@ -64,18 +64,18 @@ Proxy.getPromo = function (callback) {
     AJAX_req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     AJAX_req.send();
 };
-Proxy.vuelosSearch = function (origen, destino, callback) {
+Proxy.vuelosSearch = function (origen, destino,diaIda, callback) {
     var AJAX_req = new XMLHttpRequest();
     url = "/Progra4_project/AAMAirlinesService?action=vueloListSearch";
     AJAX_req.open("POST", url, true);
     AJAX_req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     AJAX_req.onreadystatechange = function () {
-        if (AJAX_req.readyState == 4 && AJAX_req.status === 200) {
+        if (AJAX_req.readyState === 4 && AJAX_req.status === 200) {
             var object = JSON.parse(AJAX_req.responseText, JsonUtils.revive);
             callback(object);
         }
     };
-    AJAX_req.send("origen=" + origen + "&destino=" + destino);
+    AJAX_req.send("origenYdestino=" + origen +"-"+ destino + "&diaIda=" + diaIda);
 };
 
 Proxy.userLogin = function (user, callBack) {
