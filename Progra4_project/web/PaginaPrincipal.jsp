@@ -240,41 +240,9 @@
             
             
             </div>
-            <!-- ---------------------- PIE DE PAGINA -------------------- -->
-            <div class="container_pie">
-                <div class="row ">
-                    <p class="text-center">
-                        Andres-Alex-Maikol Airlines
-                    </p>
-                    <p class="text-center">
-                        AAM es la marca comercial que representa a las aerolíneas latinoamericanas integradas en AAM Holdings S.A.
-                    </p>
-                    <p class="text-center">
-                        Contáctenos a los numeros:
-                    </p>
-                    <p class="text-center">
-                        (506): 8326-7394
-                    </p>
-                    <p class="text-center">
-                        (506): 8501-6092
-                    </p>
-                    <p class="text-center">
-                        (506): 8739-0871
-                    </p>
-                    <p class="text-center">
-                        Correo electronico: atencionAlCliente@aam.com
-                    </p>
-                </div>
-            </div>
-            <br>
-            <div class="container_pie" id="pie">
-                <div class="row">
-                    <p class="text-center">
-                        Derechos Reservados © · AAM Airlines · 2017
-                    </p>
-                </div>
-            </div>
-            </br>
+            <!-- ---------------------- PIE DE PAGINA ---------------------- -->
+
+            <%@ include file="Footer.jspf" %>
         </div>
         <!-- ------------------------ Parte de compras ---------------------- -->
         <div id="compra">

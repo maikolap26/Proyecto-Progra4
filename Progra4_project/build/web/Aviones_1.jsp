@@ -79,120 +79,87 @@
                 </ul>
             </div>       
             
-    <div class="container_cuerpo">
-        <form id="claro">
-            <div class="row" id="IngAdm">                
-                NUEVO INGRESO                
-            </div>
-            <div class="row" id="claro">
-                <div class="form-group">
-                    <label for="nombre" class="control-label col-md-12" id="claro">Codigo del avion</label>
-                    <div class="col-md-5">
-                        <input type="text" class="form-control" id="cod_Avion">
+            <div class="container_cuerpo">
+                <form id="claro">
+                    <div class="row" id="IngAdm">                
+                        NUEVO INGRESO                
                     </div>
-                </div>
-            </div>
-
-            <div class="row" id="claro">
-                <div class="form-group">
-                    <label for="Email" class="control-label col-md-12" id="claro">Cantidad de filas</label>
-                    <div class="col-md-5">
-                        <input type="text" class="form-control" id="cant_Filas">
+                    <div class="row" id="claro">
+                        <div class="form-group">
+                            <label for="nombre" class="control-label col-md-12" id="claro">Codigo del avion</label>
+                            <div class="col-md-5">
+                                <input type="text" class="form-control" id="cod_Avion">
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
 
-            <div class="row" id="claro">
-                <div class="form-group">
-                    <label for="tel" class="control-label col-md-12" id="claro">Cantidad de asiento por fila</label>
-                    <div class="col-md-5">
-                        <input type="text" class="form-control" id="cant_Asientos">
+                    <div class="row" id="claro">
+                        <div class="form-group">
+                            <label for="Email" class="control-label col-md-12" id="claro">Cantidad de filas</label>
+                            <div class="col-md-5">
+                                <input type="text" class="form-control" id="cant_Filas">
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
 
-            <div class="row" id="claro">
-                <div class="form-group">
-                    <label for="ti" class="control-label col-md-12" id="claro">Cantidad de pasajeros</label>
-                    <div class="col-md-5">
-                        <input type="text" class="form-control" id="cant_Pasa">
+                    <div class="row" id="claro">
+                        <div class="form-group">
+                            <label for="tel" class="control-label col-md-12" id="claro">Cantidad de asiento por fila</label>
+                            <div class="col-md-5">
+                                <input type="text" class="form-control" id="cant_Asientos">
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
 
-            <div class="row" id="claro">
-                <div class="form-group">
-                    <label for="ti" class="control-label col-md-12" id="claro">Marca</label>
-                    <div class="col-md-5">
-                        <input type="text" class="form-control" id="marca">
+                    <div class="row" id="claro">
+                        <div class="form-group">
+                            <label for="ti" class="control-label col-md-12" id="claro">Cantidad de pasajeros</label>
+                            <div class="col-md-5">
+                                <input type="text" class="form-control" id="cant_Pasa">
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            
-            <div class="row" id="claro">
-                <div class="form-group">
-                    <label for="ti" class="control-label col-md-12" id="claro">Modelo</label>
-                    <div class="col-md-5">
-                        <input type="text" class="form-control" id="modelo">
+
+                    <div class="row" id="claro">
+                        <div class="form-group">
+                            <label for="ti" class="control-label col-md-12" id="claro">Marca</label>
+                            <div class="col-md-5">
+                                <input type="text" class="form-control" id="marca">
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
 
-            <div class="row" id="claro">&nbsp;</div>
-
-            <div class="row" id="claro">
-                <div class="form-group">
-                    <div class="col-md-2">
-                        <button class="btn btn-primary form-control ui-button ui-widget ui-corner-all" id="btn" onclick="doSubmitAvion()" >Ingresar</button>
+                    <div class="row" id="claro">
+                        <div class="form-group">
+                            <label for="ti" class="control-label col-md-12" id="claro">Modelo</label>
+                            <div class="col-md-5">
+                                <input type="text" class="form-control" id="modelo">
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
 
-            <div class="row" id="claro">&nbsp;</div>
-            <div class="row" id="claro">&nbsp;</div>
-        </form>
-    </div>
-          <br>
-        <br>  
-            <!-- ---------------------- PIE DE PAGINA ---------------------- -->
-            <div class="container_pie">
-                <div class="row ">
-                    <p class="text-center">
-                        Andres-Alex-Maikol Airlines
-                    </p>
-                    <p class="text-center">
-                        AAM es la marca comercial que representa a las aerolíneas latinoamericanas integradas en AAM Holdings S.A.
-                    </p>
-                    <p class="text-center">
-                        Contáctenos a los numeros:
-                    </p>
-                    <p class="text-center">
-                        (506): 8326-7394
-                    </p>
-                    <p class="text-center">
-                        (506): 8501-6092
-                    </p>
-                    <p class="text-center">
-                        (506): 8739-0871
-                    </p>
-                    <p class="text-center">
-                        Correo electronico: atencionAlCliente@aam.com
-                    </p>
-                </div>
+                    <div class="row" id="claro">&nbsp;</div>
+
+                    <div class="row" id="claro">
+                        <div class="form-group">
+                            <div class="col-md-2">
+                                <button class="btn btn-primary form-control ui-button ui-widget ui-corner-all" id="btn" onclick="doSubmitAvion()" >Ingresar</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row" id="claro">&nbsp;</div>
+                    <div class="row" id="claro">&nbsp;</div>
+                </form>
             </div>
             <br>
-            <div class="container_pie" id="pie">
-                <div class="row">
-                    <p class="text-center">
-                        Derechos Reservados © · AAM Airlines · 2017
-                    </p>
-                </div>
-            </div>
-            </br>
+            <br>  
+            <!-- ---------------------- PIE DE PAGINA ---------------------- -->
+
+            <%@ include file="Footer.jspf" %>
+        
         </div>
-        
-        
-        
+
         <script src="http://code.jquery.com/jquery-latest.js">
         </script>
         <script src="js/bootstrap.min.js" type="text/javascript">

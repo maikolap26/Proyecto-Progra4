@@ -80,92 +80,61 @@
                 </ul>
             </div>
             
-    <div class="container_cuerpo">
-        <form id="claro">
-            <div class="row" id="IngAdm">                
-                NUEVO INGRESO                
-            </div>
-            <div class="row" id="claro">
-                <div class="form-group">
-                    <label for="nombre" class="control-label col-md-12" id="claro">Codigo de la ciudad</label>
-                    <div class="col-md-5">
-                        <input type="text" class="form-control" id="codigo">
+            <div class="container_cuerpo">
+                <form id="claro">
+                    <div class="row" id="IngAdm">                
+                        NUEVO INGRESO                
                     </div>
-                </div>
-            </div>
-
-            <div class="row" id="claro">
-                <div class="form-group">
-                    <label for="Email" class="control-label col-md-12" id="claro">Nombre</label>
-                    <div class="col-md-5">
-                        <input type="text" class="form-control" id="nombre">
+                    <div class="row" id="claro">
+                        <div class="form-group">
+                            <label for="nombre" class="control-label col-md-12" id="claro">Codigo de la ciudad</label>
+                            <div class="col-md-5">
+                                <input type="text" class="form-control" id="codigo">
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
 
-            <div class="row" id="claro">
-                <div class="form-group">
-                    <label for="tel" class="control-label col-md-12" id="claro">Pais</label>
-                    <div class="col-md-5">
-                        <input type="text" class="form-control" id="pais">
+                    <div class="row" id="claro">
+                        <div class="form-group">
+                            <label for="Email" class="control-label col-md-12" id="claro">Nombre</label>
+                            <div class="col-md-5">
+                                <input type="text" class="form-control" id="nombre">
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            
-            <div class="row" id="claro">&nbsp;</div>
 
-            <div class="row" id="claro">
-                <div class="form-group">
-                    <div class="col-md-2">
-                        <button class="btn btn-primary form-control ui-button ui-widget ui-corner-all" id="btn" onclick="doSubmitCiudades()">Ingresar</button>
+                    <div class="row" id="claro">
+                        <div class="form-group">
+                            <label for="tel" class="control-label col-md-12" id="claro">Pais</label>
+                            <div class="col-md-5">
+                                <input type="text" class="form-control" id="pais">
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
 
-            <div class="row" id="claro">&nbsp;</div>
-            <div class="row" id="claro">&nbsp;</div>
-        </form>
-    </div> 
+                    <div class="row" id="claro">&nbsp;</div>
+
+                    <div class="row" id="claro">
+                        <div class="form-group">
+                            <div class="col-md-2">
+                                <button class="btn btn-primary form-control ui-button ui-widget ui-corner-all" id="btn" onclick="doSubmitCiudades()">Ingresar</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row" id="claro">&nbsp;</div>
+                    <div class="row" id="claro">&nbsp;</div>
+                </form>
+            </div> 
             
             <br>
             <br>
             
             
             <!-- ---------------------- PIE DE PAGINA ---------------------- -->
-            <div class="container_pie">
-                <div class="row ">
-                    <p class="text-center">
-                        Andres-Alex-Maikol Airlines
-                    </p>
-                    <p class="text-center">
-                        AAM es la marca comercial que representa a las aerolíneas latinoamericanas integradas en AAM Holdings S.A.
-                    </p>
-                    <p class="text-center">
-                        Contáctenos a los numeros:
-                    </p>
-                    <p class="text-center">
-                        (506): 8326-7394
-                    </p>
-                    <p class="text-center">
-                        (506): 8501-6092
-                    </p>
-                    <p class="text-center">
-                        (506): 8739-0871
-                    </p>
-                    <p class="text-center">
-                        Correo electronico: atencionAlCliente@aam.com
-                    </p>
-                </div>
-            </div>
-            <br>
-            <div class="container_pie" id="pie">
-                <div class="row">
-                    <p class="text-center">
-                        Derechos Reservados © · AAM Airlines · 2017
-                    </p>
-                </div>
-            </div>
-            </br>
+
+            <%@ include file="Footer.jspf" %>
+            
         </div>
        
         <script src="http://code.jquery.com/jquery-latest.js">

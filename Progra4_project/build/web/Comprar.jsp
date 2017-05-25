@@ -4,11 +4,11 @@
     Author     : ACS
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
+    <%@page contentType="text/html" pageEncoding="UTF-8"%>
+    <!DOCTYPE html>
+    <html>
 
-<head>
+    <head>
 	<title>Comprar</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,9 +24,9 @@
 	<script src="js/funcionesJQuery.js" type="text/javascript"></script>
 	<script src="js/Metodos.js" type="text/javascript"></script>
 	<script src="js/Usuario.js" type="text/javascript"></script>
-</head>
+    </head>
 
-<body class="pagina">
+    <body class="pagina">
 
 	<!------------------------------- ENCABEZADO ------------------------------->
         
@@ -37,113 +37,91 @@
 	<!-------------------------------BUSCAR VUELOS----------------------------------------->
 
 	<div class="tableVuelos">
-		<section>
-			<table class="grid">
-				<thead>
-					<tr>
-						<th colspan="4"> Vuelos </th>
-
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>&nbsp;</td>
-					</tr>
-					<tr>
-						<td>&nbsp; Origen: </td>
-						<td>&nbsp;</td>
-						<td> Destino:</td>
-					</tr>
-					<tr>
-
-						<td><input type="text" class="bo"> </td>
-						<td> </td>
-						<td><input type="text" class="bo"> </td>
-						</td>
-					</tr>
-					<tr>
-						<td>&nbsp;</td>
-					</tr>
-					<tr>
-						<td>&nbsp; ¿Fechas?</td>
-					</tr>
-					<tr>
-						<td>&nbsp;</td>
-					</tr>
-					<tr>
-						<td>&nbsp; Partida: </td>
-						<td>&nbsp;</td>
-						<td>Regreso: </td>
-					</tr>
-					<tr>
-						<tr>
-							<td><input type="text" id="datepicker1" class="datepicker" style="z-index: 15;"></td>
-							<td> </td>
-							<td><input type="text" id="datepicker2" class="datepicker" style="z-index: 15;"></td>
-							</td>
-						</tr>
-						<tr>
-							<td>&nbsp;</td>
-						</tr>
-						<tr>
-							<td>&nbsp; Cantidad: </td>
-						</tr>
-						<tr>
-							<td> <select name="combo" class="bo">
-									<option value="1">1</option>
-									<option value="2">2</option>
-									<option value="3">3</option>
-									<option value="4">4</option>
-									<option value="5">5</option>
-									<option value="6">6</option>
-									<option value="7">7</option>
-									<option value="8">8</option>
-									<option value="9">9</option>
-									<option value="10">10</option>
-								</select></td>
-						</tr>
-						<tr>
-							<td>&nbsp;</td>
-						</tr>
-				</tbody>
-				<tfoot>
-					<tr>
-						<td colspan="4"> <input type="button" value="Comprar" class="boton"> </td>
-					</tr>
-					<tr>
-						<td>&nbsp;</td>
-					</tr>
-				</tfoot>
-			</table>
-		</section>
+            <section>
+		<table class="grid">
+                    <thead>
+			<tr>
+                            <th colspan="4"> Vuelos </th>
+			</tr>
+                    </thead>
+                    <tbody>
+			<tr>
+                            <td>&nbsp;</td>
+			</tr>
+			<tr>
+                            <td>&nbsp; Origen: </td>
+                            <td>&nbsp;</td>
+                            <td> Destino:</td>
+			</tr>
+			<tr>
+                            <td><input type="text" class="bo"> </td>
+                            <td> </td>
+                            <td><input type="text" class="bo"> </td>
+			
+			</tr>
+			<tr>
+                            <td>&nbsp;</td>
+			</tr>
+			<tr>
+                            <td>&nbsp; ¿Fechas?</td>
+			</tr>
+			<tr>
+                            <td>&nbsp;</td>
+			</tr>
+			<tr>
+                            <td>&nbsp; Partida: </td>
+                            <td>&nbsp;</td>
+                            <td>Regreso: </td>
+			</tr>
+			<tr>
+                            <td><input type="text" id="datepicker1" class="datepicker" style="z-index: 15;"></td>
+                            <td> </td>
+                            <td><input type="text" id="datepicker2" class="datepicker" style="z-index: 15;"></td>
+			</tr>
+			<tr>
+                            <td>&nbsp;</td>
+			</tr>
+			<tr>
+                            <td>&nbsp; Cantidad: </td>
+			</tr>
+			<tr>
+                            <td> 
+                                <select name="combo" class="bo">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+				</select>
+                            </td>
+			</tr>
+			<tr>
+                            <td>&nbsp;</td>
+			</tr>
+                    </tbody>
+                    <tfoot>
+			<tr>
+                            <td colspan="4"> <input type="button" value="Comprar" class="boton"> </td>
+			</tr>
+			<tr>
+                            <td>&nbsp;</td>
+			</tr>
+                    </tfoot>
+		</table>
+            </section>
 	</div>
 
 	<!------------------------------- TERMINA BUSCAR VUELOS ------------------------------->
-
 	<br>
 	<br>
+        <!-- ---------------------- PIE DE PAGINA ---------------------- -->
 
-	<!------------------------------- PIE DE PAGINA ------------------------------->
-
-	<div class="container_pie">
-		<div class="row ">
-			<p class="text-center">Andres-Alex-Maikol Airlines </p>
-			<p class="text-center">AAM es la marca comercial que representa a las aerolíneas latinoamericanas integradas en AAM Holdings S.A.</p>
-			<p class="text-center">Contáctenos a los numeros: </p>
-			<p class="text-center">(506): 8326-7394</p>
-			<p class="text-center">(506): 8501-6092</p>
-			<p class="text-center">(506): 8739-0871</p>
-			<p class="text-center">Correo electronico: atencionAlCliente@aam.com </p>
-		</div>
-	</div>
-
-	<br>
-
-	<div class="container_pie" id="pie">
-		<div class="row">
-			<p class="text-center">Derechos Reservados © · AAM Airlines · 2017</p>
-		</div>
-	</div>
+            <%@ include file="Footer.jspf" %>
 
 	<!------------------------------- TERMINA PIE DE PAGINA ------------------------------->
 

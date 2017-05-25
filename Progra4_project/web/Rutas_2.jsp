@@ -56,82 +56,52 @@
     <body>
         <!-- ------------------------ Cuerpo de la pagina ------------------ -->
         <div class="pagina" id="cuerpo">
-            <!-- ---------------------- ENCABEZADO ------------------------- -->
-            <%@ include file="AdminMenu.jspf" %>
-            
-           <div class="SubAdmin">
-                <ul class="MyMenuSubAdmi">
-                    <li>
-                        <a href="Rutas_1.jsp" title="Nuevo Ingreso">
-                            <image border="0" src="">
-                            Nuevo Ingreso
-                            </image>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="Rutas_2.jsp" title="Administrar">
-                            <image border="0" src="">
-                            Administrar
-                            </image>
-                        </a>
-                    </li>               
-                </ul>
-            </div>
-            
-            <!-- ---------------------- CUERPO ---------------------------- -->
-            
-            <div style="display: block" class="administracion" id="tablaBusqueda">
-            <table border=2 class="admi2">
-                <thead>
-                    <tr>
-                        <th> &nbsp;&nbsp;Código Ruta&nbsp;&nbsp; </th> 
-                        <th> &nbsp;&nbsp;Ciudad Origen&nbsp;&nbsp; </th>
-                        <th> &nbsp;&nbsp;Ciudad Destino&nbsp;&nbsp; </th>
-                        <th> &nbsp;&nbsp;Duración&nbsp;&nbsp; </th>
-                    </tr>
-                </thead>
-                <tbody id="listado"> </tbody>
+                <!-- ---------------------- ENCABEZADO ------------------------- -->
+                <%@ include file="AdminMenu.jspf" %>
 
-            </table>
-        </div>
+               <div class="SubAdmin">
+                    <ul class="MyMenuSubAdmi">
+                        <li>
+                            <a href="Rutas_1.jsp" title="Nuevo Ingreso">
+                                <image border="0" src="">
+                                Nuevo Ingreso
+                                </image>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Rutas_2.jsp" title="Administrar">
+                                <image border="0" src="">
+                                Administrar
+                                </image>
+                            </a>
+                        </li>               
+                    </ul>
+                </div>
+
+                <!-- ---------------------- CUERPO ---------------------------- -->
+
+                <div style="display: block" class="administracion" id="tablaBusqueda">
+                <table border=2 class="admi2">
+                    <thead>
+                        <tr>
+                            <th> &nbsp;&nbsp;Código Ruta&nbsp;&nbsp; </th> 
+                            <th> &nbsp;&nbsp;Ciudad Origen&nbsp;&nbsp; </th>
+                            <th> &nbsp;&nbsp;Ciudad Destino&nbsp;&nbsp; </th>
+                            <th> &nbsp;&nbsp;Duración&nbsp;&nbsp; </th>
+                        </tr>
+                    </thead>
+                    <tbody id="listado"> </tbody>
+
+                </table>
+            </div>
+
+            <!-- ---------------------- PIE DE PAGINA ---------------------- -->
+
+            <%@ include file="Footer.jspf" %>
             
-          <!-- ---------------------- PIE DE PAGINA ---------------------- -->
-            <div class="container_pie">
-                <div class="row ">
-                    <p class="text-center">
-                        Andres-Alex-Maikol Airlines
-                    </p>
-                    <p class="text-center">
-                        AAM es la marca comercial que representa a las aerolíneas latinoamericanas integradas en AAM Holdings S.A.
-                    </p>
-                    <p class="text-center">
-                        Contáctenos a los numeros:
-                    </p>
-                    <p class="text-center">
-                        (506): 8326-7394
-                    </p>
-                    <p class="text-center">
-                        (506): 8501-6092
-                    </p>
-                    <p class="text-center">
-                        (506): 8739-0871
-                    </p>
-                    <p class="text-center">
-                        Correo electronico: atencionAlCliente@aam.com
-                    </p>
-                </div>
-            </div>
-            <br>
-            <div class="container_pie" id="pie">
-                <div class="row">
-                    <p class="text-center">
-                        Derechos Reservados © · AAM Airlines · 2017
-                    </p>
-                </div>
-            </div>
-            </br>
         </div>
-       
+        
+        
         <script src="http://code.jquery.com/jquery-latest.js">
         </script>
         <script src="js/bootstrap.min.js" type="text/javascript">

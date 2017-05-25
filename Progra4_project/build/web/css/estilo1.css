@@ -349,7 +349,12 @@
 	    margin-top: 5%;
 	    margin-bottom: 4%;
 	}
-/* ----------------------  LOG IN ---------------------- */		
+/* ----------------------  LOG IN ---------------------- */
+
+        #Log{
+            padding-left: 68%;
+        }
+        
 	.inicioSesion {
 	    display: block;
             color: white;
@@ -384,7 +389,6 @@
 	.logueado {
 	    display: block;
 	}
-	
 	.anchor {
 	    text-decoration: none;
 	    background: black;
