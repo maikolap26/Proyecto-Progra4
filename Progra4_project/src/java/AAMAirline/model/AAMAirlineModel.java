@@ -90,16 +90,17 @@ public class AAMAirlineModel {
         return new ArrayList(Arrays.asList(vuelos));
     }
 
-    public List<Vuelo> getVuelos(String origen, String destino) {
+     public List<Vuelo> getVuelos(String origen, String destino, String diaIda) {
         ArrayList<Vuelo> result = new ArrayList();
         for (Vuelo v : this.getVuelos1()) {
-            if (v.getRuta().getCiudadO().getNombre().contains(origen) && v.getRuta().getCiudadD().getNombre().contains(destino)) {
+            if (v.getRuta().getCiudadO().getNombre().contains(origen)
+                    && v.getRuta().getCiudadD().getNombre().contains(destino) 
+                        && v.getDia_salida().contains(diaIda)) {
                 result.add(v);
             }
         }
         return result;
     }
-
     public List<Vuelo> getVuelos1() {
         List<Vuelo> vuelos;
         vuelos = new ArrayList();

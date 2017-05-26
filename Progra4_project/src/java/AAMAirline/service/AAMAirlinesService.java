@@ -79,9 +79,14 @@ public class AAMAirlinesService extends HttpServlet {
                     out.write(json);
                     break;
                 case "vueloListSearch":
-                    String origen = request.getParameter("origen");
-                    String destino = request.getParameter("destino");
-                    vuelos = model.getVuelos(origen, destino);
+                    String oYd = request.getParameter("origenYdestino");
+                    String delimiter="-";
+                    String[] temp;
+                    temp = oYd.split(delimiter);
+                    String origen=temp[0];
+                    String destino=temp[1];
+                    String diaIda = request.getParameter("diaIda");
+                    vuelos = model.getVuelos(origen, destino, diaIda);
                     json = gson.toJson(vuelos);
                     out.write(json);
                     break;
