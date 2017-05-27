@@ -3,7 +3,9 @@
 	    font-size: 0px;
 	    /* Sin espacio entre opciones */
 	}
-	
+        .seleccionado{
+            background-color: greenyellow;
+        }
 	ul.MyMenu li {
 	    /* Establece tamaño letra */
 	    font-size: 20px;
@@ -440,13 +442,18 @@
 	}
 	
 	.asiento {
-	    width: 85%;
+	     width: 85%;
 	    height: 100%;
-	    background: white;
 	    margin-top: 6%;
 	    margin-left: 20%;
 	    text-align: center;
 	}
+        .seleccionado{
+            background-color: greenyellow;
+        }
+        .bordeRojo{
+            border:1px solid red;
+        }
 	
 	.asientoV {
 	    width: 85%;

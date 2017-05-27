@@ -8,13 +8,10 @@ var numeroVuelo;
 var asientosSelec;
 var asientos = [];
 var cantidad = 0;
-<<<<<<< HEAD
 var map;
 var markers = [];
-
-=======
 var orden=[];
->>>>>>> origin/master
+
 function pageLoad(event) {
     model = new AAMModel();
     vuelos = model.vuelos;
@@ -36,22 +33,20 @@ function pageLoad(event) {
         c.addEventListener("click", mostrarAsientos);
         b.disabled = false;
         a.addEventListener("click", cancelOrden);
-    }
-<<<<<<< HEAD
-=======
-    
+    }   
     document.getElementById("terminarOrden2").addEventListener("click",cancelarOrden);
-
->>>>>>> origin/master
 }
+
 function deshabilitarRegreso(){
     normalizar();
     document.getElementById("datepicker2").disabled = true;
 }
+
 function habilitarRegreso(){
     normalizar();
     document.getElementById("datepicker2").disabled = false;
 }
+
 function llenarDescuentos() {
     for (var i = 1; i < 6; i++) {
         var imagen = document.createElement("img");
@@ -66,6 +61,7 @@ function llenarDescuentos() {
             actual.appendChild(imagen);
     }
 }
+
 function llenarSelects() {
     var origen = document.getElementById("origen");
     var destino = document.getElementById("destino");
@@ -83,6 +79,7 @@ function llenarSelects() {
         destino.appendChild(option);
     }
 }
+
 function goAsientos() {
     document.getElementById("info").style.display = "none";
     document.getElementById("goTi").style.color = "gray";
@@ -136,6 +133,7 @@ function goAsientos() {
     }
     avionAsi.appendChild(div2);
 }
+
 function mostrarAsientos(){
     var numero= numeroVuelo;
     var avion = model.buscados[numero].avion; 
@@ -179,14 +177,17 @@ function mostrarAsientos(){
         avionAsi.appendChild(fila);
     }
 }
-<<<<<<< HEAD
+
+
 function agregaAsiento() {
     if (asientos.length === cantidad) {
         while (asientos.length > 0) {
             var as = asientos.pop();
             document.getElementById(as.id).classList.remove("seleccionado");
         }
-=======
+    }
+}
+
 function crearBotones(){
     
     var divB= document.createElement("div");
@@ -205,6 +206,7 @@ function crearBotones(){
     divB.appendChild(boton2);
     asientos.appendChild(divB);
 }
+
 function cancelarOrden(){
      var compra =  document.getElementById("avionAsientos");
    // compra.classList.remove("popupComprar");
@@ -213,6 +215,7 @@ function cancelarOrden(){
     document.getElementById("cuerpo").style.opacity = 1;
     
 }
+
 function ordenCompletada(){
     if(asientos.length < cantidad){
         alert("Selecciones los "+ cantidad +" asiento(s)." );
@@ -240,25 +243,28 @@ function ordenCompletada(){
     }
     
 }
+
 function agregaAsiento(){
     if(asientos.length === cantidad){
         while(asientos.length > 0){
              var as= asientos.pop();
               document.getElementById(as.id).classList.remove("seleccionado");
           }
->>>>>>> origin/master
+
     }
     this.classList.add("seleccionado");
     asientos.push(this);
     
 }
+
 function cancelOrden() {
     var compra = document.getElementById("compra");
     compra.style.display = "none";
     document.getElementById("cuerpo").style.opacity = 1;
 }
+
 function showBuscados() {
-    //controller.buscar();
+
     if(!fechaVacia())
         return;
     else{
@@ -305,6 +311,7 @@ function showBuscados() {
         s.appendChild(t);
     }
 }
+
 function fechaVacia(){
     var fecPar = document.getElementById("datepicker1").value;
     var fecLle = document.getElementById("datepicker2").value;
@@ -322,10 +329,12 @@ function fechaVacia(){
     
     return true;
 }
+
 function normalizar(){
     document.getElementById("datepicker1").classList.remove("bordeRojo");
     document.getElementById("datepicker2").classList.remove("bordeRojo");
 }
+
 function openInfo() {
    // if(document.getElementById("uar") === null){
    //     alert("Debe iniciar sesión para hacer una compra");
@@ -354,27 +363,33 @@ function openInfo() {
     orden.push(model.buscados[index]);
     return true;
 }
+
 function diaSemana(dia,mes,anio){
     var dias=["domingo", "lunes", "martes", "miercoles", "jueves", "vieenes", "sabados"];
     var dt = new Date(mes+' '+dia+', '+anio+' 12:00:00');
     return dias[dt.getUTCDay()];    
 }
+
 function doFocus(event) {
     event.target.className = "focus";
 }
+
 function doBlur(event) {
     event.target.className = "nofocus";
 }
+
 function redireccionar() {
     location = "Registro.jsp";
 }
-<<<<<<< HEAD
+
 function redireccionar1() {
     location = "UsuarioCliente.jsp";
 }
+
 function redireccionar2() {
     location = "UsuarioAdmin.jsp";
 }
+
 function enableInput(){
     document.getElementById("correo").disabled = false;
     document.getElementById("contraseña").disabled = false;
@@ -386,8 +401,6 @@ function enableInput(){
     document.getElementById("celular").disabled = false;
 }
 
-=======
->>>>>>> origin/master
 function doValidate(event) {
     var user = document.getElementById("usuario");
     var contraseña = document.getElementById("contraseña");
@@ -475,6 +488,7 @@ function doValidate(event) {
     }
 
 }
+
 function doSubmit() {
     var user = document.getElementById("usuario");
     var contraseña = document.getElementById("contraseña");
@@ -495,6 +509,7 @@ function doSubmit() {
     }
     //formulario.reset();
 }
+
 function doSubmitAvion() {
     var codigo = document.getElementById("cod_Avion");
     var cantAsF = document.getElementById("cant_Asientos");
@@ -506,6 +521,7 @@ function doSubmitAvion() {
     var av1 = new Avion(codigo.value, modelo.value, marca.value, cantPas.value, cantFil.value, cantAsF.value);
     Proxy.guardar1(av1, function (result) {});
 }
+
 function doSubmitCiudades() {
     var codigo = document.getElementById("codigo");
     var nombre = document.getElementById("nombre");
@@ -514,6 +530,7 @@ function doSubmitCiudades() {
     var ciudad = new Ciudad(codigo.value, nombre.value, pais.value);
     Proxy.guardar2(ciudad, function (result) {});
 }
+
 function doSubmitRutas() {
     var codigo = document.getElementById("codigo");
     var origen = document.getElementById("origen");
@@ -530,6 +547,7 @@ function doSubmitRutas() {
     var rutas = new Ruta(codigo.value, ciudadO, ciudadD, duracion.value);
     Proxy.guardar3(rutas, function (result) {});
 }
+
 function doSubmitVuelos() {
     var codigo = document.getElementById("codigo_vuelo");
     var codigo1 = document.getElementById("codigo_ruta");
@@ -554,7 +572,6 @@ function doSubmitVuelos() {
     var vuelos = new Vuelo(codigo.value, salida.value, horaS.value, horaL.value, ruta, avion, precio.value);
     Proxy.guardar4(vuelos, function (result) {});
 }
-<<<<<<< HEAD
 
 // ------------------------------- ACTUALIZAR DATOS DEL PERFIL DE USUARIO CLIENTE -------------------------------
 function doPerfil1(){
@@ -575,6 +592,7 @@ function doPerfil1(){
         });
     }
 }
+
 // ------------------------------- ACTUALIZAR DATOS DEL PERFIL DE USUARIO ADMINISTRADOR -------------------------
 function doPerfil2(){
     var user = document.getElementById("usuario");
@@ -595,8 +613,6 @@ function doPerfil2(){
     }
 }
 
-=======
->>>>>>> origin/master
 function listAvion(listado, av) {
     var tr = document.createElement("tr");
     var td;
@@ -627,6 +643,7 @@ function listAvion(listado, av) {
     listado.appendChild(tr);
 
 }
+
 function listAviones(ps) {
     var listado = document.getElementById("listado");
     listado.innerHTML = "";
@@ -634,10 +651,13 @@ function listAviones(ps) {
         listAvion(listado, ps[i]);
     }
 }
+
 function llenarAviones() {
     listAviones(model.buscados);
 }
+
 /*------------------------------------------------------------------------*/
+
 function listCiudad(listado, av) {
     var tr = document.createElement("tr");
     var td;
@@ -656,6 +676,7 @@ function listCiudad(listado, av) {
     listado.appendChild(tr);
 
 }
+
 function listCiudades(ps) {
     var listado = document.getElementById("listado");
     listado.innerHTML = "";
@@ -663,11 +684,13 @@ function listCiudades(ps) {
         listCiudad(listado, ps[i]);
     }
 }
+
 function llenarCiudades() {
     listCiudades(model.buscados);
 }
 
 /*------------------------------------------------------------------------*/
+
 function listRuta(listado, av) {
     var tr = document.createElement("tr");
     var td;
@@ -690,6 +713,7 @@ function listRuta(listado, av) {
     listado.appendChild(tr);
 
 }
+
 function listRutas(ps) {
     var listado = document.getElementById("listado");
     listado.innerHTML = "";
@@ -697,10 +721,13 @@ function listRutas(ps) {
         listRuta(listado, ps[i]);
     }
 }
+
 function llenarRutas() {
     listRutas(model.buscados);
 }
+
 /*----------------------------------------------------------------*/
+
 function listVuelo(listado, av) {
     var tr = document.createElement("tr");
     var td;
@@ -734,6 +761,7 @@ function listVuelo(listado, av) {
     listado.appendChild(tr);
 
 }
+
 function listVuelos(ps) {
     var listado = document.getElementById("listado");
     listado.innerHTML = "";
@@ -741,10 +769,10 @@ function listVuelos(ps) {
         listVuelo(listado, ps[i]);
     }
 }
+
 function llenarVuelos() {
     listVuelos(model.buscados);
 }
-<<<<<<< HEAD
 
 /* ------------------------------------------------------------------- */
 /* ---------------------------    MAPA   ----------------------------- */
@@ -815,6 +843,4 @@ function deleteMarkers() {
 /* ------------------------------------------------------------------- */
 /* ------------------------------------------------------------------- */
 
-=======
->>>>>>> origin/master
 document.addEventListener("DOMContentLoaded", pageLoad);

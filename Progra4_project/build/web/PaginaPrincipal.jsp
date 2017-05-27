@@ -13,9 +13,55 @@
         <title>
             Inicio
         </title>
+<<<<<<< HEAD
         
         <%@ include file="include.jspf" %>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBacqOt9JhJHdDa2ttf3mCgLyor01XJ5HQ&callback=myMap"></script>
+=======
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <link href="css/boots	trap.min.css" rel="stylesheet" type="text/css"/>
+        <link href="css/estilo1.css" rel="stylesheet" type="text/css"/>
+        <script src="https://code.jquery.com/jquery-1.10.2.js">
+        </script>
+        <script src="js/script.js" type="text/javascript">
+        </script>
+        <link href="css/normalize.css" rel="stylesheet" type="text/css"/>
+        <link href="css/datepicker.css" rel="stylesheet" type="text/css"/>
+        <script src="js/jquery-1.7.1.min.js" type="text/javascript">
+        </script>
+        <script src="js/Avion.js" type="text/javascript">
+        </script>
+        <script src="js/jquery-ui-1.8.18.custom.min.js" type="text/javascript">
+        </script>
+        <script src="js/funcionesJQuery.js" type="text/javascript">
+        </script>
+         <script src="js/Avion.js" type="text/javascript">
+        </script>
+        <script src="js/Ciudad.js" type="text/javascript">
+        </script>
+        <script src="js/Vuelo.js" type="text/javascript">
+        </script>
+        <script src="js/Ruta.js" type="text/javascript">
+        </script>
+        <script src="js/Tiquete.js" type="text/javascript">
+        </script>
+        <script src="js/Usuario.js" type="text/javascript">
+        </script>
+        <script src="js/Proxy.js" type="text/javascript">
+        </script>
+        <script src="js/JsonUtils.js" type="text/javascript">
+        </script>
+        <script src="js/PP-Vista.js" type="text/javascript">
+        </script>
+        <script src="js/PP-Controlador.js" type="text/javascript">
+        </script>
+        <script src="js/PP-Modelo.js" type="text/javascript">
+        </script>
+
+        </meta>
+        </meta>
+>>>>>>> origin/master
     </head>
     <body>
         <!-- ------------------------ Cuerpo de la pagina ------------------ -->
@@ -53,6 +99,14 @@
                                         <td>
                                             <select class="bo" id="destino" type="text">
                                             </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left" class="fila">
+                                            <input id="ida" name="radio" type="radio" value="Ida"/> Ida
+                                        </td>
+                                        <td align="left" class="fila">
+                                            <input  checked="checked" id="idaYvuelta" name="radio" type="radio" value="Ida y vuelta"/> Ida y Vuelta
                                         </td>
                                     </tr>
                                     <tr class="fila">
@@ -228,6 +282,7 @@
                                     Destino:
                                 </td>
                             </tr>
+                            
                             <tr>
                                 <td>
                                     <label class="bo" id="origenC">
@@ -293,6 +348,97 @@
                 </div>
             </div>
             <div class="derAv" id="avionAsientos">
+            </div>
+            <div id ="aquiOrden" style="display: none;">
+                         <table class="grid">
+                        <thead>
+                            <tr>
+                                <th colspan="4">
+                                    Orden de Compra
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="fila">
+                                    Origen:
+                                </td>
+                                <td class="fila">
+                                    Destino:
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label class="bo" id="origenC2">
+                                    </label>
+                                </td>
+                                <td>
+                                    <label class="bo" id="destinoC2">
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr class="fila">
+                                <td class="fila">
+                                    Partida:
+                                </td>
+                                <td class="fila">
+                                    Regreso:
+                                </td>
+                            </tr>
+                            <tr class="fila">
+                            <tr>
+                                <td>
+                                    <label class="bo" id="partida2">
+                                    </label>
+                                </td>
+                                <td>
+                                    <label class="bo" id="regreso2">
+                                    </label>
+                                </td>
+                            </tr>
+                            </tr>
+                            <tr>
+                                <td class="fila">
+                                    Asientos:
+                                </td>
+                                <td id="aquiVan">
+                                    <label class="bo" id="estosSon">
+                                        
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="fila">
+                                    Cantidad:
+                                </td>
+                                <td class="fila">
+                                    Precio:
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="cantidad">
+                                    <label class="bo" id="cantidad2">
+                                    </label>
+                                </td>
+                                <td class="fila">
+                                    <label class="bo" id="price2">
+                                    </label>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td class="fila">
+                                    <input class="boton" id="terminarOrden2" type="button" value="Cancelar">
+                                    </input>
+                                </td>
+                                <td class="fila" colspan="2">
+                                    <input class="boton" id="terminarOrden" type="button" value="Continuar">
+                                    </input>
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
             </div>
         </div>
         <script src="http://code.jquery.com/jquery-latest.js">
