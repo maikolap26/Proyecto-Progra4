@@ -6,7 +6,9 @@ AAMController.prototype = {
     AAMController: function (model, view) {
         this.model = model;
         this.view = view;
-        if (window.location.pathname != "/Progra4_project/Registro.jsp" && window.location.pathname != "/Progra4_project/Aviones_2.jsp") {
+        if (window.location.pathname != "/Progra4_project/Registro.jsp" && window.location.pathname != "/Progra4_project/Aviones_2.jsp"
+                && window.location.pathname != "/Progra4_project/Rutas_1.jsp" && window.location.pathname != "/Progra4_project/Vuelos_1.jsp"
+                && window.location.pathname != "/Progra4_project/Ciudades_1.jsp" && window.location.pathname != "/Progra4_project/Aviones_1.jsp") {
             Proxy.getCiudades(function (result) {
                 model.ciudades = result;
                 view.llenarSelects();

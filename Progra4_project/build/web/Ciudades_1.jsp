@@ -81,7 +81,7 @@
             </div>
             
             <div class="container_cuerpo">
-                <form id="claro">
+                <form id="claro" action="javascript:doSubmitCiudades()">
                     <div class="row" id="IngAdm">                
                         NUEVO INGRESO                
                     </div>
@@ -117,7 +117,7 @@
                     <div class="row" id="claro">
                         <div class="form-group">
                             <div class="col-md-2">
-                                <button class="btn btn-primary form-control ui-button ui-widget ui-corner-all" id="btn" onclick="doSubmitCiudades()">Ingresar</button>
+                               <input class="btn btn-primary form-control ui-button ui-widget ui-corner-all" id="btn" type="submit" value="Ingresar">
                             </div>
                         </div>
                     </div>

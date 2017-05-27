@@ -90,17 +90,18 @@ public class AAMAirlineModel {
         return new ArrayList(Arrays.asList(vuelos));
     }
 
-     public List<Vuelo> getVuelos(String origen, String destino, String diaIda) {
+    public List<Vuelo> getVuelos(String origen, String destino, String diaIda) {
         ArrayList<Vuelo> result = new ArrayList();
         for (Vuelo v : this.getVuelos1()) {
             if (v.getRuta().getCiudadO().getNombre().contains(origen)
-                    && v.getRuta().getCiudadD().getNombre().contains(destino) 
-                        && v.getDia_salida().contains(diaIda)) {
+                    && v.getRuta().getCiudadD().getNombre().contains(destino)
+                    && v.getDia_salida().contains(diaIda)) {
                 result.add(v);
             }
         }
         return result;
     }
+
     public List<Vuelo> getVuelos1() {
         List<Vuelo> vuelos;
         vuelos = new ArrayList();
@@ -307,17 +308,20 @@ public class AAMAirlineModel {
     public static int guardar4(Ruta ru) throws Exception {
         String sql = "insert into " + "ruta (codigo_ruta,ciudad_origen,ciudad_destino,duracion)"
                 + "values('%s','%s','%s','%s')";
-        sql = String.format(sql, ru.getCodigo_ruta(), ru.getCiudadO().getCodigo_ciudad(), ru.getCiudadD().getCodigo_ciudad(), ru.getDuracion());
-        ResultSet rs = BD.executeUpdateWithKeys(sql);
-        if (rs != null) {
-            if (rs.next()) {
-                return rs.getInt(1);
+        if (ru.getCiudadO() != null) {
+            sql = String.format(sql, ru.getCodigo_ruta(), ru.getCiudadO().getCodigo_ciudad(), ru.getCiudadD().getCodigo_ciudad(), ru.getDuracion());
+            ResultSet rs = BD.executeUpdateWithKeys(sql);
+            if (rs != null) {
+                if (rs.next()) {
+                    return 0;
+                } else {
+                    return 1;
+                }
             } else {
-                return 0;
+                return 1;
             }
-        } else {
-            return 1;
         }
+        return 1;
     }
 
     public static int guardar5(Vuelo vu) throws Exception {
@@ -386,7 +390,7 @@ public class AAMAirlineModel {
         return rutas;
     }
 
-    public static List<Ciudad> getCiudad(String codigo, String codigo1) {
+    public static List<Ciudad> getCiudad(String codigo) {
         List<Ciudad> ciudades;
         ciudades = new ArrayList();
         try {
@@ -397,14 +401,6 @@ public class AAMAirlineModel {
             while (rs.next()) {
                 ciudades.add(toCiudad(rs));
             }
-            String sql2 = "select * "
-                    + "from ciudad  c where codigo_ciudad= '%s' ";
-            sql2 = String.format(sql2, codigo1);
-            ResultSet rs1 = BD.executeQuery(sql2);
-            while (rs1.next()) {
-                ciudades.add(toCiudad(rs1));
-            }
-
         } catch (SQLException ex) {
         }
         return ciudades;
@@ -416,7 +412,7 @@ public class AAMAirlineModel {
         try {
             String sql = "select * "
                     + "from ruta  c where codigo_ruta= '%s'";
-            sql=String.format(sql, codigo);
+            sql = String.format(sql, codigo);
             ResultSet rs = BD.executeQuery(sql);
             while (rs.next()) {
                 rutas.add(toRuta(rs));
@@ -433,7 +429,7 @@ public class AAMAirlineModel {
         try {
             String sql = "select * "
                     + "from avion  c where codigo_avion= '%s'";
-            sql=String.format(sql, codigo);
+            sql = String.format(sql, codigo);
             ResultSet rs = BD.executeQuery(sql);
             while (rs.next()) {
                 aviones.add(toAvion(rs));
@@ -443,5 +439,5 @@ public class AAMAirlineModel {
         }
         return aviones;
     }
-    
+
 }

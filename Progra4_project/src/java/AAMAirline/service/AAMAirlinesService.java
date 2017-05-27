@@ -56,8 +56,8 @@ public class AAMAirlinesService extends HttpServlet {
                     break;
                 case "getCiudad":
                     String cod = request.getParameter("codigo1");
-                    String cod1 = request.getParameter("codigo2");
-                    ciudades = model.getCiudad(cod, cod1);
+                    //String cod1 = request.getParameter("codigo2");
+                    ciudades = model.getCiudad(cod);
                     json = gson.toJson(ciudades);
                     out.write(json);
                     break;
@@ -80,11 +80,11 @@ public class AAMAirlinesService extends HttpServlet {
                     break;
                 case "vueloListSearch":
                     String oYd = request.getParameter("origenYdestino");
-                    String delimiter="-";
+                    String delimiter = "-";
                     String[] temp;
                     temp = oYd.split(delimiter);
-                    String origen=temp[0];
-                    String destino=temp[1];
+                    String origen = temp[0];
+                    String destino = temp[1];
                     String diaIda = request.getParameter("diaIda");
                     vuelos = model.getVuelos(origen, destino, diaIda);
                     json = gson.toJson(vuelos);
@@ -121,40 +121,57 @@ public class AAMAirlinesService extends HttpServlet {
                     String ac = request.getParameter("us");
                     Usuario us1 = gson.fromJson(ac, Usuario.class);
                     if (model.guardar1(us1) == 1) {
-                        request.getSession().setAttribute("error", "error");
-                        request.getRequestDispatcher("/Registro.jsp").forward(request, response);
+
+                        out.write("1");
+
+                    } else {
+
+                        out.write("0");
                     }
                     break;
                 case "guardar1":
                     String av = request.getParameter("avion");
                     Avion av1 = gson.fromJson(av, Avion.class);
                     if (model.guardar2(av1) == 1) {
-                        request.getSession().setAttribute("error", "error");
-                        request.getRequestDispatcher("/Aviones_1.jsp").forward(request, response);
+
+                        out.write("1");
+
+                    } else {
+
+                        out.write("0");
                     }
                     break;
                 case "guardar2":
                     String ci = request.getParameter("ciudad");
                     Ciudad ciu = gson.fromJson(ci, Ciudad.class);
                     if (model.guardar3(ciu) == 1) {
-                        request.getSession().setAttribute("error", "error");
-                        request.getRequestDispatcher("/Ciudades_1.jsp").forward(request, response);
+
+                        out.write("1");
+
+                    } else {
+
+                        out.write("0");
                     }
                     break;
                 case "guardar3":
                     String ru = request.getParameter("ruta");
                     Ruta rut = gson.fromJson(ru, Ruta.class);
                     if (model.guardar4(rut) == 1) {
-                        request.getSession().setAttribute("error", "error");
-                        request.getRequestDispatcher("/Rutas_1.jsp").forward(request, response);
+
+                        out.write("1");
+
+                    } else {
+
+                        out.write("0");
                     }
                     break;
                 case "guardar4":
                     String vu = request.getParameter("vuelo");
                     Vuelo vue = gson.fromJson(vu, Vuelo.class);
                     if (model.guardar5(vue) == 1) {
-                        request.getSession().setAttribute("error", "error");
-                        request.getRequestDispatcher("/Vuelos_1.jsp").forward(request, response);
+                        out.write("1");
+                    } else {
+                        out.write("0");
                     }
                     break;
                 case "avionSearch":

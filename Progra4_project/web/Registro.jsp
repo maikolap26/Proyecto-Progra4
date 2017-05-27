@@ -16,6 +16,7 @@
         <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
         <script src="js/script.js" type="text/javascript"></script>
         <script src="js/Ciudad.js" type="text/javascript"></script>
+        <script src="js/Ruta.js" type="text/javascript"></script>
         <script src="js/Avion.js" type="text/javascript"></script>
         <script src="js/Vuelo.js" type="text/javascript"></script>
         <script src="js/Usuario.js" type="text/javascript"></script>

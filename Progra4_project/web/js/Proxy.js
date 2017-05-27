@@ -15,7 +15,7 @@ Proxy.getCiudades = function (callback) {
     AJAX_req.send();
 };
 
-Proxy.getCiudad = function (cod,cod1,callback) {
+Proxy.getCiudad = function (cod, callback) {
     var AJAX_req = new XMLHttpRequest();
     url = "/Progra4_project/AAMAirlinesService?action=getCiudad";
     AJAX_req.open("POST", url, true);
@@ -26,9 +26,9 @@ Proxy.getCiudad = function (cod,cod1,callback) {
             callback(object);
         }
     };
-    AJAX_req.send("codigo1="+cod +"&codigo2="+cod1);
+    AJAX_req.send("codigo1=" + cod);
 };
-Proxy.getRuta = function (cod,callback) {
+Proxy.getRuta = function (cod, callback) {
     var AJAX_req = new XMLHttpRequest();
     url = "/Progra4_project/AAMAirlinesService?action=getRuta";
     AJAX_req.open("POST", url, true);
@@ -39,10 +39,10 @@ Proxy.getRuta = function (cod,callback) {
             callback(object);
         }
     };
-    AJAX_req.send("codigoR="+cod);
+    AJAX_req.send("codigoR=" + cod);
 };
 
-Proxy.getAvion = function (cod,callback) {
+Proxy.getAvion = function (cod, callback) {
     var AJAX_req = new XMLHttpRequest();
     url = "/Progra4_project/AAMAirlinesService?action=getAvion";
     AJAX_req.open("POST", url, true);
@@ -53,7 +53,7 @@ Proxy.getAvion = function (cod,callback) {
             callback(object);
         }
     };
-    AJAX_req.send("codigoA="+cod);
+    AJAX_req.send("codigoA=" + cod);
 };
 
 
@@ -64,7 +64,7 @@ Proxy.getPromo = function (callback) {
     AJAX_req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     AJAX_req.send();
 };
-Proxy.vuelosSearch = function (origen, destino,diaIda, callback) {
+Proxy.vuelosSearch = function (origen, destino, diaIda, callback) {
     var AJAX_req = new XMLHttpRequest();
     url = "/Progra4_project/AAMAirlinesService?action=vueloListSearch";
     AJAX_req.open("POST", url, true);
@@ -75,7 +75,7 @@ Proxy.vuelosSearch = function (origen, destino,diaIda, callback) {
             callback(object);
         }
     };
-    AJAX_req.send("origenYdestino=" + origen +"-"+ destino + "&diaIda=" + diaIda);
+    AJAX_req.send("origenYdestino=" + origen + "-" + destino + "&diaIda=" + diaIda);
 };
 
 Proxy.userLogin = function (user, callBack) {
@@ -93,56 +93,101 @@ Proxy.userLogin = function (user, callBack) {
     AJAX_req.send("user=" + jsonText);
 };
 
-Proxy.guardar = function (user, callBack) {
+Proxy.guardar = function (user, callback) {
     var enviar;
     var AJAX_req = new XMLHttpRequest();
     url = "/Progra4_project/AAMAirlinesService?action=guardar";
     AJAX_req.open("POST", url, true);
     AJAX_req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     enviar = JsonUtils.enviar(user);
-
+    AJAX_req.onreadystatechange = function () {
+        if (AJAX_req.readyState == 4 && AJAX_req.status === 200) {
+            if (parseInt(AJAX_req.responseText) == 1) {
+                callback(1);
+            } else {
+                callback(0);
+            }
+        }
+    };
     AJAX_req.send("us=" + enviar);
 };
 
 
-Proxy.guardar1 = function(aviones,callback){
+Proxy.guardar1 = function (aviones, callback) {
     var env;
     var AJAX_req = new XMLHttpRequest();
-    url="/Progra4_project/AAMAirlinesService?action=guardar1";
-    AJAX_req.open("POST",url,true);
+    url = "/Progra4_project/AAMAirlinesService?action=guardar1";
+    AJAX_req.open("POST", url, true);
     AJAX_req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     env = JsonUtils.enviar(aviones);
-    AJAX_req.send("avion="+ env); 
+    AJAX_req.onreadystatechange = function () {
+        if (AJAX_req.readyState == 4 && AJAX_req.status === 200) {
+            if (parseInt(AJAX_req.responseText) == 1) {
+                callback(1);
+            } else {
+                callback(0);
+            }
+        }
+    };
+    AJAX_req.send("avion=" + env);
 };
 
-Proxy.guardar2 = function(ciudades,callback){
+Proxy.guardar2 = function (ciudades, callback) {
     var env;
     var AJAX_req = new XMLHttpRequest();
-    url="/Progra4_project/AAMAirlinesService?action=guardar2";
-    AJAX_req.open("POST",url,true);
+    url = "/Progra4_project/AAMAirlinesService?action=guardar2";
+    AJAX_req.open("POST", url, true);
     AJAX_req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     env = JsonUtils.enviar(ciudades);
-    AJAX_req.send("ciudad="+ env); 
+    AJAX_req.onreadystatechange = function () {
+        if (AJAX_req.readyState == 4 && AJAX_req.status === 200) {
+            if (parseInt(AJAX_req.responseText) == 1) {
+                callback(1);
+            } else {
+                callback(0);
+            }
+        }
+    };
+    AJAX_req.send("ciudad=" + env);
 };
 
-Proxy.guardar3 = function(rutas,callback){
+Proxy.guardar3 = function (rutas, callback) {
     var env;
     var AJAX_req = new XMLHttpRequest();
-    url="/Progra4_project/AAMAirlinesService?action=guardar3";
-    AJAX_req.open("POST",url,true);
+    url = "/Progra4_project/AAMAirlinesService?action=guardar3";
+    AJAX_req.open("POST", url, true);
     AJAX_req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     env = JsonUtils.enviar(rutas);
-    AJAX_req.send("ruta="+ env); 
+    AJAX_req.onreadystatechange = function () {
+        if (AJAX_req.readyState == 4 && AJAX_req.status === 200) {
+            if (parseInt(AJAX_req.responseText) == 1) {
+                callback(1);
+            } else {
+                callback(0);
+            }
+        }
+    };
+    AJAX_req.send("ruta=" + env);
 };
 
-Proxy.guardar4 = function(vuelos,callback){
+Proxy.guardar4 = function (vuelos, callback) {
     var env;
     var AJAX_req = new XMLHttpRequest();
-    url="/Progra4_project/AAMAirlinesService?action=guardar4";
-    AJAX_req.open("POST",url,true);
+    url = "/Progra4_project/AAMAirlinesService?action=guardar4";
+    AJAX_req.open("POST", url, true);
     AJAX_req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     env = JsonUtils.enviar(vuelos);
-    AJAX_req.send("vuelo="+ env); 
+    AJAX_req.onreadystatechange = function () {
+        if (AJAX_req.readyState == 4 && AJAX_req.status === 200) {
+            if (parseInt(AJAX_req.responseText) == 1) {
+                callback(1);
+            } else {
+                callback(0);
+            }
+        }
+    };
+    AJAX_req.send("vuelo=" + env);
+
 };
 
 Proxy.avionSearch = function (callback) {
