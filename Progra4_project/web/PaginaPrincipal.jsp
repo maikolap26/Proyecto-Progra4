@@ -13,6 +13,8 @@
         <title>
             Inicio
         </title>
+        <%@ include file="include.jspf" %>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBacqOt9JhJHdDa2ttf3mCgLyor01XJ5HQ&callback=myMap"></script>
         <meta charset="utf-8">
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
         <link href="css/boots	trap.min.css" rel="stylesheet" type="text/css"/>
@@ -56,6 +58,7 @@
 
         </meta>
         </meta>
+
     </head>
     <body>
         <!-- ------------------------ Cuerpo de la pagina ------------------ -->
@@ -249,7 +252,8 @@
             </div>
             
             
-            </div>
+            </div>            
+                      
             <!-- ---------------------- PIE DE PAGINA ---------------------- -->
 
             <%@ include file="Footer.jspf" %>

@@ -54,6 +54,10 @@
 
         </meta>
         </meta>
+
+        
+        <%@ include file="include.jspf" %>
+        
     </head>
     <body>
         <!-- ------------------------ Cuerpo de la pagina ------------------ -->
