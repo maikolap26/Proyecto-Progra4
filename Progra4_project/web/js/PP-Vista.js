@@ -8,14 +8,16 @@ var numeroVuelo;
 var asientosSelec;
 var asientos = [];
 var cantidad = 0;
+var map;
+var markers = [];
 
 function pageLoad(event) {
-
     model = new AAMModel();
     vuelos = model.vuelos;
     ciudades = model.ciudades;
     controller = new AAMController(model, window);
     llenarDescuentos();
+    myMap();
     $("#buscar").click(function () {
         controller.buscar();
     });
@@ -29,7 +31,6 @@ function pageLoad(event) {
         b.disabled = false;
         a.addEventListener("click", cancelOrden);
     }
-
 }
 function llenarDescuentos() {
     for (var i = 1; i < 6; i++) {
@@ -157,9 +158,6 @@ function mostrarAsientos() {
         avionAsi.appendChild(fila);
     }
 }
-function seleccionado() {
-
-}
 function agregaAsiento() {
     if (asientos.length === cantidad) {
         while (asientos.length > 0) {
@@ -247,6 +245,22 @@ function doBlur(event) {
 }
 function redireccionar() {
     location = "Registro.jsp";
+}
+function redireccionar1() {
+    location = "UsuarioCliente.jsp";
+}
+function redireccionar2() {
+    location = "UsuarioAdmin.jsp";
+}
+function enableInput(){
+    document.getElementById("correo").disabled = false;
+    document.getElementById("contraseña").disabled = false;
+    document.getElementById("contraseña1").disabled = false;
+    document.getElementById("nombre").disabled = false;
+    document.getElementById("apellidos").disabled = false;
+    document.getElementById("cedula").disabled = false;
+    document.getElementById("telefono").disabled = false;
+    document.getElementById("celular").disabled = false;
 }
 
 function doValidate(event) {
@@ -421,6 +435,45 @@ function doSubmitVuelos() {
     Proxy.guardar4(vuelos, function (result) {});
 }
 
+// ------------------------------- ACTUALIZAR DATOS DEL PERFIL DE USUARIO CLIENTE -------------------------------
+function doPerfil1(){
+    var user = document.getElementById("usuario");
+    var contraseña = document.getElementById("contraseña");
+    var cedula = document.getElementById("cedula");
+    var nombre = document.getElementById("nombre");
+    var apellido = document.getElementById("apellidos");
+    var correo = document.getElementById("correo");
+    var telefono = document.getElementById("telefono");
+    var celular = document.getElementById("celular");
+
+    usuario = new Usuario(user.value, cedula.value, nombre.value, apellido.value, correo.value, telefono.value, celular.value, "1996-11-08", contraseña.value);
+    var formulario = document.getElementById("formulario");
+    if (formulario != null) {
+        formulario.addEventListener("submit", doValidate);
+        Proxy.perfil1(usuario, function (result) {
+        });
+    }
+}
+// ------------------------------- ACTUALIZAR DATOS DEL PERFIL DE USUARIO ADMINISTRADOR -------------------------
+function doPerfil2(){
+    var user = document.getElementById("usuario");
+    var contraseña = document.getElementById("contraseña");
+    var cedula = document.getElementById("cedula");
+    var nombre = document.getElementById("nombre");
+    var apellido = document.getElementById("apellidos");
+    var correo = document.getElementById("correo");
+    var telefono = document.getElementById("telefono");
+    var celular = document.getElementById("celular");
+
+    usuario = new Usuario(user.value, cedula.value, nombre.value, apellido.value, correo.value, telefono.value, celular.value, "1996-11-08", contraseña.value);
+    var formulario = document.getElementById("formulario");
+    if (formulario != null) {
+        formulario.addEventListener("submit", doValidate);
+        Proxy.perfil2(usuario, function (result) {
+        });
+    }
+}
+
 function listAvion(listado, av) {
     var tr = document.createElement("tr");
     var td;
@@ -577,5 +630,74 @@ function listVuelos(ps) {
 function llenarVuelos() {
     listVuelos(model.buscados);
 }
+
+/* ------------------------------------------------------------------- */
+/* ---------------------------    MAPA   ----------------------------- */
+/* ------------------------------------------------------------------- */
+
+function getLocation() {
+	if (navigator.geolocation) {
+		if (navigator.geolocation.getCurrentPosition(controller.saveGeolocation));
+	}
+}
+
+function positionGeoMarker(coordenates) {
+	mapProp = {
+		center: new google.maps.LatLng(coordenates.lat, coordenates.lng),
+		zoom: 10,
+	};
+	var marker = new google.maps.Marker({
+		position: mapProp.center,
+		map: map
+	});
+	markers.push(marker);
+}
+
+function myMap() {
+	mapProp = {
+		center: new google.maps.LatLng(10.0000000, -84.0000000),
+		zoom: 7
+	};
+	map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+
+	// This event listener will call addMarker() when the map is clicked.
+	map.addListener('click', function (event) {
+		addMarker(event.latLng);
+	});
+
+}
+
+// Adds a marker to the map and push to the array.
+function addMarker(location) {
+	deleteMarkers();
+	var marker = new google.maps.Marker({
+		position: location,
+		map: map
+	});
+	markers.push(marker);
+	controller.savePosition();
+}
+
+// Sets the map on all markers in the array.
+function setMapOnAll(map) {
+	for (var i = 0; i < markers.length; i++) {
+		markers[i].setMap(map);
+	}
+}
+
+// Removes the markers from the map, but keeps them in the array.
+function clearMarkers() {
+	setMapOnAll(null);
+}
+
+// Deletes all markers in the array by removing references to them.
+function deleteMarkers() {
+	clearMarkers();
+	markers = [];
+}
+
+/* ------------------------------------------------------------------- */
+/* ------------------------------------------------------------------- */
+/* ------------------------------------------------------------------- */
 
 document.addEventListener("DOMContentLoaded", pageLoad);

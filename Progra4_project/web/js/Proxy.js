@@ -1,6 +1,7 @@
 /* global JsonUtils */
 
 var Proxy = Proxy || {};
+
 Proxy.getCiudades = function (callback) {
     var AJAX_req = new XMLHttpRequest();
     url = "/Progra4_project/AAMAirlinesService?action=ciudadListAll";
@@ -28,6 +29,7 @@ Proxy.getCiudad = function (cod,cod1,callback) {
     };
     AJAX_req.send("codigo1="+cod +"&codigo2="+cod1);
 };
+
 Proxy.getRuta = function (cod,callback) {
     var AJAX_req = new XMLHttpRequest();
     url = "/Progra4_project/AAMAirlinesService?action=getRuta";
@@ -56,7 +58,6 @@ Proxy.getAvion = function (cod,callback) {
     AJAX_req.send("codigoA="+cod);
 };
 
-
 Proxy.getPromo = function (callback) {
     var AJAX_req = new XMLHttpRequest();
     url = "/Progra4_project/AAMAirlinesService?action=vueloListPromo";
@@ -64,6 +65,7 @@ Proxy.getPromo = function (callback) {
     AJAX_req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     AJAX_req.send();
 };
+
 Proxy.vuelosSearch = function (origen, destino, callback) {
     var AJAX_req = new XMLHttpRequest();
     url = "/Progra4_project/AAMAirlinesService?action=vueloListSearch";
@@ -185,4 +187,26 @@ Proxy.vueloSearch = function (callback) {
         }
     };
     AJAX_req.send();
+}
+
+Proxy.perfil1 = function (user, callBack) {
+    var enviar;
+    var AJAX_req = new XMLHttpRequest();
+    url = "/Progra4_project/AAMAirlinesService?action=Perfil1";
+    AJAX_req.open("POST", url, true);
+    AJAX_req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    enviar = JsonUtils.enviar(user);
+    
+    AJAX_req.send("us1=" + enviar);
+}
+
+Proxy.perfil2 = function (user, callBack) {
+    var enviar;
+    var AJAX_req = new XMLHttpRequest();
+    url = "/Progra4_project/AAMAirlinesService?action=Perfil2";
+    AJAX_req.open("POST", url, true);
+    AJAX_req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    enviar = JsonUtils.enviar(user);
+    
+    AJAX_req.send("us2=" + enviar);
 }
